@@ -1,0 +1,4336 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr" class="wf-nanumbarungothic-n4-inactive wf-inactive">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>트루맨 AlmightyDr</title>
+
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Descript-xion" content="올마이티 닥터" />
+    <meta http-equiv="Keywords" content="올마이티 닥터" />
+    <meta http-equiv="Publisher" content="올마이티 닥터" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <meta name="url" content="http://hanjigyo.udemzi.co.kr" />
+    <meta name="identifier-URL" content="http://hanjigyo.udemzi.co.kr" />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="https://trueman.almightydr.com/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="https://trueman.almightydr.com/favicon/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="https://trueman.almightydr.com/favicon/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="https://trueman.almightydr.com/favicon/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="https://trueman.almightydr.com/favicon/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="https://trueman.almightydr.com/favicon/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="https://trueman.almightydr.com/favicon/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="https://trueman.almightydr.com/favicon/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://trueman.almightydr.com/favicon/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="https://trueman.almightydr.com/favicon/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://trueman.almightydr.com/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="https://trueman.almightydr.com/favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://trueman.almightydr.com/favicon/favicon-16x16.png"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://trueman.almightydr.com/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,user-scalable=yes"
+    />
+
+    <script type="text/javascript" src="./main_files/webfont.js"></script>
+    <script>
+      WebFont.load({
+        custom: {
+          families: ['NanumBarunGothic'],
+        },
+      });
+    </script>
+    <!-- include CSS always before including js -->
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./main_files/jquery-ui-1.10.4.custom.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./main_files/datatables.min.css"
+    />
+
+    <script
+      type="text/javascript"
+      src="./main_files/jquery-1.11.3.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./main_files/jquery-ui-1.10.4.custom.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./main_files/moment-with-locales.min.js"
+    ></script>
+    <!-- <script type="text/javascript" src="/keynoty/js/jquery-3.3.1.min.js"></script> -->
+    <script
+      type="text/javascript"
+      src="./main_files/bootstrap.bundle.min.js"
+    ></script>
+    <script type="text/javascript" src="./main_files/tomato.js"></script>
+
+    <script type="text/javascript" src="./main_files/tinymce.min.js"></script>
+
+    <script
+      type="text/javascript"
+      src="./main_files/Chart.bundle.min.js"
+    ></script>
+    <style type="text/css">
+      /* Chart.js */
+      @-webkit-keyframes chartjs-render-animation {
+        from {
+          opacity: 0.99;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes chartjs-render-animation {
+        from {
+          opacity: 0.99;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .chartjs-render-monitor {
+        -webkit-animation: chartjs-render-animation 0.001s;
+        animation: chartjs-render-animation 0.001s;
+      }
+    </style>
+    <script
+      type="text/javascript"
+      src="./main_files/datatables.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./main_files/cinnamon_keynoty.js"
+    ></script>
+    <script type="text/javascript" src="./main_files/referenceJS"></script>
+    <script type="text/javascript" src="./main_files/checkArsAlarm_js"></script>
+
+    <script>
+      refresher.set('tinymceSetting', function (hh, init) {
+        if (!$('textarea.field_interface').length) return false;
+        var p = $('textarea.field_interface').position();
+        var $cinnamon_default = $('textarea.field_interface').closest(
+          '.cinnamon_default'
+        );
+        var $td = $('textarea.field_interface').closest('td');
+        var hh = hh
+          ? hh
+          : document.documentElement.clientHeight -
+            ($cinnamon_default.height() - $td.height()) -
+            111;
+        // var hh = document.documentElement.clientHeight-p.top-210;
+        var popupWidth = 600;
+        if (innerWidth < 320) {
+          popupWidth = 288;
+        } else if (innerWidth < 700) {
+          popupWidth = innerWidth * 0.9;
+        }
+        var init = init ? init : [];
+
+        tinymce.init({
+          selector: 'textarea.field_interface',
+          content_css: '/keynoty/css/mce.css',
+          language: 'ko',
+          width: '100%',
+          height: hh,
+          relative_urls: false,
+          plugins: [
+            'code advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
+            'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+            'save table contextmenu directionality emoticons template paste textcolor history  lineheight',
+          ],
+          plugin_preview_width: '1050',
+          plugin_preview_height: hh,
+          templates: init,
+          template_popup_width: popupWidth,
+          // menubar:"history",
+          protect: [
+            /\<\/?(if|endif)\>/g, // Protect <if> & </endif>
+            /\<xsl\:[^>]+\>/g, // Protect <xsl:...>
+            /<\?php.*?\?>/g, // Protect php code
+          ],
+          toolbar:
+            'insertfile undo redo | styleselect |  fontsizeselect | link image bold underline italic forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | code ',
+          extended_valid_elements:
+            'span[style|class|id|alt|onclick|onClick|onmouseout|onmouseover],a[onclick|href|class|id|title|alt|onmouseover|onmouseout|target|data|style],input[onclick|type|value|class|id|name],strong[class|style|id]',
+          lineheight_formats:
+            '11pt 12pt 14pt 16pt 18pt 20pt 22pt 24pt 26pt 36pt 100% 120% 140% 160% 180% 200%',
+          theme_concrete_text_colors: '436EB2,3CB54B,3b2315,ffffff,000000',
+          fontsize_formats:
+            '11px 12px 13px 14px 15px 16px 17px 18px 19px 20px 21px 22px 23px 24px 25px 26px 27px 28px 29px 30px 31px 32px 33px 34px 35px 36px 37px 38px 39px 40px 41px 42px 43px 44px 45px 46px 47px 48px 49px 50px 51px 52px 53px 54px 55px 56px 57px 58px 59px 60px 61px 62px 63px 64px 65px 66px 67px 68px 69px 70px 71px ',
+
+          setup: function (editor) {
+            editor.on('change', function (e) {
+              // console.log("tinymce_change")
+              refresher.execute('tinymce_change');
+            });
+          },
+          style_formats: [
+            { title: 'Heading 1', block: 'h1' },
+            { title: 'Heading 2', block: 'h2' },
+            { title: 'Heading 3', block: 'h3' },
+            { title: 'Heading 4', block: 'h4' },
+            { title: 'Heading 5', block: 'h5' },
+            { title: 'Heading 6', block: 'h6' },
+            { title: 'Paragraph', block: 'p' },
+          ],
+          font_formats: 'Noto Sans KR=Noto Sans KR;',
+          //
+          // "나눔고딕=ng;"+
+          // "나눔바른고딕=nbg;"+
+          // "나눔바른고딕 Light=nbgl;"+
+          // "나눔바른고딕 Ultra Light=nbgul;"+
+          // "나눔바른고딕 Bold=nbgb;"+
+          // "나눔명조=nm;"+
+          // "나눔명조 Bold=nmb;"+
+          // "나눔손글씨붓=Nanum Brush Script;"+
+          // "나눔손글씨펜=Nanum Pen Script;"+
+          // "돋움=doutm;"+
+          // "맑은고딕=맑은고딕;"+
+          // "굴림=gulim;"+
+          // "바탕=batang;"+
+          // "궁서=gungseo;"+
+          // "MS PMincho=MS PMincho;"+
+          // "MS Gothic=MS Gothic;"+
+          // "Arial=arial;"+
+          // "Arial Black=arial black,avant garde;"+
+          // "Book Antiqua=book antiqua,palatino;"+
+          // "Comic Sans MS=comic sans ms,sans-serif;"+
+          // "Courier New=courier new,courier;"+
+          // "Georgia=georgia,palatino;"+
+          // "Helvetica=helvetica;"+
+          // "Impact=impact,chicago;"+
+          // "Symbol=symbol;"+
+          // "Tahoma=tahoma,arial,helvetica,sans-serif;"+
+          // "Terminal=terminal,monaco;"+
+          // "Times New Roman=times new roman,times;"+
+          // "Trebuchet MS=trebuchet ms,geneva;"+
+          // "Verdana=verdana,geneva;"+
+          // "Webdings=webdings;"+
+          // "Wingdings=wingdings,zapf dingbats"
+        });
+      });
+      METT.initJ([
+        {
+          title: '[일반조루수술] 일반과 스위치조루',
+          description: '',
+          url: '/intranet/template/9.html',
+        },
+        {
+          title: '[일반조루수술] 조루수술(부천)-양원장',
+          description: '',
+          url: '/intranet/template/109.html',
+        },
+        {
+          title: '[일반조루수술] (구)조루수술(기본)-양원장',
+          description: '',
+          url: '/intranet/template/113.html',
+        },
+        {
+          title: '[일반조루수술] 조루 분댱 스탈',
+          description: '',
+          url: '/intranet/template/154.html',
+        },
+        {
+          title: '[스위치조루수술] 트루맨 남성의원입니다.',
+          description: '',
+          url: '/intranet/template/5.html',
+        },
+        {
+          title: '[스위치조루수술] 스위치조루',
+          description: '',
+          url: '/intranet/template/8.html',
+        },
+        {
+          title: '[스위치조루수술] 스위치',
+          description: '',
+          url: '/intranet/template/14.html',
+        },
+        {
+          title: '[스위치조루수술] 조루수술',
+          description: '',
+          url: '/intranet/template/19.html',
+        },
+        {
+          title: '[스위치조루수술] NEW)스위치조루(인천점)',
+          description: '',
+          url: '/intranet/template/40.html',
+        },
+        {
+          title: '[스위치조루수술] NEW)스위치조루,귀두확대(인천점)',
+          description: '',
+          url: '/intranet/template/43.html',
+        },
+        {
+          title: '[스위치조루수술] 조루2',
+          description: '',
+          url: '/intranet/template/60.html',
+        },
+        {
+          title: '[스위치조루수술] 조루이벤트',
+          description: '',
+          url: '/intranet/template/78.html',
+        },
+        {
+          title: '[스위치조루수술] 조루수술-(조루,라이펜이벤트)',
+          description: '',
+          url: '/intranet/template/102.html',
+        },
+        {
+          title: '[스위치조루수술] (구)스위치조루수술(기본)-양원장',
+          description: '',
+          url: '/intranet/template/110.html',
+        },
+        {
+          title: '[스위치조루수술] 스위치조루수술(강남-박)',
+          description: '',
+          url: '/intranet/template/126.html',
+        },
+        {
+          title: '[스위치조루수술] 스조 분당 스탈',
+          description: '',
+          url: '/intranet/template/160.html',
+        },
+        {
+          title: '[스위치조루수술] 부산조루',
+          description: '',
+          url: '/intranet/template/172.html',
+        },
+        {
+          title: '[스위치조루수술] 조루',
+          description: '',
+          url: '/intranet/template/205.html',
+        },
+        {
+          title: '[스위치조루수술] NEW)조루수술문의 답변(공통/양기훈원장)',
+          description: '',
+          url: '/intranet/template/217.html',
+        },
+        {
+          title: '[스위치조루수술] 조루',
+          description: '',
+          url: '/intranet/template/226.html',
+        },
+        {
+          title: '[스위치조루수술] NEW)스위치조루,정관(인천점)',
+          description: '',
+          url: '/intranet/template/235.html',
+        },
+        {
+          title: '[소대절단술] 은낭칼퀴',
+          description: '',
+          url: '/intranet/template/54.html',
+        },
+        {
+          title: '[약물치료] 트리믹스',
+          description: '',
+          url: '/intranet/template/34.html',
+        },
+        {
+          title: '[약물치료] 발기부전 외래',
+          description: '',
+          url: '/intranet/template/39.html',
+        },
+        {
+          title: '[약물치료] NEW)발기부전진료(인천점)',
+          description: '',
+          url: '/intranet/template/240.html',
+        },
+        {
+          title: '[굴곡형수술] (구)발기부전수술(기본)-양원장',
+          description: '',
+          url: '/intranet/template/81.html',
+        },
+        {
+          title: '[굴곡형수술] 발기부전수술(부천)-양원장',
+          description: '',
+          url: '/intranet/template/103.html',
+        },
+        {
+          title: '[굴곡형수술] 굴곡형(강남-박)',
+          description: '',
+          url: '/intranet/template/128.html',
+        },
+        {
+          title: '[펌프형수술(세조각형)] 발기부전 양식1',
+          description: '',
+          url: '/intranet/template/26.html',
+        },
+        {
+          title: '[펌프형수술(세조각형)] 부산 발기부전보형물',
+          description: '',
+          url: '/intranet/template/71.html',
+        },
+        {
+          title: '[펌프형수술(세조각형)] 펌프형',
+          description: '',
+          url: '/intranet/template/96.html',
+        },
+        {
+          title:
+            '[펌프형수술(세조각형)] NEW) 발기부전수술 답변(공통/양기훈원장)',
+          description: '',
+          url: '/intranet/template/106.html',
+        },
+        {
+          title: '[펌프형수술(세조각형)] 발기부전수술(부천)-양원장',
+          description: '',
+          url: '/intranet/template/111.html',
+        },
+        {
+          title: '[펌프형수술(세조각형)] 팽창형',
+          description: '',
+          url: '/intranet/template/127.html',
+        },
+        {
+          title: '[펌프형수술(세조각형)] NEW)펌프형,굴곡형(인천점)',
+          description: '',
+          url: '/intranet/template/187.html',
+        },
+        {
+          title: '[펌프형수술(세조각형)] 팽창형',
+          description: '',
+          url: '/intranet/template/209.html',
+        },
+        {
+          title:
+            '[펌프형수술(세조각형)] NEW)발기부전수술답변(굴곡형/팽창형)(공통/양기훈원장)',
+          description: '',
+          url: '/intranet/template/215.html',
+        },
+        {
+          title: '[펌프형수술(세조각형)] 발기부전+보형물',
+          description: '',
+          url: '/intranet/template/228.html',
+        },
+        {
+          title: '[귀두확대] 조루와 귀두',
+          description: '',
+          url: '/intranet/template/36.html',
+        },
+        {
+          title: '[귀두확대] 귀두확대(부천)',
+          description: '',
+          url: '/intranet/template/69.html',
+        },
+        {
+          title: '[귀두확대] 귀두확대(강남-박)',
+          description: '',
+          url: '/intranet/template/90.html',
+        },
+        {
+          title: '[귀두확대] 귀두확대',
+          description: '',
+          url: '/intranet/template/173.html',
+        },
+        {
+          title: '[귀두확대] NEW)귀두(인천점)',
+          description: '',
+          url: '/intranet/template/198.html',
+        },
+        {
+          title: '[귀두확대] NEW)귀두,길이연장(인천점)',
+          description: '',
+          url: '/intranet/template/241.html',
+        },
+        {
+          title: '[자가조직귀두확대] 조루,확대,길이',
+          description: '',
+          url: '/intranet/template/52.html',
+        },
+        {
+          title: '[자가조직귀두확대] 자가조직 귀두,음경확대',
+          description: '',
+          url: '/intranet/template/62.html',
+        },
+        {
+          title: '[자가조직귀두확대] 조루와 귀두',
+          description: '',
+          url: '/intranet/template/88.html',
+        },
+        {
+          title: '[자가조직귀두확대] 음경',
+          description: '',
+          url: '/intranet/template/97.html',
+        },
+        {
+          title: '[자가조직귀두확대] 복합(확대,길이연장,조루)',
+          description: '',
+          url: '/intranet/template/141.html',
+        },
+        {
+          title: '[자가조직귀두확대] 360도',
+          description: '',
+          url: '/intranet/template/158.html',
+        },
+        {
+          title: '[음경확대] 길이연장',
+          description: '',
+          url: '/intranet/template/20.html',
+        },
+        {
+          title: '[음경확대] 음경확대(강남-박)',
+          description: '',
+          url: '/intranet/template/21.html',
+        },
+        {
+          title: '[음경확대] 귀두,음경 대체진피',
+          description: '',
+          url: '/intranet/template/65.html',
+        },
+        {
+          title: '[음경확대] 조귀음(지방)',
+          description: '',
+          url: '/intranet/template/80.html',
+        },
+        {
+          title: '[음경확대] NEW)실리콘보형물(인천점)',
+          description: '',
+          url: '/intranet/template/85.html',
+        },
+        {
+          title: '[음경확대] 확대',
+          description: '',
+          url: '/intranet/template/211.html',
+        },
+        {
+          title: '[음경확대] 확대',
+          description: '',
+          url: '/intranet/template/224.html',
+        },
+        {
+          title: '[자가조직확대] 자가조직확대',
+          description: '',
+          url: '/intranet/template/27.html',
+        },
+        {
+          title: '[자가조직확대] 귀두와 길이',
+          description: '',
+          url: '/intranet/template/50.html',
+        },
+        {
+          title: '[자가조직확대] 자가조직확대',
+          description: '',
+          url: '/intranet/template/59.html',
+        },
+        {
+          title: '[자가조직확대] NEW)자가조직패키지(인천점)',
+          description: '',
+          url: '/intranet/template/87.html',
+        },
+        {
+          title: '[자가조직확대] 조귀음',
+          description: '',
+          url: '/intranet/template/94.html',
+        },
+        {
+          title: '[자가조직확대] 자가지방(귀두,음경)',
+          description: '',
+          url: '/intranet/template/139.html',
+        },
+        {
+          title: '[자가조직확대] 길이이야기',
+          description: '',
+          url: '/intranet/template/161.html',
+        },
+        {
+          title: '[자가조직확대] 분당 확대 버전',
+          description: '',
+          url: '/intranet/template/162.html',
+        },
+        {
+          title: '[자가조직확대] 자가조직과 대체진피,라이펜',
+          description: '',
+          url: '/intranet/template/186.html',
+        },
+        {
+          title: '[대체조직확대] NEW)대체진피패키지(인천점)',
+          description: '',
+          url: '/intranet/template/48.html',
+        },
+        {
+          title: '[대체조직확대] 대체',
+          description: '',
+          url: '/intranet/template/99.html',
+        },
+        {
+          title: '[대체조직확대] 부산 길이연장',
+          description: '',
+          url: '/intranet/template/105.html',
+        },
+        {
+          title: '[대체조직확대] 대체진피와 길이연장',
+          description: '',
+          url: '/intranet/template/134.html',
+        },
+        {
+          title: '[대체조직확대] 대체진피(귀두,음경)',
+          description: '',
+          url: '/intranet/template/137.html',
+        },
+        {
+          title: '[대체조직확대] 확대_대체진피',
+          description: '',
+          url: '/intranet/template/150.html',
+        },
+        {
+          title: '[대체조직확대] 4가지 복합확대술',
+          description: '',
+          url: '/intranet/template/213.html',
+        },
+        {
+          title: '[대체조직확대] 복합',
+          description: '',
+          url: '/intranet/template/225.html',
+        },
+        {
+          title: '[주사음경확대] 라이펜',
+          description: '',
+          url: '/intranet/template/100.html',
+        },
+        {
+          title: '[인조고환삽입술] 인조고환',
+          description: '',
+          url: '/intranet/template/135.html',
+        },
+        {
+          title: '[지방고환성형술] 외고환',
+          description: '',
+          url: '/intranet/template/55.html',
+        },
+        {
+          title: '[고환(음낭)지방확대술] 인조고환 삽입술',
+          description: '',
+          url: '/intranet/template/25.html',
+        },
+        {
+          title: '[만곡증교정수술] 만곡증과 음경확대',
+          description: '',
+          url: '/intranet/template/11.html',
+        },
+        {
+          title: '[만곡증교정수술] 만곡(강남-박)',
+          description: '',
+          url: '/intranet/template/37.html',
+        },
+        {
+          title: '[만곡증교정수술] 만곡증',
+          description: '',
+          url: '/intranet/template/56.html',
+        },
+        {
+          title: '[만곡증교정수술] 만곡증',
+          description: '',
+          url: '/intranet/template/61.html',
+        },
+        {
+          title: '[만곡증교정수술] 만곡',
+          description: '',
+          url: '/intranet/template/74.html',
+        },
+        {
+          title: '[만곡증교정수술] 만곡증과 음경확대',
+          description: '',
+          url: '/intranet/template/131.html',
+        },
+        {
+          title: '[만곡증교정수술] 분당_만곡',
+          description: '',
+          url: '/intranet/template/149.html',
+        },
+        {
+          title: '[만곡증교정수술] 부산 음경만곡',
+          description: '',
+          url: '/intranet/template/178.html',
+        },
+        {
+          title: '[만곡증교정수술] NEW)만곡증(인천점)',
+          description: '',
+          url: '/intranet/template/193.html',
+        },
+        {
+          title: '[만곡증교정수술] 만곡증',
+          description: '',
+          url: '/intranet/template/230.html',
+        },
+        {
+          title: '[바세린제거수술] 부산 바세린',
+          description: '',
+          url: '/intranet/template/33.html',
+        },
+        {
+          title: '[바세린제거수술] 음낭칼퀴',
+          description: '',
+          url: '/intranet/template/58.html',
+        },
+        {
+          title: '[바세린제거수술] 바세린제거',
+          description: '',
+          url: '/intranet/template/89.html',
+        },
+        {
+          title: '[바세린제거수술] NEW)바세린제거(인천점)',
+          description: '',
+          url: '/intranet/template/192.html',
+        },
+        {
+          title: '[바세린제거수술] 음낭피판술',
+          description: '',
+          url: '/intranet/template/212.html',
+        },
+        {
+          title: '[바세린제거수술] 바세린',
+          description: '',
+          url: '/intranet/template/229.html',
+        },
+        {
+          title: '[포경수술] 트루맨 남성의원입니다',
+          description: '',
+          url: '/intranet/template/6.html',
+        },
+        {
+          title: '[포경수술] 포경',
+          description: '',
+          url: '/intranet/template/22.html',
+        },
+        {
+          title: '[포경수술] 부산포경수술',
+          description: '',
+          url: '/intranet/template/35.html',
+        },
+        {
+          title: '[포경수술] 포경',
+          description: '',
+          url: '/intranet/template/75.html',
+        },
+        {
+          title: '[포경수술] 포경',
+          description: '',
+          url: '/intranet/template/95.html',
+        },
+        {
+          title: '[포경수술] 포경수술(기본)-양원장',
+          description: '',
+          url: '/intranet/template/122.html',
+        },
+        {
+          title: '[포경수술] 포경(강남-박)',
+          description: '',
+          url: '/intranet/template/125.html',
+        },
+        {
+          title: '[포경수술] 부천 포경',
+          description: '',
+          url: '/intranet/template/129.html',
+        },
+        {
+          title: '[포경수술] 포경',
+          description: '',
+          url: '/intranet/template/146.html',
+        },
+        {
+          title: '[포경수술] NEW)포경,정관(인천점)',
+          description: '',
+          url: '/intranet/template/199.html',
+        },
+        {
+          title: '[포경수술] NEW)포경_성인(인천점)',
+          description: '',
+          url: '/intranet/template/203.html',
+        },
+        {
+          title: '[포경수술] NEW)포경_소아(인천점)',
+          description: '',
+          url: '/intranet/template/236.html',
+        },
+        {
+          title: '[치골융기술] NEW)치골융기술(인천점)',
+          description: '',
+          url: '/intranet/template/86.html',
+        },
+        {
+          title: '[치골융기술] 치골융기술',
+          description: '',
+          url: '/intranet/template/115.html',
+        },
+        {
+          title: '[치골융기술] 치골융기술(기본)-양원장',
+          description: '',
+          url: '/intranet/template/123.html',
+        },
+        {
+          title: '[치골융기술] 치골융기술(강남-박)',
+          description: '',
+          url: '/intranet/template/124.html',
+        },
+        {
+          title: '[정관수술] 정관',
+          description: '',
+          url: '/intranet/template/23.html',
+        },
+        {
+          title: '[정관수술] 부산정관',
+          description: '',
+          url: '/intranet/template/32.html',
+        },
+        {
+          title: '[정관수술] 정관(강남-박)',
+          description: '',
+          url: '/intranet/template/73.html',
+        },
+        {
+          title: '[정관수술] 정관',
+          description: '',
+          url: '/intranet/template/92.html',
+        },
+        {
+          title: '[정관수술] (구)정관수술(기본)-양원장',
+          description: '',
+          url: '/intranet/template/104.html',
+        },
+        {
+          title: '[정관수술] 정관',
+          description: '',
+          url: '/intranet/template/133.html',
+        },
+        {
+          title: '[정관수술] 정관 부천점',
+          description: '',
+          url: '/intranet/template/148.html',
+        },
+        {
+          title: '[정관수술] 정관장',
+          description: '',
+          url: '/intranet/template/155.html',
+        },
+        {
+          title: '[정관수술] 부산 정관 조루',
+          description: '',
+          url: '/intranet/template/185.html',
+        },
+        {
+          title: '[정관수술] NEW)정관,스위치조루(인천점)',
+          description: '',
+          url: '/intranet/template/189.html',
+        },
+        {
+          title: '[정관수술] NEW)정관(인천점)',
+          description: '',
+          url: '/intranet/template/200.html',
+        },
+        {
+          title: '[정관수술] NEW)정관,포경(인천점)',
+          description: '',
+          url: '/intranet/template/201.html',
+        },
+        {
+          title: '[정관수술] 정관',
+          description: '',
+          url: '/intranet/template/207.html',
+        },
+        {
+          title: '[정관수술] NEW)정관수술 답변(공통/양기훈원장)',
+          description: '',
+          url: '/intranet/template/216.html',
+        },
+        {
+          title: '[정관수술] 정관',
+          description: '',
+          url: '/intranet/template/227.html',
+        },
+        {
+          title: '[여성형유방증] 여유증',
+          description: '',
+          url: '/intranet/template/10.html',
+        },
+        {
+          title: '[여성형유방증] 여유증-2',
+          description: '',
+          url: '/intranet/template/12.html',
+        },
+        {
+          title: '[여성형유방증] 여유와 유두',
+          description: '',
+          url: '/intranet/template/13.html',
+        },
+        {
+          title: '[여성형유방증] 여유증',
+          description: '',
+          url: '/intranet/template/17.html',
+        },
+        {
+          title: '[여성형유방증] 여유증과 확대(강남-박)',
+          description: '',
+          url: '/intranet/template/28.html',
+        },
+        {
+          title: '[여성형유방증] 여유증,복부',
+          description: '',
+          url: '/intranet/template/30.html',
+        },
+        {
+          title: '[여성형유방증] 여유증',
+          description: '',
+          url: '/intranet/template/38.html',
+        },
+        {
+          title: '[여성형유방증] 여유증 비용 문의에 대한 답변',
+          description: '',
+          url: '/intranet/template/46.html',
+        },
+        {
+          title: '[여성형유방증] 여유,확대',
+          description: '',
+          url: '/intranet/template/57.html',
+        },
+        {
+          title: '[여성형유방증] 여유증',
+          description: '',
+          url: '/intranet/template/63.html',
+        },
+        {
+          title: '[여성형유방증] 부산 여유+복부',
+          description: '',
+          url: '/intranet/template/67.html',
+        },
+        {
+          title: '[여성형유방증] 부산 여유증',
+          description: '',
+          url: '/intranet/template/72.html',
+        },
+        {
+          title: '[여성형유방증] 여유증 (강남-박)',
+          description: '',
+          url: '/intranet/template/107.html',
+        },
+        {
+          title: '[여성형유방증] (구)여유증(기본)-양원장',
+          description: '',
+          url: '/intranet/template/118.html',
+        },
+        {
+          title: '[여성형유방증] 여유증 (부천)',
+          description: '',
+          url: '/intranet/template/119.html',
+        },
+        {
+          title: '[여성형유방증] 여유증 +복부 (강남 -박)',
+          description: '',
+          url: '/intranet/template/121.html',
+        },
+        {
+          title: '[여성형유방증] 여유증과 확대',
+          description: '',
+          url: '/intranet/template/140.html',
+        },
+        {
+          title: '[여성형유방증] 복부와 여유',
+          description: '',
+          url: '/intranet/template/142.html',
+        },
+        {
+          title: '[여성형유방증] 여유와 유두',
+          description: '',
+          url: '/intranet/template/144.html',
+        },
+        {
+          title: '[여성형유방증] 여유증+유두축소',
+          description: '',
+          url: '/intranet/template/147.html',
+        },
+        {
+          title: '[여성형유방증] 여유-분당 스턀',
+          description: '',
+          url: '/intranet/template/151.html',
+        },
+        {
+          title: '[여성형유방증] 여유증',
+          description: '',
+          url: '/intranet/template/170.html',
+        },
+        {
+          title: '[여성형유방증] (강남-박) 외과',
+          description: '',
+          url: '/intranet/template/184.html',
+        },
+        {
+          title: '[여성형유방증] NEW)여유증(인천점)',
+          description: '',
+          url: '/intranet/template/188.html',
+        },
+        {
+          title: '[여성형유방증] NEW)여유증 보험적용만(인천점)',
+          description: '',
+          url: '/intranet/template/194.html',
+        },
+        {
+          title: '[여성형유방증] NEW)여유증과 보험적용(인천점)',
+          description: '',
+          url: '/intranet/template/195.html',
+        },
+        {
+          title: '[여성형유방증] 여유증',
+          description: '',
+          url: '/intranet/template/204.html',
+        },
+        {
+          title:
+            '[여성형유방증] 여유증 보험적용(건강보험/실비보험) 여부에 대한 답변(공통)',
+          description: '',
+          url: '/intranet/template/214.html',
+        },
+        {
+          title: '[여성형유방증] 여유+복부',
+          description: '',
+          url: '/intranet/template/219.html',
+        },
+        {
+          title: '[여성형유방증] 여유',
+          description: '',
+          url: '/intranet/template/222.html',
+        },
+        {
+          title: '[유두축소] NEW)유두축소(인천점)',
+          description: '',
+          url: '/intranet/template/41.html',
+        },
+        {
+          title: '[유두축소] 유두축소',
+          description: '',
+          url: '/intranet/template/68.html',
+        },
+        {
+          title: '[유두축소] 유두축소(강남-박)',
+          description: '',
+          url: '/intranet/template/84.html',
+        },
+        {
+          title: '[유두축소] 유두축소 (부천)',
+          description: '',
+          url: '/intranet/template/130.html',
+        },
+        {
+          title: '[유두축소] 유두축소',
+          description: '',
+          url: '/intranet/template/145.html',
+        },
+        {
+          title: '[유두축소] 유두축소',
+          description: '',
+          url: '/intranet/template/174.html',
+        },
+        {
+          title: '[유두축소] 유두축소',
+          description: '',
+          url: '/intranet/template/233.html',
+        },
+        {
+          title: '[유륜축소] 부산 유륜축소',
+          description: '',
+          url: '/intranet/template/66.html',
+        },
+        {
+          title: '[함몰유두] 부산 함몰유두',
+          description: '',
+          url: '/intranet/template/179.html',
+        },
+        {
+          title: '[함몰유두] NEW)함몰유두(인천점)',
+          description: '',
+          url: '/intranet/template/190.html',
+        },
+        {
+          title: '[복부지방흡입] 트루맨 남성의원입니다.',
+          description: '',
+          url: '/intranet/template/4.html',
+        },
+        {
+          title: '[복부지방흡입] 복부와 치골',
+          description: '',
+          url: '/intranet/template/15.html',
+        },
+        {
+          title: '[복부지방흡입] 복부지방흡입',
+          description: '',
+          url: '/intranet/template/16.html',
+        },
+        {
+          title: '[복부지방흡입] 복부,여유,길이',
+          description: '',
+          url: '/intranet/template/24.html',
+        },
+        {
+          title: '[복부지방흡입] 부산 복부지방흡입',
+          description: '',
+          url: '/intranet/template/29.html',
+        },
+        {
+          title: '[복부지방흡입] 복부지방+복근(강남-박)',
+          description: '',
+          url: '/intranet/template/47.html',
+        },
+        {
+          title: '[복부지방흡입] 복부와 여유',
+          description: '',
+          url: '/intranet/template/51.html',
+        },
+        {
+          title: '[복부지방흡입] 복부지방',
+          description: '',
+          url: '/intranet/template/76.html',
+        },
+        {
+          title: '[복부지방흡입] 복부와 확대',
+          description: '',
+          url: '/intranet/template/79.html',
+        },
+        {
+          title: '[복부지방흡입] 복부와 확대',
+          description: '',
+          url: '/intranet/template/101.html',
+        },
+        {
+          title: '[복부지방흡입] 복부지방흡입(기본)-양원장',
+          description: '',
+          url: '/intranet/template/108.html',
+        },
+        {
+          title: '[복부지방흡입] 지방흡입(기본)-양원장',
+          description: '',
+          url: '/intranet/template/114.html',
+        },
+        {
+          title: '[복부지방흡입] 복부지방',
+          description: '',
+          url: '/intranet/template/120.html',
+        },
+        {
+          title: '[복부지방흡입] 복부와 치골',
+          description: '',
+          url: '/intranet/template/143.html',
+        },
+        {
+          title: '[복부지방흡입] 분당 스탈',
+          description: '',
+          url: '/intranet/template/156.html',
+        },
+        {
+          title: '[복부지방흡입] 분당 버전2',
+          description: '',
+          url: '/intranet/template/157.html',
+        },
+        {
+          title: '[복부지방흡입] 복부버전3',
+          description: '',
+          url: '/intranet/template/159.html',
+        },
+        {
+          title: '[복부지방흡입] 복부',
+          description: '',
+          url: '/intranet/template/206.html',
+        },
+        {
+          title: '[복부지방흡입] 여유+복부',
+          description: '',
+          url: '/intranet/template/210.html',
+        },
+        {
+          title: '[복부지방흡입] 복부지방',
+          description: '',
+          url: '/intranet/template/221.html',
+        },
+        {
+          title: '[복부지방흡입] NEW)복부,가슴(인천점)',
+          description: '',
+          url: '/intranet/template/234.html',
+        },
+        {
+          title: '[복부지방흡입] NEW)복부(인천점)',
+          description: '',
+          url: '/intranet/template/237.html',
+        },
+        {
+          title: '[치골지방흡입] NEW)치골(인천점)',
+          description: '',
+          url: '/intranet/template/202.html',
+        },
+        {
+          title: '[복근성형술] 복근성형',
+          description: '',
+          url: '/intranet/template/18.html',
+        },
+        {
+          title: '[복근성형술] 복근과 여유',
+          description: '',
+          url: '/intranet/template/64.html',
+        },
+        {
+          title: '[복근성형술] 복근',
+          description: '',
+          url: '/intranet/template/77.html',
+        },
+        {
+          title: '[복근성형술] 복근',
+          description: '',
+          url: '/intranet/template/91.html',
+        },
+        {
+          title: '[복근성형술] 복근과 복부',
+          description: '',
+          url: '/intranet/template/93.html',
+        },
+        {
+          title: '[복근성형술] 복근(강남-박)',
+          description: '',
+          url: '/intranet/template/112.html',
+        },
+        {
+          title: '[복근성형술] 복근성형술(기본)-양원장',
+          description: '',
+          url: '/intranet/template/116.html',
+        },
+        {
+          title: '[복근성형술] 복근성형(기본)-양원장',
+          description: '',
+          url: '/intranet/template/117.html',
+        },
+        {
+          title: '[복근성형술] 복근과 여유',
+          description: '',
+          url: '/intranet/template/138.html',
+        },
+        {
+          title: '[복근성형술] NEW)복근(인천점)',
+          description: '',
+          url: '/intranet/template/196.html',
+        },
+        {
+          title: '[복근성형술] 복근',
+          description: '',
+          url: '/intranet/template/220.html',
+        },
+        {
+          title: '[처진살교정] 가슴쳐진살',
+          description: '',
+          url: '/intranet/template/70.html',
+        },
+        {
+          title: '[처진살교정] 복부쳐진살교정',
+          description: '',
+          url: '/intranet/template/175.html',
+        },
+        {
+          title: '[처진살교정] 복부처진살2',
+          description: '',
+          url: '/intranet/template/176.html',
+        },
+        {
+          title: '[처진살교정] NEW)가슴처진살(인천점)',
+          description: '',
+          url: '/intranet/template/238.html',
+        },
+        {
+          title: '[처진살교정] NEW)복부처진살(인천점)',
+          description: '',
+          url: '/intranet/template/239.html',
+        },
+        {
+          title: '[엉덩이] 엉,허,종',
+          description: '',
+          url: '/intranet/template/98.html',
+        },
+        {
+          title: '[허벅지] 허벅지',
+          description: '',
+          url: '/intranet/template/31.html',
+        },
+        {
+          title: '[허벅지] 부산 허벅지',
+          description: '',
+          url: '/intranet/template/49.html',
+        },
+        {
+          title: '[허벅지] 허벅지와 엉덩이 (강남-박)',
+          description: '',
+          url: '/intranet/template/82.html',
+        },
+        {
+          title: '[허벅지] 허벅지(강남-박)',
+          description: '',
+          url: '/intranet/template/83.html',
+        },
+        {
+          title: '[허벅지] 허벅지와 엉덩이',
+          description: '',
+          url: '/intranet/template/132.html',
+        },
+        {
+          title: '[허벅지] NEW)엉덩이,허벅지(인천점)',
+          description: '',
+          url: '/intranet/template/197.html',
+        },
+        {
+          title: '[턱] 트리믹스',
+          description: '',
+          url: '/intranet/template/223.html',
+        },
+        {
+          title: '[턱] 길이연장',
+          description: '',
+          url: '/intranet/template/231.html',
+        },
+        {
+          title: '[액취증] 부산 액취증',
+          description: '',
+          url: '/intranet/template/153.html',
+        },
+        {
+          title: '[액취증] 액취증',
+          description: '',
+          url: '/intranet/template/218.html',
+        },
+        {
+          title: '[액취증] NEW)액취증(인천점)',
+          description: '',
+          url: '/intranet/template/242.html',
+        },
+        {
+          title: '[다한증] 다한증',
+          description: '',
+          url: '/intranet/template/44.html',
+        },
+        {
+          title: '[다한증] 다한증 (강남-박)',
+          description: '',
+          url: '/intranet/template/152.html',
+        },
+        {
+          title: '[엉덩이지방흡입] NEW)엉덩이,허벅지(인천점)',
+          description: '',
+          url: '/intranet/template/42.html',
+        },
+        {
+          title: '[허벅지지방흡입] 허벅지',
+          description: '',
+          url: '/intranet/template/208.html',
+        },
+      ]);
+      refresher.set('onload', function () {
+        METT.height(300);
+        METT.fn_start();
+      });
+    </script>
+    <script type="text/javascript" src="./main_files/dandy.js"></script>
+    <link href="./main_files/css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="./main_files/all.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="/lkooniCSS"> -->
+    <link rel="stylesheet" type="text/css" href="./main_files/referenceCSS" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./main_files/deviceSecurityCSS"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+      integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./main_files/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./main_files/bootstrap-multiselect.css"
+    />
+    <link rel="stylesheet" href="./main_files/SpoqaHanSans-kr.css" />
+    <link rel="stylesheet" href="./main_files/keynoty.css" />
+    <link rel="stylesheet" href="./main_files/checkArsAlarm_css" />
+    <script type="text/javascript" src="./main_files/keynoty.js"></script>
+    <script
+      type="text/javascript"
+      src="./main_files/bootstrap-multiselect.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./main_files/bootstrap-input-spinner.js"
+    ></script>
+    <script src="./main_files/split.min.js"></script>
+    <script src="./main_files/fakeLoader.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.5.9/split.min.js"></script> -->
+    <script>
+      refresher.set('onAjaxLoad', function () {
+        console.log('execute onAjaxLoad');
+        TOMATOFIELD.setDatepicker();
+        $('.referenceCheckStack')
+          .multiselect('destroy')
+          .multiselect({
+            numberDisplayed: 3,
+            maxHeight: 400,
+            nonSelectedText: '선택 가능',
+            nSelectedText: '개 선택됨',
+            enableFiltering: true,
+            enableClickableOptGroups: false,
+            enableCaseInsensitiveFiltering: true,
+          })
+          .unbind('change')
+          .bind('change', function () {
+            if ($(this).attr('multiple') == 'multiple')
+              $('input[name=' + $(this).attr('data-target') + ']').val(
+                $(this).val() ? $(this).val().join(',') : ''
+              );
+            if ($(this).attr('callback') == 'tableSortSearch.auto')
+              tableSortSearch._autoSearchTimer = setTimeout(
+                (function (_this) {
+                  tableSortSearch.auto(_this);
+                })($(this)),
+                50
+              );
+          });
+        METT.fn_start();
+        TOMATOFIELD.setDatepicker();
+        multiselectFilterSticky();
+      });
+
+      refresher.set('onload', function () {
+        $('.referenceCheckStack')
+          .multiselect('destroy')
+          .multiselect({
+            numberDisplayed: 3,
+            maxHeight: 400,
+            nonSelectedText: '선택 가능',
+            nSelectedText: '개 선택됨',
+            enableFiltering: true,
+            enableClickableOptGroups: false,
+            enableCaseInsensitiveFiltering: true,
+          })
+          .unbind('change')
+          .bind('change', function () {
+            if ($(this).attr('multiple') == 'multiple')
+              $('input[name=' + $(this).attr('data-target') + ']').val(
+                $(this).val() ? $(this).val().join(',') : ''
+              );
+            if ($(this).attr('callback') == 'tableSortSearch.auto')
+              tableSortSearch._autoSearchTimer = setTimeout(
+                (function (_this) {
+                  tableSortSearch.auto(_this);
+                })($(this)),
+                50
+              );
+          });
+        multiselectFilterSticky();
+
+        $('.alarm-recall').click(function () {
+          UDZ_MODAL.fn_open('리콜 알림', '/ars_recall');
+        });
+      });
+    </script>
+  </head>
+  <body class="dashboard_body">
+    <div id="fakeLoader"></div>
+    <nav
+      class="navbar navbar-expand navbar-dark sticky-top bg-dark flex-lg-nowrap p-0 shadow justify-content-between"
+    >
+      <div class="d-flex">
+        <button
+          class="btn bg-transparent ml-2 p-2 text-white d-lg-none"
+          type="button"
+          data-toggle="collapse"
+          data-target="#menu-content"
+          aria-expanded="false"
+          aria-controls="menu-content"
+        >
+          <i class="fas fa-bars fa-2x toggle-btn"></i>
+        </button>
+        <h1>
+          <a class="navbar-brand" href="main.html"> </a>
+        </h1>
+      </div>
+      <div class="d-flex">
+        <div class="nav-search d-flex">
+          <form class="" action="#" method="post">
+            <input
+              type="text"
+              name="customers"
+              class="form-control form-control-dark mx-lg-2 d-lg-inline-block text"
+              placeholder="고객 검색"
+              aria-label="Search"
+              value=""
+            />
+          </form>
+          <button
+            class="btn nav-search-open bg-transparent ml-lg-2 p-2 text-white d-lg-none"
+            type="button"
+          >
+            <i class="fas fa-search fa-lg"></i>
+          </button>
+          <button
+            class="btn nav-search-close bg-transparent ml-lg-2 p-2 text-white d-lg-none"
+            type="button"
+          >
+            <i class="fas fa-times fa-lg"></i>
+          </button>
+        </div>
+        <div class="h3 mb-0">
+          <button class="btn bg-transparent text-white alarm-btn">
+            <i class="fas fa-phone fa-lg"></i>
+          </button>
+        </div>
+        <div class="h3 mb-0">
+          <button class="btn bg-transparent text-white alarm-recall">
+            <i class="fas fa-bell fa-lg"></i>
+          </button>
+        </div>
+
+        <ul class="navbar-nav px-lg-3">
+          <li class="nav-item dropdown text-nowrap last-child">
+            <a
+              class="nav-link dropdown-toggle"
+              href="##"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              김준수</a
+            >
+            <div
+              class="dropdown-menu dropdown-menu-right"
+              aria-labelledby="navbarDropdown"
+            >
+              <a class="dropdown-item" href="#">개인정보관리</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">나의 접속 기기 관리</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">로그아웃</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <script>
+      // var checkchat = new __checkChat();
+      // refresher.set("onload",function () {
+      // 	checkchat.chat.setbId('chatAlert');
+      // 	checkchat.chatRoom.setbId('chatRoom');
+      // 	checkchat.chatBox.setbId('chatBoxList');
+      // 	checkchat.start($("#cinnamon_gnb"));
+      // },"checkchat");
+      //
+      // var gnb = new __gnb();
+      // refresher.set("onload",function () {
+      // 	gnb.start($("#cinnamon_gnb"));
+      // },"gnb")
+    </script>
+    <div class="nav-side-menu shadow">
+      <div class="menu-list">
+        <ul id="menu-content" class="menu-content collapse out">
+          <li>
+            <a
+              href="introduceSearch.html"
+              data-toggle="collapse"
+              data-target="#mainMenu_7178"
+              class="collapsed"
+              aria-expanded="true"
+              ><i class="fas fa-headset"></i> 상담관리
+              <i class="fas fa-angle-right fa-lg arrow"></i>
+            </a>
+            <ul class="sub-menu collapse" id="mainMenu_7178">
+              <li class="">
+                <a href="recall.html"
+                  ><i class="fas fa-phone-square"></i>리콜관리</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7179"></ul>
+              </li>
+              <li class="">
+                <a href="customers.html"
+                  ><i class="fas fa-user-friends"></i>상담고객관리</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7235"></ul>
+              </li>
+              <li class="">
+                <a href="customersSearch.html"
+                  ><i class="fas fa-search"></i>상세검색</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7272"></ul>
+              </li>
+              <li class="">
+                <a href="introduceSearch.html"
+                  ><i class="fas fa-user-plus"></i>소개자 조회</a
+                >
+                <ul class="small-menu collapse" id="subMenu_8190"></ul>
+              </li>
+              <li class="">
+                <a href="CTI.html"
+                  ><i class="fas fa-phone-volume"></i>인콜리스트</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7191"></ul>
+              </li>
+              <li class="">
+                <a href="SMS.html"><i class="fas fa-comments"></i>문자</a>
+                <ul class="small-menu collapse" id="subMenu_7182"></ul>
+              </li>
+              <li class="last-child">
+                <a href="counselChanged.html"
+                  ><i class="fas fa-exchange-alt"></i>상담자 변경 목록</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7986"></ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="introduceSearch.html"
+              data-toggle="collapse"
+              data-target="#mainMenu_7173"
+              class="collapsed active"
+              ><i class="fas fa-hospital"></i> 병원업무
+              <i class="fas fa-angle-right fa-lg arrow"></i>
+            </a>
+            <ul class="sub-menu collapse show" id="mainMenu_7173">
+              <li class="">
+                <a href="resvMonth.html"
+                  ><i class="fas fa-calendar-check"></i>예약관리</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7172"></ul>
+              </li>
+              <li class="">
+                <a href="customers_treat.html"
+                  ><i class="fas fa-user-edit"></i>간호고객관리</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7183"></ul>
+              </li>
+              <li class="">
+                <a href="eventSms.html"
+                  ><i class="fas fa-gift"></i>이벤트신청 관리</a
+                >
+                <ul class="small-menu collapse" id="subMenu_8539"></ul>
+              </li>
+              <li class="">
+                <a href="daily_check.html"
+                  ><i class="fas fa-file-invoice-dollar"></i>일일 정산</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7518"></ul>
+              </li>
+              <li class="">
+                <a href="period_check.html"
+                  ><i class="fas fa-search-dollar"></i>기간별 정산</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7627"></ul>
+              </li>
+              <li class="">
+                <a href="outstanding_amount.html"
+                  ><i class="fas fa-hand-holding-usd"></i>미수금 관리</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7945"></ul>
+              </li>
+              <li class="">
+                <a href="admin_visit2.html"
+                  ><i class="fas fa-walking"></i>내원예약 상세</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7967"></ul>
+              </li>
+              <li class="">
+                <a href="admin_resvList2.html"
+                  ><i class="fas fa-stethoscope"></i>수술예약 상세</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7966"></ul>
+              </li>
+              <li class="active">
+                <a href="alfredo_medicalInfo.html"
+                  ><i class="fas fa-window-restore"></i>올프레도 의료정보</a
+                >
+                <ul class="small-menu collapse" id="subMenu_8987"></ul>
+              </li>
+              <li class="">
+                <a href="receipt_oneclick.html"
+                  ><i class="fas fa-money-check-alt"></i>임의 카드 결제</a
+                >
+                <ul class="small-menu collapse" id="subMenu_8623"></ul>
+              </li>
+              <li class="">
+                <a href="oneclick_payment.html"
+                  ><i class="fas fa-credit-card"></i>올닥 결제 관리</a
+                >
+                <ul class="small-menu collapse" id="subMenu_8684"></ul>
+              </li>
+              <li class="">
+                <a href="ChartUnion.html"
+                  ><i class="fas fa-window-restore"></i>펜차트</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7831"></ul>
+              </li>
+              <li class="">
+                <a href="certificate.html"
+                  ><i class="fas fa-certificate"></i>서류발급관리</a
+                >
+                <ul class="small-menu collapse" id="subMenu_8838"></ul>
+              </li>
+              <li class="last-child">
+                <a href="lockHistory.html"
+                  ><i class="fas fa-exclamation-triangle"></i>정산 후
+                  수정이력</a
+                >
+                <ul class="small-menu collapse" id="subMenu_8049"></ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="introduceSearch.html"
+              data-toggle="collapse"
+              data-target="#mainMenu_7031"
+              class="collapsed"
+              ><i class="fas fa-clipboard-list"></i> 게시판
+              <i class="fas fa-angle-right fa-lg arrow"></i>
+            </a>
+            <ul class="sub-menu collapse" id="mainMenu_7031">
+              <li class="">
+                <a href="boardPds.html"
+                  ><i class="fas fa-flag"></i>사용 방법 안내</a
+                >
+                <ul class="small-menu collapse" id="subMenu_1604"></ul>
+              </li>
+              <li class="">
+                <a href="boardPds2.html"
+                  ><i class="fas fa-handshake"></i>자료실</a
+                >
+                <ul class="small-menu collapse" id="subMenu_1606"></ul>
+              </li>
+              <li class="last-child">
+                <a href="boardPdsBug.html"
+                  ><i class="fas fa-question-circle"></i>문의하기</a
+                >
+                <ul class="small-menu collapse" id="subMenu_6766"></ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="introduceSearch.html"
+              data-toggle="collapse"
+              data-target="#mainMenu_7028"
+              class="collapsed"
+              ><i class="fas fa-chart-line"></i> 통계
+              <i class="fas fa-angle-right fa-lg arrow"></i
+            ></a>
+            <ul class="sub-menu collapse" id="mainMenu_7028">
+              <li class="">
+                <a href="total_6.html"><i class="fas fa-road"></i>마케팅통계</a>
+                <ul class="small-menu collapse" id="subMenu_7306"></ul>
+              </li>
+              <li class="">
+                <a href="marketingRoi_new.html"
+                  ><i class="fas fa-road"></i>마케팅 ROAS (New)</a
+                >
+                <ul class="small-menu collapse" id="subMenu_8916"></ul>
+              </li>
+              <li class="">
+                <a href="datorama_sample.html"
+                  ><i class="fas fa-road"></i>데이토라마 예시 화면</a
+                >
+                <ul class="small-menu collapse" id="subMenu_8976"></ul>
+              </li>
+              <li class="">
+                <a href="datorama1.html"
+                  ><i class="fas fa-road"></i>데이토라마</a
+                >
+                <ul class="small-menu collapse" id="subMenu_9008"></ul>
+              </li>
+              <li class="">
+                <a href="total_4.html"
+                  ><i class="fas fa-phone"></i>전화상담통계</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7304"></ul>
+              </li>
+              <li class="">
+                <a href="total_5.html"
+                  ><i class="fas fa-walking"></i>내원상담통계</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7305"></ul>
+              </li>
+              <li class="">
+                <a href="total_7.html"
+                  ><i class="fas fas fa-syringe"></i>진료/수술 통계</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7897"></ul>
+              </li>
+              <li class="">
+                <a href="total_8.html"
+                  ><i class="fas fa-toolbox"></i>재료 통계</a
+                >
+                <ul class="small-menu collapse" id="subMenu_8731"></ul>
+              </li>
+              <li class="">
+                <a href="connectLogKeyword.html"
+                  ><i class="fas fa-search"></i>매체별 키워드</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7651"></ul>
+              </li>
+              <li class="last-child">
+                <a href="autoSmsReport.html"
+                  ><i class="fas fas fa-server"></i>문자 결과</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7875"></ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="introduceSearch.html"
+              data-toggle="collapse"
+              data-target="#mainMenu_7911"
+              class="collapsed"
+              ><i class="fas fa-table"></i> 상세테이블
+              <i class="fas fa-angle-right fa-lg arrow"></i
+            ></a>
+            <ul class="sub-menu collapse" id="mainMenu_7911">
+              <li class="">
+                <a href="admin_counsel.html"
+                  ><i class="fas fa-phone"></i>전화상담 상세</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7584"></ul>
+              </li>
+              <li class="">
+                <a href="admin_visit.html"
+                  ><i class="fas fa-walking"></i>내원예약 상세</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7585"></ul>
+              </li>
+              <li class="">
+                <a href="admin_resvList.html"
+                  ><i class="fas fa-stethoscope"></i>수술예약 상세</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7350"></ul>
+              </li>
+              <li class="">
+                <a href="admin_payment.html"
+                  ><i class="fas fas fa-prescription-bottle-alt"></i>청구수납
+                  상세</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7586"></ul>
+              </li>
+              <li class="">
+                <a href="admin_receipt.html"
+                  ><i class="fas fas fa-prescription-bottle-alt"></i>청구항목
+                  상세</a
+                >
+                <ul class="small-menu collapse" id="subMenu_8195"></ul>
+              </li>
+              <li class="">
+                <a href="admin_receipt_cus.html"
+                  ><i class="fas fa-money-check-alt"></i>수납세부 상세</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7762"></ul>
+              </li>
+              <li class="">
+                <a href="paymentLock.html"
+                  ><i class="fas fas fa-server"></i>정산 마감</a
+                >
+                <ul class="small-menu collapse" id="subMenu_8017"></ul>
+              </li>
+              <li class="last-child">
+                <a href="admin_card.html"
+                  ><i class="fas fa-money-check-alt"></i>결제 카드 요청 상세</a
+                >
+                <ul class="small-menu collapse" id="subMenu_8217"></ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="goSsoLogin.html" target="_blank"
+              ><i class="fas fa-dolly-flatbed"></i> 의료소모품몰
+            </a>
+          </li>
+
+          <li class="last-child">
+            <a href="https://trueman75.co.kr/" target="_blank"
+              ><i class="fas fa-home"></i> 홈페이지
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="calendar-link">
+      <a href="#resvMonth"><i class="fas fa-calendar-alt fa-2x"></i></a>
+    </div>
+
+    <div id="dashboard">
+      <!-- ETC2S Default Skin Header End -->
+      <script></script>
+      <div class="cinnamon_default">
+        <div class="card">
+          <div class="card-header d-flex justify-content-between">
+            <div class="">
+              <h3 class="h5">올프레도 의료정보</h3>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <h4>올프레도 의료정보</h4>
+            <div class="table-responsive">
+              <div
+                id="datatable_5_wrapper"
+                class="dataTables_wrapper dt-bootstrap4 no-footer"
+              >
+                <div class="row">
+                  <div class="col-sm-12 col-md-6"></div>
+                  <div class="col-sm-12 col-md-6"></div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <table
+                      id="datatable_5"
+                      class="table table-striped table-bordered table-hover dataTable no-footer"
+                      role="grid"
+                    >
+                      <colgroup></colgroup>
+                      <thead>
+                        <tr role="row" class="last-child">
+                          <th
+                            scope="col"
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="datatable_5"
+                            rowspan="1"
+                            colspan="1"
+                            aria-label="No: activate to sort column ascending"
+                            style="width: 107.5px"
+                          >
+                            No
+                          </th>
+                          <th
+                            scope="col"
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="datatable_5"
+                            rowspan="1"
+                            colspan="1"
+                            aria-label="제목: activate to sort column ascending"
+                            style="width: 857.5px"
+                          >
+                            제목
+                          </th>
+                          <th
+                            scope="col"
+                            class="sorting last-child"
+                            tabindex="0"
+                            aria-controls="datatable_5"
+                            rowspan="1"
+                            colspan="1"
+                            aria-label="바로가기: activate to sort column ascending"
+                            style="width: 176.5px"
+                          >
+                            바로가기
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr role="row" class="odd">
+                          <td scope="row">1</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/402"
+                              target="_blank"
+                              >보증서</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/402"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">2</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/438"
+                              target="_blank"
+                              >여유증 수술 후 직후 (인천점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/438"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">3</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/439"
+                              target="_blank"
+                              >여유증 수술 후 지속관리 6주차 (인천점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/439"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">4</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/441"
+                              target="_blank"
+                              >여유증 수술 전 준비사항 (&nbsp;수원점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/441"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">5</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/442"
+                              target="_blank"
+                              >여유증 수술 직후 주의사항 (수원점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/442"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">6</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/443"
+                              target="_blank"
+                              >여유증 수술 완료 1일 후 (수원점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/443"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">7</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/445"
+                              target="_blank"
+                              >여유증 수술 후 샤워 시 주의사항 (수원점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/445"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">8</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/446"
+                              target="_blank"
+                              >여유증 수술 12일 후 안내 (수원점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/446"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">9</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/447"
+                              target="_blank"
+                              >여유증 수술 후 마사지 안내 2주차 (수원점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/447"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">10</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/448"
+                              target="_blank"
+                              >여유증 수술 후 웨이트 안내 4주차 (수원점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/448"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">11</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/449"
+                              target="_blank"
+                              >여유증 수술 후 지속관리 6주차 (수원점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/449"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">12</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/451"
+                              target="_blank"
+                              >여유증 수술 전 준비사항 (천안점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/451"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">13</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/452"
+                              target="_blank"
+                              >여유증 수술 직후 주의사항 (천안점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/452"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">14</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/453"
+                              target="_blank"
+                              >여유증 수술 완료 1일 후 (천안점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/453"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">15</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/454"
+                              target="_blank"
+                              >여유증 수술 후 샤워 시 주의사항 (천안점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/454"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">16</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/455"
+                              target="_blank"
+                              >여유증 수술 후 마사지 안내 2주차 (천안점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/455"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">17</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/456"
+                              target="_blank"
+                              >여유증 수술 후 고주파치료및 웨이트 안내 4주차
+                              (천안점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/456"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">18</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/457"
+                              target="_blank"
+                              >여유증 수술 후 지속관리 6주차 (천안점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/457"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">19</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/458"
+                              target="_blank"
+                              >여유증 수술 전 준비사항 (&nbsp;광주점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/458"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">20</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/459"
+                              target="_blank"
+                              >여유증 수술 직후 주의사항 (광주점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/459"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">21</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/460"
+                              target="_blank"
+                              >여유증 수술 완료 1일 후 (광주점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/460"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">22</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/461"
+                              target="_blank"
+                              >여유증 수술 후 샤워 시 주의사항 (광주점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/461"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">23</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/462"
+                              target="_blank"
+                              >여유증 수술 후 마사지 안내 2주차 (광주점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/462"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">24</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/463"
+                              target="_blank"
+                              >여유증 수술 후 웨이트 안내 4주차 (광주점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/463"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">25</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/464"
+                              target="_blank"
+                              >여유증 수술 후 지속관리 6주차 (광주점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/464"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">26</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/468"
+                              target="_blank"
+                              >여유증 수술 후 샤워 시 주의사항 (대구점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/468"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">27</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/469"
+                              target="_blank"
+                              >여유증 수술 10일 후 안내 (대구점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/469"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">28</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/473"
+                              target="_blank"
+                              >여유증 수술 후 지속관리 6주차 (대구점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/473"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">29</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/474"
+                              target="_blank"
+                              >여유증 수술 전 준비사항 (부산점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/474"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">30</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/475"
+                              target="_blank"
+                              >여유증 수술 직후 주의사항 (부산점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/475"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">31</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/476"
+                              target="_blank"
+                              >여유증 수술 완료 1일 후 (부산점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/476"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">32</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/477"
+                              target="_blank"
+                              >여유증 수술 후 샤워 시 주의사항 (부산점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/477"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">33</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/478"
+                              target="_blank"
+                              >여유증 수술 12일 후 안내 (부산점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/478"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">34</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/481"
+                              target="_blank"
+                              >여유증 수술 후 마사지 안내 2주차 (부산점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/481"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">35</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/482"
+                              target="_blank"
+                              >여유증 수술 후 웨이트 안내 4주차 (부산점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/482"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">36</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/483"
+                              target="_blank"
+                              >여유증 수술 후 지속관리 6주차 (부산점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/483"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">37</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/484"
+                              target="_blank"
+                              >여유증 수술 1주일 전 안내 사항 (강남점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/484"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">38</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/486"
+                              target="_blank"
+                              >여유증 수술 퇴원 안내 사항 (강남점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/486"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">39</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/487"
+                              target="_blank"
+                              >여유증 수술 첫 상태점검 후 안내 (강남점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/487"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">40</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/491"
+                              target="_blank"
+                              >여유증 수술 후 스트레칭 마사지 안내 (강남점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/491"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">41</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/492"
+                              target="_blank"
+                              >여유증 수술 후 웨이트 트레이닝 안내 (강남점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/492"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">42</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/494"
+                              target="_blank"
+                              >여유증 수술 12일 후 안내 (강남점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/494"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">43</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/495"
+                              target="_blank"
+                              >비대면 사진 점검 시 촬영 예시</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/495"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">44</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/498"
+                              target="_blank"
+                              >복부지방흡입 수술 전 날 안내사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/498"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">45</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/499"
+                              target="_blank"
+                              >치골지방흡입 수술 전 날 안내사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/499"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">46</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/500"
+                              target="_blank"
+                              >굴곡형 발기부전 보형물 수술 전 날 안내사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/500"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">47</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/501"
+                              target="_blank"
+                              >팽창형 발기부전 보형물 수술 전 날 안내사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/501"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">48</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/502"
+                              target="_blank"
+                              >복부지방흡입 수술 1주일 전 안내 사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/502"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">49</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/503"
+                              target="_blank"
+                              >치골지방흡입 수술 1주일 전 안내 사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/503"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">50</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/504"
+                              target="_blank"
+                              >굴곡형 발기부전 보형물 수술 1주일 전 안내 사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/504"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">51</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/505"
+                              target="_blank"
+                              >팽창형 발기부전 보형물 수술 1주일 전 안내 사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/505"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">52</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/510"
+                              target="_blank"
+                              >수술 1주일 전 안내 사항 (수면마취 안내 필요
+                              시)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/510"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">53</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/514"
+                              target="_blank"
+                              >수면마취 수술 하루 전 주의사항 (분당점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/514"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">54</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/515"
+                              target="_blank"
+                              >수면마취 수술 일주일 전 주의사항 (분당점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/515"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">55</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/1"
+                              target="_blank"
+                              >이럴때 유의 사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/1"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">56</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/9"
+                              target="_blank"
+                              >의료정보 알림입니다.</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/9"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">57</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/512"
+                              target="_blank"
+                              >정관 수술 후 주의사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/512"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">58</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/513"
+                              target="_blank"
+                              >정관수술 3개월 후 재 안내</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/513"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">59</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/507"
+                              target="_blank"
+                              >남성 수술 후 3일차 주의사항(인천점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/507"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">60</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/508"
+                              target="_blank"
+                              >복부지방흡입 수술 직후 주의사항 (인천점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/508"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">61</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/509"
+                              target="_blank"
+                              >복부지방흡입 수술 다음날 안내 사항 (인천점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/509"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">62</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/290"
+                              target="_blank"
+                              >팽창형 발기부전 보형물 수술 6주차 주의사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/290"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">63</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/58"
+                              target="_blank"
+                              >여유증 수술 후 샤워 시 주의사항 (여유증 수술
+                              다음날 상태점검 후)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/58"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">64</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/271"
+                              target="_blank"
+                              >복부지방흡입 수술 후 2주차 안내사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/271"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">65</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/434"
+                              target="_blank"
+                              >여유증 수술 완료 1일 후 (부천점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/434"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">66</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/435"
+                              target="_blank"
+                              >여유증 수술 후 웨이트 안내 4주차 (부천점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/435"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">67</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/465"
+                              target="_blank"
+                              >여유증 수술 전 준비사항 (대구점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/465"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">68</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/466"
+                              target="_blank"
+                              >여유증 수술 직후 주의사항 (대구점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/466"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">69</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/472"
+                              target="_blank"
+                              >여유증 수술 후 웨이트 안내 4주차 (대구점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/472"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">70</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/485"
+                              target="_blank"
+                              >여유증 수술 전 날 안내 사항 (강남점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/485"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">71</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/511"
+                              target="_blank"
+                              >수술 하루 전 안내 사항 (수면마취 필요 시 안내)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/511"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">72</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/506"
+                              target="_blank"
+                              >비대면서비스안내</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/506"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">73</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/421"
+                              target="_blank"
+                              >여유증 수술 후 8주째 상태점검 (왕십리점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/421"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">74</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/284"
+                              target="_blank"
+                              >팽창형 발기부전 보형물 수술 직후 주의사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/284"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">75</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/285"
+                              target="_blank"
+                              >팽창형 발기부전 보형물 수술 다음 날 주의사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/285"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">76</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/286"
+                              target="_blank"
+                              >팽창형 발기부전 보형물 수술 샤워시 안내</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/286"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">77</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/287"
+                              target="_blank"
+                              >팽창형 발기부전 보형물 수술 7일차 주의사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/287"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">78</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/288"
+                              target="_blank"
+                              >팽창형 발기부전 보형물 수술 2주차 주의사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/288"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">79</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/289"
+                              target="_blank"
+                              >팽창형 발기부전 보형물 수술 3주차 안내사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/289"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">80</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/275"
+                              target="_blank"
+                              >치골지방흡입 수술 직후 주의사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/275"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">81</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/276"
+                              target="_blank"
+                              >치골지방흡입 수술 다음날 안내사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/276"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">82</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/277"
+                              target="_blank"
+                              >치골지방흡입 수술 후 샤워 시 주의사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/277"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">83</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/278"
+                              target="_blank"
+                              >치골지방흡입 수술 후 7일차</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/278"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">84</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/279"
+                              target="_blank"
+                              >치골지방흡입 수술 후 2주차 안내사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/279"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">85</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/281"
+                              target="_blank"
+                              >치골지방흡입 수술 4주차 주의사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/281"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">86</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/283"
+                              target="_blank"
+                              >치골지방흡입 수술 후 6주차 안내사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/283"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">87</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/35"
+                              target="_blank"
+                              >여유증 수술 후 마지막 상태점검 후(강남점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/35"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">88</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/19"
+                              target="_blank"
+                              >여유증 수술당일 수술 직후 주의사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/19"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">89</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/24"
+                              target="_blank"
+                              >여유증 수술 다음날 상태점검 전 안내</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/24"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">90</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/32"
+                              target="_blank"
+                              >여유증 수술 후 2주째 상태점검 후</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/32"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">91</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/33"
+                              target="_blank"
+                              >여유증 수술 후 4주째 상태점검 후</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/33"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">92</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/234"
+                              target="_blank"
+                              >여유증 수술 후 12일 차</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/234"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">93</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/250"
+                              target="_blank"
+                              >수술 전 준비 안내문</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/250"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">94</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/36"
+                              target="_blank"
+                              >스위치 수술당일 수술후</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/36"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">95</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/37"
+                              target="_blank"
+                              >스위치 수술 다음날 상태점검 후</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/37"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">96</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/266"
+                              target="_blank"
+                              >복부지방흡입 수술 직후 주의사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/266"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">97</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/269"
+                              target="_blank"
+                              >복부지방흡입 수술 다음날 안내 사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/269"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">98</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/270"
+                              target="_blank"
+                              >복부지방흡입 수술 후 7일차</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/270"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">99</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/272"
+                              target="_blank"
+                              >복부지방흡입 수술 4주차 주의사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/272"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">100</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/273"
+                              target="_blank"
+                              >복부지방흡입 수술 후 6주차 안내사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/273"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">101</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/257"
+                              target="_blank"
+                              >남성 수술 직후 주의사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/257"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">102</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/259"
+                              target="_blank"
+                              >남성 수술 다음날 안내사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/259"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">103</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/263"
+                              target="_blank"
+                              >남성 수술 후 3일차 주의사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/263"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">104</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/264"
+                              target="_blank"
+                              >남성 수술 후 2주차 주의사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/264"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">105</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/339"
+                              target="_blank"
+                              >굴곡형 발기부전 보형물 수술 직후 주의사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/339"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">106</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/367"
+                              target="_blank"
+                              >굴곡형 발기부전 보형물 수술 다음 날 주의사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/367"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">107</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/368"
+                              target="_blank"
+                              >굴곡형 발기부전 보형물 수술 샤워시 안내</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/368"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">108</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/369"
+                              target="_blank"
+                              >굴곡형 발기부전 보형물 수술 2주차 주의사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/369"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">109</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/370"
+                              target="_blank"
+                              >굴곡형 발기부전 보형물 수술 6주차 주의사항</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/370"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">110</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/403"
+                              target="_blank"
+                              >여유증 수술 전 준비사항 (명동점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/403"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">111</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/404"
+                              target="_blank"
+                              >여유증 수술 직후 주의사항 (명동점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/404"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">112</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/405"
+                              target="_blank"
+                              >여유증 수술 완료 1일 후 (명동점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/405"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">113</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/407"
+                              target="_blank"
+                              >여유증 수술 후 마사지 안내 2주차 (명동점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/407"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">114</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/408"
+                              target="_blank"
+                              >여유증 수술 후 웨이트 안내 4주차 (명동점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/408"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">115</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/409"
+                              target="_blank"
+                              >여유증 수술 후 지속관리 6주차 (명동점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/409"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">116</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/410"
+                              target="_blank"
+                              >여유증 수술 전 준비사항 (왕십리점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/410"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">117</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/411"
+                              target="_blank"
+                              >여유증 수술 후 직후 주의사항 (왕십리점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/411"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">118</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/414"
+                              target="_blank"
+                              >여유증 수술 완료 1일 후 (왕십리점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/414"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">119</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/415"
+                              target="_blank"
+                              >여유증 수술 후 샤워 시 주의사항 (왕십리점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/415"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">120</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/416"
+                              target="_blank"
+                              >여유증 수술 후 18일째 (왕십리점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/416"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">121</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/417"
+                              target="_blank"
+                              >여유증 수술 후 4주째 상태점검 (왕십리점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/417"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">122</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/418"
+                              target="_blank"
+                              >여유증 수술 후 9일차 봉합부위 실밥제거
+                              (왕십리점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/418"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">123</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/423"
+                              target="_blank"
+                              >여유증 수술 전 준비사항 (분당점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/423"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">124</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/424"
+                              target="_blank"
+                              >여유증 수술 직후 주의사항 (분당점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/424"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">125</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/425"
+                              target="_blank"
+                              >여유증 수술 완료 1일 후 (분당점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/425"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">126</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/426"
+                              target="_blank"
+                              >여유증 수술 후 샤워 시 주의사항 (분당점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/426"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">127</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/427"
+                              target="_blank"
+                              >여유증 수술 12일 후 안내 (분당점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/427"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">128</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/428"
+                              target="_blank"
+                              >여유증 수술 후 마사지 안내 2주차 (분당점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/428"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">129</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/429"
+                              target="_blank"
+                              >여유증 수술 후 웨이트 안내 4주차 (분당점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/429"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">130</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/430"
+                              target="_blank"
+                              >여유증 수술 후 지속관리 6주차 (분당점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/430"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">131</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/431"
+                              target="_blank"
+                              >여유증 수술 전 준비사항 (부천점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/431"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td scope="row">132</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/433"
+                              target="_blank"
+                              >여유증 수술 직후 주의사항 (부천점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/433"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td scope="row">133</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/436"
+                              target="_blank"
+                              >여유증 수술 후 지속관리 6주차 (부천점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/436"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even last-child">
+                          <td scope="row">134</td>
+                          <td scope="row">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/437"
+                              target="_blank"
+                              >여유증 수술 전 준비사항 (인천점)</a
+                            >
+                          </td>
+                          <td scope="row" class="last-child">
+                            <a
+                              href="https://allfredo.kr/medicalPreview/437"
+                              target="_blank"
+                              >이동</a
+                            >
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12 col-md-5"></div>
+                  <div class="col-sm-12 col-md-7"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        $(document).ready(function () {
+          $('#datatable_5').DataTable();
+        });
+      </script>
+      <!-- ETC2S Default Skin Footer Start-->
+    </div>
+    <script type="text/javascript">
+      $.extend($.fn.dataTable.defaults, {
+        paging: false,
+        info: false,
+        order: [],
+        searching: false,
+        // dom: 'Bfrtip',
+        // buttons: [
+        // 	'excel'
+        // ],
+        language: {
+          processing: '로딩중',
+          search: '검색&nbsp;:',
+          emptyTable: '조회된 정보가 없습니다.',
+          info: '전체 _TOTAL_ 개 항목 중 _START_ - _END_',
+          infoEmpty: '전체 0개 항목',
+          infoFiltered: '(전체 _MAX_개 항목 중 필터링 됨)',
+          lengthMenu: '페이지 당 _MENU_ 개 항목 표시',
+          zeroRecords: '검색 결과가 없습니다.',
+          paginate: {
+            first: '처음',
+            previous: '이전',
+            next: '다음',
+            last: '끝',
+          },
+        },
+      });
+    </script>
+
+    <!-- ETC2S Default Skin Footer End-->
+  </body>
+  <whale-quicksearch translate="no"></whale-quicksearch>
+</html>

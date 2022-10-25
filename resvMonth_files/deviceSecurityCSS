@@ -1,0 +1,7 @@
+//
+.admin_memberDevice {}
+.admin_memberDevice img {width:80%;}
+
+.navbar .deviceInfo {}
+.navbar .deviceInfo {color:white;font-size: 12px;}
+.navbar .deviceInfo a {color:white;font-size: 12px;}

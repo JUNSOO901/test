@@ -1,0 +1,6 @@
+//
+.denim_reference {}
+.denim_reference>input {border:1px solid #ccc !important;border-bottom: none;line-height: 30px !important;height:30px !important;}
+.denim_reference>ul{height: 100px;overflow-y: scroll;border:1px solid #ccc;position: static;margin:0px;}
+.denim_reference>ul>li {display:block;font-size: 12px;line-height: 20px;border-bottom:1px dotted #ccc;}
+.denim_reference>ul>li input {float:right;width:16px;height:16px;font-size: 12px;line-height: 16px;padding:0px;border:none;}

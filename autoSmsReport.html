@@ -1,0 +1,3558 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr" class="wf-nanumbarungothic-n4-inactive wf-inactive">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>트루맨 AlmightyDr</title>
+
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Descript-xion" content="올마이티 닥터" />
+    <meta http-equiv="Keywords" content="올마이티 닥터" />
+    <meta http-equiv="Publisher" content="올마이티 닥터" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <meta name="url" content="http://hanjigyo.udemzi.co.kr" />
+    <meta name="identifier-URL" content="http://hanjigyo.udemzi.co.kr" />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="https://trueman.almightydr.com/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="https://trueman.almightydr.com/favicon/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="https://trueman.almightydr.com/favicon/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="https://trueman.almightydr.com/favicon/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="https://trueman.almightydr.com/favicon/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="https://trueman.almightydr.com/favicon/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="https://trueman.almightydr.com/favicon/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="https://trueman.almightydr.com/favicon/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://trueman.almightydr.com/favicon/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="https://trueman.almightydr.com/favicon/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://trueman.almightydr.com/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="https://trueman.almightydr.com/favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://trueman.almightydr.com/favicon/favicon-16x16.png"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://trueman.almightydr.com/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,user-scalable=yes"
+    />
+
+    <script type="text/javascript" src="./main_files/webfont.js"></script>
+    <script>
+      WebFont.load({
+        custom: {
+          families: ['NanumBarunGothic'],
+        },
+      });
+    </script>
+    <!-- include CSS always before including js -->
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./main_files/jquery-ui-1.10.4.custom.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./main_files/datatables.min.css"
+    />
+
+    <script
+      type="text/javascript"
+      src="./main_files/jquery-1.11.3.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./main_files/jquery-ui-1.10.4.custom.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./main_files/moment-with-locales.min.js"
+    ></script>
+    <!-- <script type="text/javascript" src="/keynoty/js/jquery-3.3.1.min.js"></script> -->
+    <script
+      type="text/javascript"
+      src="./main_files/bootstrap.bundle.min.js"
+    ></script>
+    <script type="text/javascript" src="./main_files/tomato.js"></script>
+
+    <script type="text/javascript" src="./main_files/tinymce.min.js"></script>
+
+    <script
+      type="text/javascript"
+      src="./main_files/Chart.bundle.min.js"
+    ></script>
+    <style type="text/css">
+      /* Chart.js */
+      @-webkit-keyframes chartjs-render-animation {
+        from {
+          opacity: 0.99;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes chartjs-render-animation {
+        from {
+          opacity: 0.99;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .chartjs-render-monitor {
+        -webkit-animation: chartjs-render-animation 0.001s;
+        animation: chartjs-render-animation 0.001s;
+      }
+    </style>
+    <script
+      type="text/javascript"
+      src="./main_files/datatables.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./main_files/cinnamon_keynoty.js"
+    ></script>
+    <script type="text/javascript" src="./main_files/referenceJS"></script>
+    <script type="text/javascript" src="./main_files/checkArsAlarm_js"></script>
+
+    <script>
+      refresher.set('tinymceSetting', function (hh, init) {
+        if (!$('textarea.field_interface').length) return false;
+        var p = $('textarea.field_interface').position();
+        var $cinnamon_default = $('textarea.field_interface').closest(
+          '.cinnamon_default'
+        );
+        var $td = $('textarea.field_interface').closest('td');
+        var hh = hh
+          ? hh
+          : document.documentElement.clientHeight -
+            ($cinnamon_default.height() - $td.height()) -
+            111;
+        // var hh = document.documentElement.clientHeight-p.top-210;
+        var popupWidth = 600;
+        if (innerWidth < 320) {
+          popupWidth = 288;
+        } else if (innerWidth < 700) {
+          popupWidth = innerWidth * 0.9;
+        }
+        var init = init ? init : [];
+
+        tinymce.init({
+          selector: 'textarea.field_interface',
+          content_css: '/keynoty/css/mce.css',
+          language: 'ko',
+          width: '100%',
+          height: hh,
+          relative_urls: false,
+          plugins: [
+            'code advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
+            'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+            'save table contextmenu directionality emoticons template paste textcolor history  lineheight',
+          ],
+          plugin_preview_width: '1050',
+          plugin_preview_height: hh,
+          templates: init,
+          template_popup_width: popupWidth,
+          // menubar:"history",
+          protect: [
+            /\<\/?(if|endif)\>/g, // Protect <if> & </endif>
+            /\<xsl\:[^>]+\>/g, // Protect <xsl:...>
+            /<\?php.*?\?>/g, // Protect php code
+          ],
+          toolbar:
+            'insertfile undo redo | styleselect |  fontsizeselect | link image bold underline italic forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | code ',
+          extended_valid_elements:
+            'span[style|class|id|alt|onclick|onClick|onmouseout|onmouseover],a[onclick|href|class|id|title|alt|onmouseover|onmouseout|target|data|style],input[onclick|type|value|class|id|name],strong[class|style|id]',
+          lineheight_formats:
+            '11pt 12pt 14pt 16pt 18pt 20pt 22pt 24pt 26pt 36pt 100% 120% 140% 160% 180% 200%',
+          theme_concrete_text_colors: '436EB2,3CB54B,3b2315,ffffff,000000',
+          fontsize_formats:
+            '11px 12px 13px 14px 15px 16px 17px 18px 19px 20px 21px 22px 23px 24px 25px 26px 27px 28px 29px 30px 31px 32px 33px 34px 35px 36px 37px 38px 39px 40px 41px 42px 43px 44px 45px 46px 47px 48px 49px 50px 51px 52px 53px 54px 55px 56px 57px 58px 59px 60px 61px 62px 63px 64px 65px 66px 67px 68px 69px 70px 71px ',
+
+          setup: function (editor) {
+            editor.on('change', function (e) {
+              // console.log("tinymce_change")
+              refresher.execute('tinymce_change');
+            });
+          },
+          style_formats: [
+            { title: 'Heading 1', block: 'h1' },
+            { title: 'Heading 2', block: 'h2' },
+            { title: 'Heading 3', block: 'h3' },
+            { title: 'Heading 4', block: 'h4' },
+            { title: 'Heading 5', block: 'h5' },
+            { title: 'Heading 6', block: 'h6' },
+            { title: 'Paragraph', block: 'p' },
+          ],
+          font_formats: 'Noto Sans KR=Noto Sans KR;',
+          //
+          // "나눔고딕=ng;"+
+          // "나눔바른고딕=nbg;"+
+          // "나눔바른고딕 Light=nbgl;"+
+          // "나눔바른고딕 Ultra Light=nbgul;"+
+          // "나눔바른고딕 Bold=nbgb;"+
+          // "나눔명조=nm;"+
+          // "나눔명조 Bold=nmb;"+
+          // "나눔손글씨붓=Nanum Brush Script;"+
+          // "나눔손글씨펜=Nanum Pen Script;"+
+          // "돋움=doutm;"+
+          // "맑은고딕=맑은고딕;"+
+          // "굴림=gulim;"+
+          // "바탕=batang;"+
+          // "궁서=gungseo;"+
+          // "MS PMincho=MS PMincho;"+
+          // "MS Gothic=MS Gothic;"+
+          // "Arial=arial;"+
+          // "Arial Black=arial black,avant garde;"+
+          // "Book Antiqua=book antiqua,palatino;"+
+          // "Comic Sans MS=comic sans ms,sans-serif;"+
+          // "Courier New=courier new,courier;"+
+          // "Georgia=georgia,palatino;"+
+          // "Helvetica=helvetica;"+
+          // "Impact=impact,chicago;"+
+          // "Symbol=symbol;"+
+          // "Tahoma=tahoma,arial,helvetica,sans-serif;"+
+          // "Terminal=terminal,monaco;"+
+          // "Times New Roman=times new roman,times;"+
+          // "Trebuchet MS=trebuchet ms,geneva;"+
+          // "Verdana=verdana,geneva;"+
+          // "Webdings=webdings;"+
+          // "Wingdings=wingdings,zapf dingbats"
+        });
+      });
+      METT.initJ([
+        {
+          title: '[일반조루수술] 일반과 스위치조루',
+          description: '',
+          url: '/intranet/template/9.html',
+        },
+        {
+          title: '[일반조루수술] 조루수술(부천)-양원장',
+          description: '',
+          url: '/intranet/template/109.html',
+        },
+        {
+          title: '[일반조루수술] (구)조루수술(기본)-양원장',
+          description: '',
+          url: '/intranet/template/113.html',
+        },
+        {
+          title: '[일반조루수술] 조루 분댱 스탈',
+          description: '',
+          url: '/intranet/template/154.html',
+        },
+        {
+          title: '[스위치조루수술] 트루맨 남성의원입니다.',
+          description: '',
+          url: '/intranet/template/5.html',
+        },
+        {
+          title: '[스위치조루수술] 스위치조루',
+          description: '',
+          url: '/intranet/template/8.html',
+        },
+        {
+          title: '[스위치조루수술] 스위치',
+          description: '',
+          url: '/intranet/template/14.html',
+        },
+        {
+          title: '[스위치조루수술] 조루수술',
+          description: '',
+          url: '/intranet/template/19.html',
+        },
+        {
+          title: '[스위치조루수술] NEW)스위치조루(인천점)',
+          description: '',
+          url: '/intranet/template/40.html',
+        },
+        {
+          title: '[스위치조루수술] NEW)스위치조루,귀두확대(인천점)',
+          description: '',
+          url: '/intranet/template/43.html',
+        },
+        {
+          title: '[스위치조루수술] 조루2',
+          description: '',
+          url: '/intranet/template/60.html',
+        },
+        {
+          title: '[스위치조루수술] 조루이벤트',
+          description: '',
+          url: '/intranet/template/78.html',
+        },
+        {
+          title: '[스위치조루수술] 조루수술-(조루,라이펜이벤트)',
+          description: '',
+          url: '/intranet/template/102.html',
+        },
+        {
+          title: '[스위치조루수술] (구)스위치조루수술(기본)-양원장',
+          description: '',
+          url: '/intranet/template/110.html',
+        },
+        {
+          title: '[스위치조루수술] 스위치조루수술(강남-박)',
+          description: '',
+          url: '/intranet/template/126.html',
+        },
+        {
+          title: '[스위치조루수술] 스조 분당 스탈',
+          description: '',
+          url: '/intranet/template/160.html',
+        },
+        {
+          title: '[스위치조루수술] 부산조루',
+          description: '',
+          url: '/intranet/template/172.html',
+        },
+        {
+          title: '[스위치조루수술] 조루',
+          description: '',
+          url: '/intranet/template/205.html',
+        },
+        {
+          title: '[스위치조루수술] NEW)조루수술문의 답변(공통/양기훈원장)',
+          description: '',
+          url: '/intranet/template/217.html',
+        },
+        {
+          title: '[스위치조루수술] 조루',
+          description: '',
+          url: '/intranet/template/226.html',
+        },
+        {
+          title: '[스위치조루수술] NEW)스위치조루,정관(인천점)',
+          description: '',
+          url: '/intranet/template/235.html',
+        },
+        {
+          title: '[소대절단술] 은낭칼퀴',
+          description: '',
+          url: '/intranet/template/54.html',
+        },
+        {
+          title: '[약물치료] 트리믹스',
+          description: '',
+          url: '/intranet/template/34.html',
+        },
+        {
+          title: '[약물치료] 발기부전 외래',
+          description: '',
+          url: '/intranet/template/39.html',
+        },
+        {
+          title: '[약물치료] NEW)발기부전진료(인천점)',
+          description: '',
+          url: '/intranet/template/240.html',
+        },
+        {
+          title: '[굴곡형수술] (구)발기부전수술(기본)-양원장',
+          description: '',
+          url: '/intranet/template/81.html',
+        },
+        {
+          title: '[굴곡형수술] 발기부전수술(부천)-양원장',
+          description: '',
+          url: '/intranet/template/103.html',
+        },
+        {
+          title: '[굴곡형수술] 굴곡형(강남-박)',
+          description: '',
+          url: '/intranet/template/128.html',
+        },
+        {
+          title: '[펌프형수술(세조각형)] 발기부전 양식1',
+          description: '',
+          url: '/intranet/template/26.html',
+        },
+        {
+          title: '[펌프형수술(세조각형)] 부산 발기부전보형물',
+          description: '',
+          url: '/intranet/template/71.html',
+        },
+        {
+          title: '[펌프형수술(세조각형)] 펌프형',
+          description: '',
+          url: '/intranet/template/96.html',
+        },
+        {
+          title:
+            '[펌프형수술(세조각형)] NEW) 발기부전수술 답변(공통/양기훈원장)',
+          description: '',
+          url: '/intranet/template/106.html',
+        },
+        {
+          title: '[펌프형수술(세조각형)] 발기부전수술(부천)-양원장',
+          description: '',
+          url: '/intranet/template/111.html',
+        },
+        {
+          title: '[펌프형수술(세조각형)] 팽창형',
+          description: '',
+          url: '/intranet/template/127.html',
+        },
+        {
+          title: '[펌프형수술(세조각형)] NEW)펌프형,굴곡형(인천점)',
+          description: '',
+          url: '/intranet/template/187.html',
+        },
+        {
+          title: '[펌프형수술(세조각형)] 팽창형',
+          description: '',
+          url: '/intranet/template/209.html',
+        },
+        {
+          title:
+            '[펌프형수술(세조각형)] NEW)발기부전수술답변(굴곡형/팽창형)(공통/양기훈원장)',
+          description: '',
+          url: '/intranet/template/215.html',
+        },
+        {
+          title: '[펌프형수술(세조각형)] 발기부전+보형물',
+          description: '',
+          url: '/intranet/template/228.html',
+        },
+        {
+          title: '[귀두확대] 조루와 귀두',
+          description: '',
+          url: '/intranet/template/36.html',
+        },
+        {
+          title: '[귀두확대] 귀두확대(부천)',
+          description: '',
+          url: '/intranet/template/69.html',
+        },
+        {
+          title: '[귀두확대] 귀두확대(강남-박)',
+          description: '',
+          url: '/intranet/template/90.html',
+        },
+        {
+          title: '[귀두확대] 귀두확대',
+          description: '',
+          url: '/intranet/template/173.html',
+        },
+        {
+          title: '[귀두확대] NEW)귀두(인천점)',
+          description: '',
+          url: '/intranet/template/198.html',
+        },
+        {
+          title: '[귀두확대] NEW)귀두,길이연장(인천점)',
+          description: '',
+          url: '/intranet/template/241.html',
+        },
+        {
+          title: '[자가조직귀두확대] 조루,확대,길이',
+          description: '',
+          url: '/intranet/template/52.html',
+        },
+        {
+          title: '[자가조직귀두확대] 자가조직 귀두,음경확대',
+          description: '',
+          url: '/intranet/template/62.html',
+        },
+        {
+          title: '[자가조직귀두확대] 조루와 귀두',
+          description: '',
+          url: '/intranet/template/88.html',
+        },
+        {
+          title: '[자가조직귀두확대] 음경',
+          description: '',
+          url: '/intranet/template/97.html',
+        },
+        {
+          title: '[자가조직귀두확대] 복합(확대,길이연장,조루)',
+          description: '',
+          url: '/intranet/template/141.html',
+        },
+        {
+          title: '[자가조직귀두확대] 360도',
+          description: '',
+          url: '/intranet/template/158.html',
+        },
+        {
+          title: '[음경확대] 길이연장',
+          description: '',
+          url: '/intranet/template/20.html',
+        },
+        {
+          title: '[음경확대] 음경확대(강남-박)',
+          description: '',
+          url: '/intranet/template/21.html',
+        },
+        {
+          title: '[음경확대] 귀두,음경 대체진피',
+          description: '',
+          url: '/intranet/template/65.html',
+        },
+        {
+          title: '[음경확대] 조귀음(지방)',
+          description: '',
+          url: '/intranet/template/80.html',
+        },
+        {
+          title: '[음경확대] NEW)실리콘보형물(인천점)',
+          description: '',
+          url: '/intranet/template/85.html',
+        },
+        {
+          title: '[음경확대] 확대',
+          description: '',
+          url: '/intranet/template/211.html',
+        },
+        {
+          title: '[음경확대] 확대',
+          description: '',
+          url: '/intranet/template/224.html',
+        },
+        {
+          title: '[자가조직확대] 자가조직확대',
+          description: '',
+          url: '/intranet/template/27.html',
+        },
+        {
+          title: '[자가조직확대] 귀두와 길이',
+          description: '',
+          url: '/intranet/template/50.html',
+        },
+        {
+          title: '[자가조직확대] 자가조직확대',
+          description: '',
+          url: '/intranet/template/59.html',
+        },
+        {
+          title: '[자가조직확대] NEW)자가조직패키지(인천점)',
+          description: '',
+          url: '/intranet/template/87.html',
+        },
+        {
+          title: '[자가조직확대] 조귀음',
+          description: '',
+          url: '/intranet/template/94.html',
+        },
+        {
+          title: '[자가조직확대] 자가지방(귀두,음경)',
+          description: '',
+          url: '/intranet/template/139.html',
+        },
+        {
+          title: '[자가조직확대] 길이이야기',
+          description: '',
+          url: '/intranet/template/161.html',
+        },
+        {
+          title: '[자가조직확대] 분당 확대 버전',
+          description: '',
+          url: '/intranet/template/162.html',
+        },
+        {
+          title: '[자가조직확대] 자가조직과 대체진피,라이펜',
+          description: '',
+          url: '/intranet/template/186.html',
+        },
+        {
+          title: '[대체조직확대] NEW)대체진피패키지(인천점)',
+          description: '',
+          url: '/intranet/template/48.html',
+        },
+        {
+          title: '[대체조직확대] 대체',
+          description: '',
+          url: '/intranet/template/99.html',
+        },
+        {
+          title: '[대체조직확대] 부산 길이연장',
+          description: '',
+          url: '/intranet/template/105.html',
+        },
+        {
+          title: '[대체조직확대] 대체진피와 길이연장',
+          description: '',
+          url: '/intranet/template/134.html',
+        },
+        {
+          title: '[대체조직확대] 대체진피(귀두,음경)',
+          description: '',
+          url: '/intranet/template/137.html',
+        },
+        {
+          title: '[대체조직확대] 확대_대체진피',
+          description: '',
+          url: '/intranet/template/150.html',
+        },
+        {
+          title: '[대체조직확대] 4가지 복합확대술',
+          description: '',
+          url: '/intranet/template/213.html',
+        },
+        {
+          title: '[대체조직확대] 복합',
+          description: '',
+          url: '/intranet/template/225.html',
+        },
+        {
+          title: '[주사음경확대] 라이펜',
+          description: '',
+          url: '/intranet/template/100.html',
+        },
+        {
+          title: '[인조고환삽입술] 인조고환',
+          description: '',
+          url: '/intranet/template/135.html',
+        },
+        {
+          title: '[지방고환성형술] 외고환',
+          description: '',
+          url: '/intranet/template/55.html',
+        },
+        {
+          title: '[고환(음낭)지방확대술] 인조고환 삽입술',
+          description: '',
+          url: '/intranet/template/25.html',
+        },
+        {
+          title: '[만곡증교정수술] 만곡증과 음경확대',
+          description: '',
+          url: '/intranet/template/11.html',
+        },
+        {
+          title: '[만곡증교정수술] 만곡(강남-박)',
+          description: '',
+          url: '/intranet/template/37.html',
+        },
+        {
+          title: '[만곡증교정수술] 만곡증',
+          description: '',
+          url: '/intranet/template/56.html',
+        },
+        {
+          title: '[만곡증교정수술] 만곡증',
+          description: '',
+          url: '/intranet/template/61.html',
+        },
+        {
+          title: '[만곡증교정수술] 만곡',
+          description: '',
+          url: '/intranet/template/74.html',
+        },
+        {
+          title: '[만곡증교정수술] 만곡증과 음경확대',
+          description: '',
+          url: '/intranet/template/131.html',
+        },
+        {
+          title: '[만곡증교정수술] 분당_만곡',
+          description: '',
+          url: '/intranet/template/149.html',
+        },
+        {
+          title: '[만곡증교정수술] 부산 음경만곡',
+          description: '',
+          url: '/intranet/template/178.html',
+        },
+        {
+          title: '[만곡증교정수술] NEW)만곡증(인천점)',
+          description: '',
+          url: '/intranet/template/193.html',
+        },
+        {
+          title: '[만곡증교정수술] 만곡증',
+          description: '',
+          url: '/intranet/template/230.html',
+        },
+        {
+          title: '[바세린제거수술] 부산 바세린',
+          description: '',
+          url: '/intranet/template/33.html',
+        },
+        {
+          title: '[바세린제거수술] 음낭칼퀴',
+          description: '',
+          url: '/intranet/template/58.html',
+        },
+        {
+          title: '[바세린제거수술] 바세린제거',
+          description: '',
+          url: '/intranet/template/89.html',
+        },
+        {
+          title: '[바세린제거수술] NEW)바세린제거(인천점)',
+          description: '',
+          url: '/intranet/template/192.html',
+        },
+        {
+          title: '[바세린제거수술] 음낭피판술',
+          description: '',
+          url: '/intranet/template/212.html',
+        },
+        {
+          title: '[바세린제거수술] 바세린',
+          description: '',
+          url: '/intranet/template/229.html',
+        },
+        {
+          title: '[포경수술] 트루맨 남성의원입니다',
+          description: '',
+          url: '/intranet/template/6.html',
+        },
+        {
+          title: '[포경수술] 포경',
+          description: '',
+          url: '/intranet/template/22.html',
+        },
+        {
+          title: '[포경수술] 부산포경수술',
+          description: '',
+          url: '/intranet/template/35.html',
+        },
+        {
+          title: '[포경수술] 포경',
+          description: '',
+          url: '/intranet/template/75.html',
+        },
+        {
+          title: '[포경수술] 포경',
+          description: '',
+          url: '/intranet/template/95.html',
+        },
+        {
+          title: '[포경수술] 포경수술(기본)-양원장',
+          description: '',
+          url: '/intranet/template/122.html',
+        },
+        {
+          title: '[포경수술] 포경(강남-박)',
+          description: '',
+          url: '/intranet/template/125.html',
+        },
+        {
+          title: '[포경수술] 부천 포경',
+          description: '',
+          url: '/intranet/template/129.html',
+        },
+        {
+          title: '[포경수술] 포경',
+          description: '',
+          url: '/intranet/template/146.html',
+        },
+        {
+          title: '[포경수술] NEW)포경,정관(인천점)',
+          description: '',
+          url: '/intranet/template/199.html',
+        },
+        {
+          title: '[포경수술] NEW)포경_성인(인천점)',
+          description: '',
+          url: '/intranet/template/203.html',
+        },
+        {
+          title: '[포경수술] NEW)포경_소아(인천점)',
+          description: '',
+          url: '/intranet/template/236.html',
+        },
+        {
+          title: '[치골융기술] NEW)치골융기술(인천점)',
+          description: '',
+          url: '/intranet/template/86.html',
+        },
+        {
+          title: '[치골융기술] 치골융기술',
+          description: '',
+          url: '/intranet/template/115.html',
+        },
+        {
+          title: '[치골융기술] 치골융기술(기본)-양원장',
+          description: '',
+          url: '/intranet/template/123.html',
+        },
+        {
+          title: '[치골융기술] 치골융기술(강남-박)',
+          description: '',
+          url: '/intranet/template/124.html',
+        },
+        {
+          title: '[정관수술] 정관',
+          description: '',
+          url: '/intranet/template/23.html',
+        },
+        {
+          title: '[정관수술] 부산정관',
+          description: '',
+          url: '/intranet/template/32.html',
+        },
+        {
+          title: '[정관수술] 정관(강남-박)',
+          description: '',
+          url: '/intranet/template/73.html',
+        },
+        {
+          title: '[정관수술] 정관',
+          description: '',
+          url: '/intranet/template/92.html',
+        },
+        {
+          title: '[정관수술] (구)정관수술(기본)-양원장',
+          description: '',
+          url: '/intranet/template/104.html',
+        },
+        {
+          title: '[정관수술] 정관',
+          description: '',
+          url: '/intranet/template/133.html',
+        },
+        {
+          title: '[정관수술] 정관 부천점',
+          description: '',
+          url: '/intranet/template/148.html',
+        },
+        {
+          title: '[정관수술] 정관장',
+          description: '',
+          url: '/intranet/template/155.html',
+        },
+        {
+          title: '[정관수술] 부산 정관 조루',
+          description: '',
+          url: '/intranet/template/185.html',
+        },
+        {
+          title: '[정관수술] NEW)정관,스위치조루(인천점)',
+          description: '',
+          url: '/intranet/template/189.html',
+        },
+        {
+          title: '[정관수술] NEW)정관(인천점)',
+          description: '',
+          url: '/intranet/template/200.html',
+        },
+        {
+          title: '[정관수술] NEW)정관,포경(인천점)',
+          description: '',
+          url: '/intranet/template/201.html',
+        },
+        {
+          title: '[정관수술] 정관',
+          description: '',
+          url: '/intranet/template/207.html',
+        },
+        {
+          title: '[정관수술] NEW)정관수술 답변(공통/양기훈원장)',
+          description: '',
+          url: '/intranet/template/216.html',
+        },
+        {
+          title: '[정관수술] 정관',
+          description: '',
+          url: '/intranet/template/227.html',
+        },
+        {
+          title: '[여성형유방증] 여유증',
+          description: '',
+          url: '/intranet/template/10.html',
+        },
+        {
+          title: '[여성형유방증] 여유증-2',
+          description: '',
+          url: '/intranet/template/12.html',
+        },
+        {
+          title: '[여성형유방증] 여유와 유두',
+          description: '',
+          url: '/intranet/template/13.html',
+        },
+        {
+          title: '[여성형유방증] 여유증',
+          description: '',
+          url: '/intranet/template/17.html',
+        },
+        {
+          title: '[여성형유방증] 여유증과 확대(강남-박)',
+          description: '',
+          url: '/intranet/template/28.html',
+        },
+        {
+          title: '[여성형유방증] 여유증,복부',
+          description: '',
+          url: '/intranet/template/30.html',
+        },
+        {
+          title: '[여성형유방증] 여유증',
+          description: '',
+          url: '/intranet/template/38.html',
+        },
+        {
+          title: '[여성형유방증] 여유증 비용 문의에 대한 답변',
+          description: '',
+          url: '/intranet/template/46.html',
+        },
+        {
+          title: '[여성형유방증] 여유,확대',
+          description: '',
+          url: '/intranet/template/57.html',
+        },
+        {
+          title: '[여성형유방증] 여유증',
+          description: '',
+          url: '/intranet/template/63.html',
+        },
+        {
+          title: '[여성형유방증] 부산 여유+복부',
+          description: '',
+          url: '/intranet/template/67.html',
+        },
+        {
+          title: '[여성형유방증] 부산 여유증',
+          description: '',
+          url: '/intranet/template/72.html',
+        },
+        {
+          title: '[여성형유방증] 여유증 (강남-박)',
+          description: '',
+          url: '/intranet/template/107.html',
+        },
+        {
+          title: '[여성형유방증] (구)여유증(기본)-양원장',
+          description: '',
+          url: '/intranet/template/118.html',
+        },
+        {
+          title: '[여성형유방증] 여유증 (부천)',
+          description: '',
+          url: '/intranet/template/119.html',
+        },
+        {
+          title: '[여성형유방증] 여유증 +복부 (강남 -박)',
+          description: '',
+          url: '/intranet/template/121.html',
+        },
+        {
+          title: '[여성형유방증] 여유증과 확대',
+          description: '',
+          url: '/intranet/template/140.html',
+        },
+        {
+          title: '[여성형유방증] 복부와 여유',
+          description: '',
+          url: '/intranet/template/142.html',
+        },
+        {
+          title: '[여성형유방증] 여유와 유두',
+          description: '',
+          url: '/intranet/template/144.html',
+        },
+        {
+          title: '[여성형유방증] 여유증+유두축소',
+          description: '',
+          url: '/intranet/template/147.html',
+        },
+        {
+          title: '[여성형유방증] 여유-분당 스턀',
+          description: '',
+          url: '/intranet/template/151.html',
+        },
+        {
+          title: '[여성형유방증] 여유증',
+          description: '',
+          url: '/intranet/template/170.html',
+        },
+        {
+          title: '[여성형유방증] (강남-박) 외과',
+          description: '',
+          url: '/intranet/template/184.html',
+        },
+        {
+          title: '[여성형유방증] NEW)여유증(인천점)',
+          description: '',
+          url: '/intranet/template/188.html',
+        },
+        {
+          title: '[여성형유방증] NEW)여유증 보험적용만(인천점)',
+          description: '',
+          url: '/intranet/template/194.html',
+        },
+        {
+          title: '[여성형유방증] NEW)여유증과 보험적용(인천점)',
+          description: '',
+          url: '/intranet/template/195.html',
+        },
+        {
+          title: '[여성형유방증] 여유증',
+          description: '',
+          url: '/intranet/template/204.html',
+        },
+        {
+          title:
+            '[여성형유방증] 여유증 보험적용(건강보험/실비보험) 여부에 대한 답변(공통)',
+          description: '',
+          url: '/intranet/template/214.html',
+        },
+        {
+          title: '[여성형유방증] 여유+복부',
+          description: '',
+          url: '/intranet/template/219.html',
+        },
+        {
+          title: '[여성형유방증] 여유',
+          description: '',
+          url: '/intranet/template/222.html',
+        },
+        {
+          title: '[유두축소] NEW)유두축소(인천점)',
+          description: '',
+          url: '/intranet/template/41.html',
+        },
+        {
+          title: '[유두축소] 유두축소',
+          description: '',
+          url: '/intranet/template/68.html',
+        },
+        {
+          title: '[유두축소] 유두축소(강남-박)',
+          description: '',
+          url: '/intranet/template/84.html',
+        },
+        {
+          title: '[유두축소] 유두축소 (부천)',
+          description: '',
+          url: '/intranet/template/130.html',
+        },
+        {
+          title: '[유두축소] 유두축소',
+          description: '',
+          url: '/intranet/template/145.html',
+        },
+        {
+          title: '[유두축소] 유두축소',
+          description: '',
+          url: '/intranet/template/174.html',
+        },
+        {
+          title: '[유두축소] 유두축소',
+          description: '',
+          url: '/intranet/template/233.html',
+        },
+        {
+          title: '[유륜축소] 부산 유륜축소',
+          description: '',
+          url: '/intranet/template/66.html',
+        },
+        {
+          title: '[함몰유두] 부산 함몰유두',
+          description: '',
+          url: '/intranet/template/179.html',
+        },
+        {
+          title: '[함몰유두] NEW)함몰유두(인천점)',
+          description: '',
+          url: '/intranet/template/190.html',
+        },
+        {
+          title: '[복부지방흡입] 트루맨 남성의원입니다.',
+          description: '',
+          url: '/intranet/template/4.html',
+        },
+        {
+          title: '[복부지방흡입] 복부와 치골',
+          description: '',
+          url: '/intranet/template/15.html',
+        },
+        {
+          title: '[복부지방흡입] 복부지방흡입',
+          description: '',
+          url: '/intranet/template/16.html',
+        },
+        {
+          title: '[복부지방흡입] 복부,여유,길이',
+          description: '',
+          url: '/intranet/template/24.html',
+        },
+        {
+          title: '[복부지방흡입] 부산 복부지방흡입',
+          description: '',
+          url: '/intranet/template/29.html',
+        },
+        {
+          title: '[복부지방흡입] 복부지방+복근(강남-박)',
+          description: '',
+          url: '/intranet/template/47.html',
+        },
+        {
+          title: '[복부지방흡입] 복부와 여유',
+          description: '',
+          url: '/intranet/template/51.html',
+        },
+        {
+          title: '[복부지방흡입] 복부지방',
+          description: '',
+          url: '/intranet/template/76.html',
+        },
+        {
+          title: '[복부지방흡입] 복부와 확대',
+          description: '',
+          url: '/intranet/template/79.html',
+        },
+        {
+          title: '[복부지방흡입] 복부와 확대',
+          description: '',
+          url: '/intranet/template/101.html',
+        },
+        {
+          title: '[복부지방흡입] 복부지방흡입(기본)-양원장',
+          description: '',
+          url: '/intranet/template/108.html',
+        },
+        {
+          title: '[복부지방흡입] 지방흡입(기본)-양원장',
+          description: '',
+          url: '/intranet/template/114.html',
+        },
+        {
+          title: '[복부지방흡입] 복부지방',
+          description: '',
+          url: '/intranet/template/120.html',
+        },
+        {
+          title: '[복부지방흡입] 복부와 치골',
+          description: '',
+          url: '/intranet/template/143.html',
+        },
+        {
+          title: '[복부지방흡입] 분당 스탈',
+          description: '',
+          url: '/intranet/template/156.html',
+        },
+        {
+          title: '[복부지방흡입] 분당 버전2',
+          description: '',
+          url: '/intranet/template/157.html',
+        },
+        {
+          title: '[복부지방흡입] 복부버전3',
+          description: '',
+          url: '/intranet/template/159.html',
+        },
+        {
+          title: '[복부지방흡입] 복부',
+          description: '',
+          url: '/intranet/template/206.html',
+        },
+        {
+          title: '[복부지방흡입] 여유+복부',
+          description: '',
+          url: '/intranet/template/210.html',
+        },
+        {
+          title: '[복부지방흡입] 복부지방',
+          description: '',
+          url: '/intranet/template/221.html',
+        },
+        {
+          title: '[복부지방흡입] NEW)복부,가슴(인천점)',
+          description: '',
+          url: '/intranet/template/234.html',
+        },
+        {
+          title: '[복부지방흡입] NEW)복부(인천점)',
+          description: '',
+          url: '/intranet/template/237.html',
+        },
+        {
+          title: '[치골지방흡입] NEW)치골(인천점)',
+          description: '',
+          url: '/intranet/template/202.html',
+        },
+        {
+          title: '[복근성형술] 복근성형',
+          description: '',
+          url: '/intranet/template/18.html',
+        },
+        {
+          title: '[복근성형술] 복근과 여유',
+          description: '',
+          url: '/intranet/template/64.html',
+        },
+        {
+          title: '[복근성형술] 복근',
+          description: '',
+          url: '/intranet/template/77.html',
+        },
+        {
+          title: '[복근성형술] 복근',
+          description: '',
+          url: '/intranet/template/91.html',
+        },
+        {
+          title: '[복근성형술] 복근과 복부',
+          description: '',
+          url: '/intranet/template/93.html',
+        },
+        {
+          title: '[복근성형술] 복근(강남-박)',
+          description: '',
+          url: '/intranet/template/112.html',
+        },
+        {
+          title: '[복근성형술] 복근성형술(기본)-양원장',
+          description: '',
+          url: '/intranet/template/116.html',
+        },
+        {
+          title: '[복근성형술] 복근성형(기본)-양원장',
+          description: '',
+          url: '/intranet/template/117.html',
+        },
+        {
+          title: '[복근성형술] 복근과 여유',
+          description: '',
+          url: '/intranet/template/138.html',
+        },
+        {
+          title: '[복근성형술] NEW)복근(인천점)',
+          description: '',
+          url: '/intranet/template/196.html',
+        },
+        {
+          title: '[복근성형술] 복근',
+          description: '',
+          url: '/intranet/template/220.html',
+        },
+        {
+          title: '[처진살교정] 가슴쳐진살',
+          description: '',
+          url: '/intranet/template/70.html',
+        },
+        {
+          title: '[처진살교정] 복부쳐진살교정',
+          description: '',
+          url: '/intranet/template/175.html',
+        },
+        {
+          title: '[처진살교정] 복부처진살2',
+          description: '',
+          url: '/intranet/template/176.html',
+        },
+        {
+          title: '[처진살교정] NEW)가슴처진살(인천점)',
+          description: '',
+          url: '/intranet/template/238.html',
+        },
+        {
+          title: '[처진살교정] NEW)복부처진살(인천점)',
+          description: '',
+          url: '/intranet/template/239.html',
+        },
+        {
+          title: '[엉덩이] 엉,허,종',
+          description: '',
+          url: '/intranet/template/98.html',
+        },
+        {
+          title: '[허벅지] 허벅지',
+          description: '',
+          url: '/intranet/template/31.html',
+        },
+        {
+          title: '[허벅지] 부산 허벅지',
+          description: '',
+          url: '/intranet/template/49.html',
+        },
+        {
+          title: '[허벅지] 허벅지와 엉덩이 (강남-박)',
+          description: '',
+          url: '/intranet/template/82.html',
+        },
+        {
+          title: '[허벅지] 허벅지(강남-박)',
+          description: '',
+          url: '/intranet/template/83.html',
+        },
+        {
+          title: '[허벅지] 허벅지와 엉덩이',
+          description: '',
+          url: '/intranet/template/132.html',
+        },
+        {
+          title: '[허벅지] NEW)엉덩이,허벅지(인천점)',
+          description: '',
+          url: '/intranet/template/197.html',
+        },
+        {
+          title: '[턱] 트리믹스',
+          description: '',
+          url: '/intranet/template/223.html',
+        },
+        {
+          title: '[턱] 길이연장',
+          description: '',
+          url: '/intranet/template/231.html',
+        },
+        {
+          title: '[액취증] 부산 액취증',
+          description: '',
+          url: '/intranet/template/153.html',
+        },
+        {
+          title: '[액취증] 액취증',
+          description: '',
+          url: '/intranet/template/218.html',
+        },
+        {
+          title: '[액취증] NEW)액취증(인천점)',
+          description: '',
+          url: '/intranet/template/242.html',
+        },
+        {
+          title: '[다한증] 다한증',
+          description: '',
+          url: '/intranet/template/44.html',
+        },
+        {
+          title: '[다한증] 다한증 (강남-박)',
+          description: '',
+          url: '/intranet/template/152.html',
+        },
+        {
+          title: '[엉덩이지방흡입] NEW)엉덩이,허벅지(인천점)',
+          description: '',
+          url: '/intranet/template/42.html',
+        },
+        {
+          title: '[허벅지지방흡입] 허벅지',
+          description: '',
+          url: '/intranet/template/208.html',
+        },
+      ]);
+      refresher.set('onload', function () {
+        METT.height(300);
+        METT.fn_start();
+      });
+    </script>
+    <script type="text/javascript" src="./main_files/dandy.js"></script>
+    <link href="./main_files/css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="./main_files/all.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="/lkooniCSS"> -->
+    <link rel="stylesheet" type="text/css" href="./main_files/referenceCSS" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./main_files/deviceSecurityCSS"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+      integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./main_files/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./main_files/bootstrap-multiselect.css"
+    />
+    <link rel="stylesheet" href="./main_files/SpoqaHanSans-kr.css" />
+    <link rel="stylesheet" href="./main_files/keynoty.css" />
+    <link rel="stylesheet" href="./main_files/checkArsAlarm_css" />
+    <script type="text/javascript" src="./main_files/keynoty.js"></script>
+    <script
+      type="text/javascript"
+      src="./main_files/bootstrap-multiselect.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./main_files/bootstrap-input-spinner.js"
+    ></script>
+    <script src="./main_files/split.min.js"></script>
+    <script src="./main_files/fakeLoader.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.5.9/split.min.js"></script> -->
+    <script>
+      refresher.set('onAjaxLoad', function () {
+        console.log('execute onAjaxLoad');
+        TOMATOFIELD.setDatepicker();
+        $('.referenceCheckStack')
+          .multiselect('destroy')
+          .multiselect({
+            numberDisplayed: 3,
+            maxHeight: 400,
+            nonSelectedText: '선택 가능',
+            nSelectedText: '개 선택됨',
+            enableFiltering: true,
+            enableClickableOptGroups: false,
+            enableCaseInsensitiveFiltering: true,
+          })
+          .unbind('change')
+          .bind('change', function () {
+            if ($(this).attr('multiple') == 'multiple')
+              $('input[name=' + $(this).attr('data-target') + ']').val(
+                $(this).val() ? $(this).val().join(',') : ''
+              );
+            if ($(this).attr('callback') == 'tableSortSearch.auto')
+              tableSortSearch._autoSearchTimer = setTimeout(
+                (function (_this) {
+                  tableSortSearch.auto(_this);
+                })($(this)),
+                50
+              );
+          });
+        METT.fn_start();
+        TOMATOFIELD.setDatepicker();
+        multiselectFilterSticky();
+      });
+
+      refresher.set('onload', function () {
+        $('.referenceCheckStack')
+          .multiselect('destroy')
+          .multiselect({
+            numberDisplayed: 3,
+            maxHeight: 400,
+            nonSelectedText: '선택 가능',
+            nSelectedText: '개 선택됨',
+            enableFiltering: true,
+            enableClickableOptGroups: false,
+            enableCaseInsensitiveFiltering: true,
+          })
+          .unbind('change')
+          .bind('change', function () {
+            if ($(this).attr('multiple') == 'multiple')
+              $('input[name=' + $(this).attr('data-target') + ']').val(
+                $(this).val() ? $(this).val().join(',') : ''
+              );
+            if ($(this).attr('callback') == 'tableSortSearch.auto')
+              tableSortSearch._autoSearchTimer = setTimeout(
+                (function (_this) {
+                  tableSortSearch.auto(_this);
+                })($(this)),
+                50
+              );
+          });
+        multiselectFilterSticky();
+
+        $('.alarm-recall').click(function () {
+          UDZ_MODAL.fn_open('리콜 알림', '/ars_recall');
+        });
+      });
+    </script>
+  </head>
+  <body class="dashboard_body">
+    <div id="fakeLoader"></div>
+    <nav
+      class="navbar navbar-expand navbar-dark sticky-top bg-dark flex-lg-nowrap p-0 shadow justify-content-between"
+    >
+      <div class="d-flex">
+        <button
+          class="btn bg-transparent ml-2 p-2 text-white d-lg-none"
+          type="button"
+          data-toggle="collapse"
+          data-target="#menu-content"
+          aria-expanded="false"
+          aria-controls="menu-content"
+        >
+          <i class="fas fa-bars fa-2x toggle-btn"></i>
+        </button>
+        <h1>
+          <a class="navbar-brand" href="main.html"> </a>
+        </h1>
+      </div>
+      <div class="d-flex">
+        <div class="nav-search d-flex">
+          <form class="" action="#" method="post">
+            <input
+              type="text"
+              name="customers"
+              class="form-control form-control-dark mx-lg-2 d-lg-inline-block text"
+              placeholder="고객 검색"
+              aria-label="Search"
+              value=""
+            />
+          </form>
+          <button
+            class="btn nav-search-open bg-transparent ml-lg-2 p-2 text-white d-lg-none"
+            type="button"
+          >
+            <i class="fas fa-search fa-lg"></i>
+          </button>
+          <button
+            class="btn nav-search-close bg-transparent ml-lg-2 p-2 text-white d-lg-none"
+            type="button"
+          >
+            <i class="fas fa-times fa-lg"></i>
+          </button>
+        </div>
+        <div class="h3 mb-0">
+          <button class="btn bg-transparent text-white alarm-btn">
+            <i class="fas fa-phone fa-lg"></i>
+          </button>
+        </div>
+        <div class="h3 mb-0">
+          <button class="btn bg-transparent text-white alarm-recall">
+            <i class="fas fa-bell fa-lg"></i>
+          </button>
+        </div>
+
+        <ul class="navbar-nav px-lg-3">
+          <li class="nav-item dropdown text-nowrap last-child">
+            <a
+              class="nav-link dropdown-toggle"
+              href="##"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              김준수</a
+            >
+            <div
+              class="dropdown-menu dropdown-menu-right"
+              aria-labelledby="navbarDropdown"
+            >
+              <a class="dropdown-item" href="#">개인정보관리</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">나의 접속 기기 관리</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">로그아웃</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <script>
+      // var checkchat = new __checkChat();
+      // refresher.set("onload",function () {
+      // 	checkchat.chat.setbId('chatAlert');
+      // 	checkchat.chatRoom.setbId('chatRoom');
+      // 	checkchat.chatBox.setbId('chatBoxList');
+      // 	checkchat.start($("#cinnamon_gnb"));
+      // },"checkchat");
+      //
+      // var gnb = new __gnb();
+      // refresher.set("onload",function () {
+      // 	gnb.start($("#cinnamon_gnb"));
+      // },"gnb")
+    </script>
+    <div class="nav-side-menu shadow">
+      <div class="menu-list">
+        <ul id="menu-content" class="menu-content collapse out">
+          <li>
+            <a
+              href="introduceSearch.html"
+              data-toggle="collapse"
+              data-target="#mainMenu_7178"
+              class="collapsed"
+              aria-expanded="true"
+              ><i class="fas fa-headset"></i> 상담관리
+              <i class="fas fa-angle-right fa-lg arrow"></i>
+            </a>
+            <ul class="sub-menu collapse" id="mainMenu_7178">
+              <li class="">
+                <a href="recall.html"
+                  ><i class="fas fa-phone-square"></i>리콜관리</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7179"></ul>
+              </li>
+              <li class="">
+                <a href="customers.html"
+                  ><i class="fas fa-user-friends"></i>상담고객관리</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7235"></ul>
+              </li>
+              <li class="">
+                <a href="customersSearch.html"
+                  ><i class="fas fa-search"></i>상세검색</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7272"></ul>
+              </li>
+              <li class="">
+                <a href="introduceSearch.html"
+                  ><i class="fas fa-user-plus"></i>소개자 조회</a
+                >
+                <ul class="small-menu collapse" id="subMenu_8190"></ul>
+              </li>
+              <li class="">
+                <a href="CTI.html"
+                  ><i class="fas fa-phone-volume"></i>인콜리스트</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7191"></ul>
+              </li>
+              <li class="">
+                <a href="SMS.html"><i class="fas fa-comments"></i>문자</a>
+                <ul class="small-menu collapse" id="subMenu_7182"></ul>
+              </li>
+              <li class="last-child">
+                <a href="counselChanged.html"
+                  ><i class="fas fa-exchange-alt"></i>상담자 변경 목록</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7986"></ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="introduceSearch.html"
+              data-toggle="collapse"
+              data-target="#mainMenu_7173"
+              class="collapsed"
+              ><i class="fas fa-hospital"></i> 병원업무
+              <i class="fas fa-angle-right fa-lg arrow"></i>
+            </a>
+            <ul class="sub-menu collapse" id="mainMenu_7173">
+              <li class="">
+                <a href="resvMonth.html"
+                  ><i class="fas fa-calendar-check"></i>예약관리</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7172"></ul>
+              </li>
+              <li class="">
+                <a href="customers_treat.html"
+                  ><i class="fas fa-user-edit"></i>간호고객관리</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7183"></ul>
+              </li>
+              <li class="">
+                <a href="eventSms.html"
+                  ><i class="fas fa-gift"></i>이벤트신청 관리</a
+                >
+                <ul class="small-menu collapse" id="subMenu_8539"></ul>
+              </li>
+              <li class="">
+                <a href="daily_check.html"
+                  ><i class="fas fa-file-invoice-dollar"></i>일일 정산</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7518"></ul>
+              </li>
+              <li class="">
+                <a href="period_check.html"
+                  ><i class="fas fa-search-dollar"></i>기간별 정산</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7627"></ul>
+              </li>
+              <li class="">
+                <a href="outstanding_amount.html"
+                  ><i class="fas fa-hand-holding-usd"></i>미수금 관리</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7945"></ul>
+              </li>
+              <li class="">
+                <a href="admin_visit2.html"
+                  ><i class="fas fa-walking"></i>내원예약 상세</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7967"></ul>
+              </li>
+              <li class="">
+                <a href="admin_resvList2.html"
+                  ><i class="fas fa-stethoscope"></i>수술예약 상세</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7966"></ul>
+              </li>
+              <li class="">
+                <a href="alfredo_medicalInfo.html"
+                  ><i class="fas fa-window-restore"></i>올프레도 의료정보</a
+                >
+                <ul class="small-menu collapse" id="subMenu_8987"></ul>
+              </li>
+              <li class="">
+                <a href="receipt_oneclick.html"
+                  ><i class="fas fa-money-check-alt"></i>임의 카드 결제</a
+                >
+                <ul class="small-menu collapse" id="subMenu_8623"></ul>
+              </li>
+              <li class="">
+                <a href="oneclick_payment.html"
+                  ><i class="fas fa-credit-card"></i>올닥 결제 관리</a
+                >
+                <ul class="small-menu collapse" id="subMenu_8684"></ul>
+              </li>
+              <li class="">
+                <a href="ChartUnion.html"
+                  ><i class="fas fa-window-restore"></i>펜차트</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7831"></ul>
+              </li>
+              <li class="">
+                <a href="certificate.html"
+                  ><i class="fas fa-certificate"></i>서류발급관리</a
+                >
+                <ul class="small-menu collapse" id="subMenu_8838"></ul>
+              </li>
+              <li class="last-child">
+                <a href="lockHistory.html"
+                  ><i class="fas fa-exclamation-triangle"></i>정산 후
+                  수정이력</a
+                >
+                <ul class="small-menu collapse" id="subMenu_8049"></ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="introduceSearch.html"
+              data-toggle="collapse"
+              data-target="#mainMenu_7031"
+              class="collapsed"
+              ><i class="fas fa-clipboard-list"></i> 게시판
+              <i class="fas fa-angle-right fa-lg arrow"></i>
+            </a>
+            <ul class="sub-menu collapse" id="mainMenu_7031">
+              <li class="">
+                <a href="boardPds.html"
+                  ><i class="fas fa-flag"></i>사용 방법 안내</a
+                >
+                <ul class="small-menu collapse" id="subMenu_1604"></ul>
+              </li>
+              <li class="">
+                <a href="boardPds2.html"
+                  ><i class="fas fa-handshake"></i>자료실</a
+                >
+                <ul class="small-menu collapse" id="subMenu_1606"></ul>
+              </li>
+              <li class="last-child">
+                <a href="boardPdsBug.html"
+                  ><i class="fas fa-question-circle"></i>문의하기</a
+                >
+                <ul class="small-menu collapse" id="subMenu_6766"></ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="introduceSearch.html"
+              data-toggle="collapse"
+              data-target="#mainMenu_7028"
+              class="collapsed active"
+              ><i class="fas fa-chart-line"></i> 통계
+              <i class="fas fa-angle-right fa-lg arrow"></i
+            ></a>
+            <ul class="sub-menu collapse show" id="mainMenu_7028">
+              <li class="">
+                <a href="total_6.html"><i class="fas fa-road"></i>마케팅통계</a>
+                <ul class="small-menu collapse" id="subMenu_7306"></ul>
+              </li>
+              <li class="">
+                <a href="marketingRoi_new.html"
+                  ><i class="fas fa-road"></i>마케팅 ROAS (New)</a
+                >
+                <ul class="small-menu collapse" id="subMenu_8916"></ul>
+              </li>
+              <li class="">
+                <a href="datorama_sample.html"
+                  ><i class="fas fa-road"></i>데이토라마 예시 화면</a
+                >
+                <ul class="small-menu collapse" id="subMenu_8976"></ul>
+              </li>
+              <li class="">
+                <a href="datorama1.html"
+                  ><i class="fas fa-road"></i>데이토라마</a
+                >
+                <ul class="small-menu collapse" id="subMenu_9008"></ul>
+              </li>
+              <li class="">
+                <a href="total_4.html"
+                  ><i class="fas fa-phone"></i>전화상담통계</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7304"></ul>
+              </li>
+              <li class="">
+                <a href="total_5.html"
+                  ><i class="fas fa-walking"></i>내원상담통계</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7305"></ul>
+              </li>
+              <li class="">
+                <a href="total_7.html"
+                  ><i class="fas fas fa-syringe"></i>진료/수술 통계</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7897"></ul>
+              </li>
+              <li class="">
+                <a href="total_8.html"
+                  ><i class="fas fa-toolbox"></i>재료 통계</a
+                >
+                <ul class="small-menu collapse" id="subMenu_8731"></ul>
+              </li>
+              <li class="">
+                <a href="connectLogKeyword.html"
+                  ><i class="fas fa-search"></i>매체별 키워드</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7651"></ul>
+              </li>
+              <li class="last-child active">
+                <a href="autoSmsReport.html"
+                  ><i class="fas fas fa-server"></i>문자 결과</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7875"></ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="introduceSearch.html"
+              data-toggle="collapse"
+              data-target="#mainMenu_7911"
+              class="collapsed"
+              ><i class="fas fa-table"></i> 상세테이블
+              <i class="fas fa-angle-right fa-lg arrow"></i
+            ></a>
+            <ul class="sub-menu collapse" id="mainMenu_7911">
+              <li class="">
+                <a href="admin_counsel.html"
+                  ><i class="fas fa-phone"></i>전화상담 상세</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7584"></ul>
+              </li>
+              <li class="">
+                <a href="admin_visit.html"
+                  ><i class="fas fa-walking"></i>내원예약 상세</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7585"></ul>
+              </li>
+              <li class="">
+                <a href="admin_resvList.html"
+                  ><i class="fas fa-stethoscope"></i>수술예약 상세</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7350"></ul>
+              </li>
+              <li class="">
+                <a href="admin_payment.html"
+                  ><i class="fas fas fa-prescription-bottle-alt"></i>청구수납
+                  상세</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7586"></ul>
+              </li>
+              <li class="">
+                <a href="admin_receipt.html"
+                  ><i class="fas fas fa-prescription-bottle-alt"></i>청구항목
+                  상세</a
+                >
+                <ul class="small-menu collapse" id="subMenu_8195"></ul>
+              </li>
+              <li class="">
+                <a href="admin_receipt_cus.html"
+                  ><i class="fas fa-money-check-alt"></i>수납세부 상세</a
+                >
+                <ul class="small-menu collapse" id="subMenu_7762"></ul>
+              </li>
+              <li class="">
+                <a href="paymentLock.html"
+                  ><i class="fas fas fa-server"></i>정산 마감</a
+                >
+                <ul class="small-menu collapse" id="subMenu_8017"></ul>
+              </li>
+              <li class="last-child">
+                <a href="admin_card.html"
+                  ><i class="fas fa-money-check-alt"></i>결제 카드 요청 상세</a
+                >
+                <ul class="small-menu collapse" id="subMenu_8217"></ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="goSsoLogin.html" target="_blank"
+              ><i class="fas fa-dolly-flatbed"></i> 의료소모품몰
+            </a>
+          </li>
+
+          <li class="last-child">
+            <a href="https://trueman75.co.kr/" target="_blank"
+              ><i class="fas fa-home"></i> 홈페이지
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="calendar-link">
+      <a href="#resvMonth"><i class="fas fa-calendar-alt fa-2x"></i></a>
+    </div>
+
+    <div id="dashboard">
+      <!-- ETC2S Default Skin Header End -->
+
+      <script>
+        $(function () {
+          var branch = '';
+
+          if (branch != '') {
+            $('.branch option[value!=]').remove();
+          }
+        });
+      </script>
+      <div class="cinnamon_default cinnamon_default_pageSlider mode_list">
+        <div class="card">
+          <div
+            class="cinnamon_head card-header d-flex justify-content-between align-items-center"
+          >
+            <h3 class="h5">문자 결과</h3>
+            <h4 class="mr-auto">3596개의 문서중 1-20</h4>
+            <!-- <h4>3596개의 문서중 1-20</h4> -->
+            <div class="btn-toolbar ml-auto ml-md-0">
+              <div class="btn-group btn-group-md">
+                <input
+                  type="button"
+                  style="float: ; display: none"
+                  class="button"
+                  value=" "
+                  title="삭제리스트"
+                  onclick="location.href=&#39;/autoSmsReport/list?showDeleted=1&amp;&#39;"
+                />
+                <button
+                  class="system btn btn-secondary"
+                  value="B"
+                  title="B"
+                  onclick="window.open(&#39;/etc_bs_boardDetail/mod/8594&#39;);"
+                >
+                  <i class="fas fa-cog"></i> <span class=""> B </span>
+                </button>
+                <button
+                  class="system btn btn-secondary"
+                  title="T"
+                  onclick="window.open(&#39;/etc_bs_table/mod/1060&#39;);"
+                >
+                  <i class="fas fa-cog"></i> <span class=""> T </span>
+                </button>
+                <button
+                  class="insert btn btn-secondary"
+                  value="신규"
+                  onclick="location.href=&#39;/autoSmsReport/insert&#39;"
+                >
+                  <i class="fas fa-plus"></i>
+                  <span class="d-none d-md-inline"> 신규 </span>
+                </button>
+                <button
+                  class="trash btn btn-secondary"
+                  style="display: none"
+                  title="선택 삭제"
+                  onclick="deleteChecked();"
+                >
+                  <i class="fas fa-trash"></i>
+                  <span class="d-none d-md-inline"> 선택 삭제 </span>
+                </button>
+                <button
+                  class="excel btn btn-secondary"
+                  title="엑셀로 다운로드"
+                  onclick="CINNAMON.excel(&#39;autoSmsReport&#39;);"
+                >
+                  <i class="fas fa-file-export"></i>
+                  <span class="d-none d-md-inline"> 엑셀 </span>
+                </button>
+
+                <!-- 					<button class="trash btn btn-secondary" style="display:none;" title="선택 삭제" onClick="deleteChecked();">
+						<i class="fas fa-trash"></i> <span class="d-none d-md-inline"> 선택 삭제 </span>
+					</button>
+										<button class="check btn btn-secondary" style="display:none;" title="선택" onClick="toggleCheck(this);">
+						<i class="fas fa-plus"></i> <span class="d-none d-md-inline"> 선택 </span>
+					</button>
+					<button class="excel btn btn-secondary" title="엑셀로 다운로드"  onClick="CINNAMON.excel('autoSmsReport');">
+						<i class="fas fa-file-export"></i> <span class="d-none d-md-inline"> 엑셀 </span>
+					</button>
+					<button class="print btn btn-secondary" title="리스트 인쇄"  onClick="CINNAMON.print('autoSmsReport');">
+						<i class="fas fa-print"></i> <span class="d-none d-md-inline"> 인쇄 </span>
+					</button>
+					<button class="newWin btn btn-secondary" title="새창" onClick='var newwin=window.open(_realUrl,"_blank");newwin.focus();' tabIndex=2000>
+						<i class="fas fa-window-restore"></i> <span class="d-none d-md-inline"> 새창 </span>
+					</button> -->
+                <button
+                  class="reload btn btn-secondary"
+                  title="새로고침"
+                  onclick="location.href=location.href;showLoading();"
+                  tabindex="2000"
+                >
+                  <i class="fas fa-redo-alt"></i>
+                  <span class="d-none d-md-inline"> 새로고침 </span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="cinnamon_contents card-body">
+            <script type="text/javascript">
+              $(document).ready(function () {
+                $('#example-getting-started').multiselect({
+                  nonSelectedText: '다중 선택 가능',
+                  maxHeight: 400,
+                  nSelectedText: '개 선택됨',
+                  enableFiltering: true,
+                  enableCaseInsensitiveFiltering: true,
+                });
+              });
+            </script>
+            <div class="table-responsive">
+              <table
+                class="cinnamon_table table table-striped table-hover"
+                bidentity="autoSmsReport"
+                width="100%"
+                id="boardList"
+                bid="8594"
+                hash=""
+                pagemax="20"
+                page="1"
+                page2="1"
+                pagec="180"
+              >
+                <thead>
+                  <tr class="">
+                    <th class="prevPage">
+                      <a
+                        href="#autoSmsReport#"
+                        onclick="tableSortSearch.movePage(this,-1);return false;"
+                      ></a>
+                    </th>
+                    <th class="nextPage">
+                      <a
+                        href="#autoSmsReport#"
+                        onclick="tableSortSearch.movePage(this,1);return false;"
+                      ></a>
+                    </th>
+                    <th class="sDate type_text asc">
+                      <nobr>
+                        <a
+                          href="#autoSmsReport?&amp;bId=autoSmsReport&amp;page=1&amp;order=sDate&amp;sort=asc"
+                          order="sDate"
+                          sort="asc"
+                          onclick="tableSortSearch.sortUnit(this);return false;"
+                          desctext="Z~A ▼"
+                          asctext="A~Z ▲"
+                          >일자</a
+                        >
+                      </nobr>
+                    </th>
+                    <th class="report type_textareaOnly asc">
+                      <nobr>
+                        <a
+                          href="#autoSmsReport?&amp;bId=autoSmsReport&amp;page=1&amp;order=report&amp;sort=asc"
+                          order="report"
+                          sort="asc"
+                          onclick="tableSortSearch.sortUnit(this);return false;"
+                          desctext="Z~A ▼"
+                          asctext="A~Z ▲"
+                          >결과</a
+                        >
+                      </nobr>
+                    </th>
+                    <th class="cont type_textareaOnly asc">
+                      <nobr>
+                        <a
+                          href="#autoSmsReport?&amp;bId=autoSmsReport&amp;page=1&amp;order=cont&amp;sort=asc"
+                          order="cont"
+                          sort="asc"
+                          onclick="tableSortSearch.sortUnit(this);return false;"
+                          desctext="Z~A ▼"
+                          asctext="A~Z ▲"
+                          >비고</a
+                        >
+                      </nobr>
+                    </th>
+                    <th class="update_member_id type_memberId asc">
+                      <nobr>
+                        <a
+                          href="#autoSmsReport?&amp;bId=autoSmsReport&amp;page=1&amp;order=update_member_id&amp;sort=asc"
+                          order="update_member_id"
+                          sort="asc"
+                          onclick="tableSortSearch.sortUnit(this);return false;"
+                          desctext="Z~A ▼"
+                          asctext="A~Z ▲"
+                          >수정자</a
+                        >
+                      </nobr>
+                    </th>
+                    <th
+                      class="update_date type_update_date sort sort1 desc last-child"
+                      order="update_date"
+                      sort="desc"
+                      ordercount="1"
+                    >
+                      <nobr>
+                        <a
+                          href="#autoSmsReport?&amp;bId=autoSmsReport&amp;page=1&amp;order=update_date&amp;sort=desc"
+                          order="update_date"
+                          sort="desc"
+                          onclick="tableSortSearch.sortUnit(this);return false;"
+                          desctext="Z~A ▼"
+                          asctext="A~Z ▲"
+                          >수정일</a
+                        >
+                      </nobr>
+                    </th>
+                  </tr>
+                  <tr class="headSearch last-child">
+                    <th class="checkTd">
+                      <input type="checkbox" class="checkall" />
+                    </th>
+                    <th><i class="fas fa-search"></i></th>
+                    <th class="sDate type_text">
+                      <div class="searchOption">
+                        <input
+                          tomato="true"
+                          placeholder="일자"
+                          name="etc_bst_autoSmsReport__sDate"
+                          id="etc_bst_autoSmsReport__sDate"
+                          size=""
+                          value=""
+                          type="text"
+                          class="etc_bst_autoSmsReport__sDate sDate search form-control text field_interface"
+                          callback="tableSortSearch.auto"
+                        />
+                      </div>
+                      <!--textdatatype-->
+                      <script></script>
+                    </th>
+                    <th class="report type_textareaOnly">
+                      <div class="searchOption">
+                        <input
+                          tomato="true"
+                          class="form-control text"
+                          placeholder="결과"
+                          name="etc_bst_autoSmsReport__report"
+                          id="etc_bst_autoSmsReport__report"
+                          size=""
+                          value=""
+                          type="text"
+                        />
+                      </div>
+                    </th>
+                    <th class="cont type_textareaOnly">
+                      <div class="searchOption">
+                        <input
+                          tomato="true"
+                          class="form-control text"
+                          placeholder="비고"
+                          name="etc_bst_autoSmsReport__cont"
+                          id="etc_bst_autoSmsReport__cont"
+                          size=""
+                          value=""
+                          type="text"
+                        />
+                      </div>
+                    </th>
+                    <th class="update_member_id type_memberId">
+                      <div class="searchOption">
+                        <div
+                          id="etc_bst_autoSmsReport__update_member_id_container"
+                          class="etc_bst_autoSmsReport__update_member_id update_member_id search"
+                          callback="tableSortSearch.auto"
+                        >
+                          <input
+                            tomato="true"
+                            name="etc_bst_autoSmsReport__update_member_id"
+                            id="etc_bst_autoSmsReport__update_member_id"
+                            value=""
+                            type="hidden"
+                            style=""
+                          /><span
+                            role="status"
+                            aria-live="polite"
+                            class="ui-helper-hidden-accessible"
+                          ></span
+                          ><input
+                            id="etc_bst_autoSmsReport__update_member_id_suggest"
+                            value=""
+                            type="text"
+                            placeholder="수정자"
+                            class="referenceS text field_interface form-control ui-autocomplete-input"
+                            autocomplete="off"
+                            data-url="/tomato/plugin/referenceSuggest/referenceSuggest.php?bId=8594&amp;fId=26833&amp;id=&amp;mode=list"
+                          />
+                          <ul
+                            class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all"
+                            id="ui-id-1"
+                            tabindex="0"
+                            style="display: none"
+                          ></ul>
+                        </div>
+                      </div>
+                      <style>
+                        #etc_bst_autoSmsReport__update_member_id_container
+                          .ui-autocomplete {
+                          position: absolute;
+                          max-height: 300px;
+                          overflow-y: auto;
+                          overflow-x: hidden;
+                          font-size: 12px;
+                          text-align: left;
+                        }
+                        *
+                          #etc_bst_autoSmsReport__update_member_id_container
+                          .ui-autocomplete {
+                          font-size: 12px;
+                          /*		height:300px;*/
+                        }
+                        .ui-autocomplete-loading {
+                        }
+                      </style>
+                      <script>
+                        $(function () {
+                          var etc_bst_autoSmsReport__update_member_id_timer;
+                          var cacheetc_bst_autoSmsReport__update_member_id = {};
+                          $(
+                            '#etc_bst_autoSmsReport__update_member_id_container .ui-autocomplete'
+                          ).css(
+                            'min-width',
+                            $(
+                              '#etc_bst_autoSmsReport__update_member_id'
+                            ).width()
+                          );
+                          $('#etc_bst_autoSmsReport__update_member_id_suggest')
+                            .bind('keydown', function (event) {})
+                            .autocomplete({
+                              source: function (request, response) {
+                                var term = request.term;
+                                if (
+                                  term in
+                                  cacheetc_bst_autoSmsReport__update_member_id
+                                ) {
+                                  response(
+                                    cacheetc_bst_autoSmsReport__update_member_id[
+                                      term
+                                    ]
+                                  );
+                                  return;
+                                }
+
+                                $.getJSON(
+                                  '/tomato/plugin/referenceSuggest/referenceSuggest.php?bId=8594&fId=26833&id=&mode=list',
+                                  { term: term },
+                                  function (data, status, xhr) {
+                                    //cacheetc_bst_autoSmsReport__update_member_id[ term ] = data;
+                                    response(data);
+                                    //alert (data);
+                                  }
+                                );
+                              },
+                              minLength: 1,
+                              delay: 100,
+                              autoFocus: true,
+                              select: function (event, ui) {
+                                variable = ui.item.id;
+                                $(
+                                  '#etc_bst_autoSmsReport__update_member_id'
+                                ).val(variable);
+                                $(
+                                  '#etc_bst_autoSmsReport__update_member_id_loaded'
+                                ).val('1');
+                              },
+                              appendTo: $(
+                                '#etc_bst_autoSmsReport__update_member_id'
+                              ).parent(),
+                            })
+                            .blur(function () {
+                              if (!$(this).val())
+                                $(
+                                  '#etc_bst_autoSmsReport__update_member_id'
+                                ).val('');
+                              var callback = $(
+                                '#etc_bst_autoSmsReport__update_member_id_container'
+                              ).attr('callback');
+                              // if (callback) eval (callback);
+                              if (callback)
+                                refresher.execute(
+                                  callback,
+                                  $('#etc_bst_autoSmsReport__update_member_id')
+                                );
+
+                              clearTimeout(
+                                etc_bst_autoSmsReport__update_member_id_timer
+                              );
+                              var callback2 = $(this).parent().attr('callback');
+                              if (callback2)
+                                etc_bst_autoSmsReport__update_member_id_timer =
+                                  setTimeout(callback2, 1);
+                            })
+                            .attr(
+                              'data-url',
+                              '/tomato/plugin/referenceSuggest/referenceSuggest.php?bId=8594&fId=26833&id=&mode=list'
+                            );
+                        });
+                      </script>
+                    </th>
+                    <th class="update_date type_update_date last-child">
+                      <div class="searchOption">
+                        <input
+                          tomato="true"
+                          name="etc_bst_autoSmsReport__update_date"
+                          id="etc_bst_autoSmsReport__update_date"
+                          value=""
+                          type="text"
+                          class="form-control etc_bst_autoSmsReport__update_date update_date search datepickerPeriod text field_interface"
+                          placeholder="수정일"
+                          callback="tableSortSearch.auto"
+                        />
+                      </div>
+                      <style>
+                        #datepickerPeriod_box_etc_bst_autoSmsReport__update_date {
+                          position: absolute;
+                        }
+                      </style>
+                      <script>
+                        $(function () {
+                          var toDate = new Date();
+                          var thisYear = toDate.getFullYear();
+                          $('body').append(
+                            '<div id=datepickerPeriod_box_etc_bst_autoSmsReport__update_date class=datepickerPeriodBox load=etc_bst_autoSmsReport__update_date></div>'
+                          );
+
+                          $(
+                            '#datepickerPeriod_box_etc_bst_autoSmsReport__update_date'
+                          )
+                            .datepicker({
+                              numberOfMonths: 1,
+                              showAnim: 'blind',
+                              changeMonth: true,
+                              changeYear: true,
+                              yearRange: thisYear - 100 + ':' + (thisYear + 2),
+                              dateFormat: 'yy-mm-dd',
+                              minDate: new Date('2000-01-01'),
+                              showButtonPanel: true,
+                              closeText: '닫기',
+                              prevText: '이전달',
+                              nextText: '다음달',
+                              currentText: '오늘',
+                              monthNames: [
+                                '1월',
+                                '2월',
+                                '3월',
+                                '4월',
+                                '5월',
+                                '6월',
+                                '7월',
+                                '8월',
+                                '9월',
+                                '10월',
+                                '11월',
+                                '12월',
+                              ],
+                              monthNamesShort: [
+                                '1월',
+                                '2월',
+                                '3월',
+                                '4월',
+                                '5월',
+                                '6월',
+                                '7월',
+                                '8월',
+                                '9월',
+                                '10월',
+                                '11월',
+                                '12월',
+                              ],
+                              dayNames: [
+                                '일요일',
+                                '월요일',
+                                '화요일',
+                                '수요일',
+                                '목요일',
+                                '금요일',
+                                '토요일',
+                              ],
+                              dayNamesShort: [
+                                '일',
+                                '월',
+                                '화',
+                                '수',
+                                '목',
+                                '금',
+                                '토',
+                              ],
+                              dayNamesMin: [
+                                '일',
+                                '월',
+                                '화',
+                                '수',
+                                '목',
+                                '금',
+                                '토',
+                              ],
+                              weekHeader: '주',
+                              yearSuffix: '년',
+                              beforeShowDay: function (date) {
+                                return [
+                                  true,
+                                  date.getTime() >= Math.min(prv, cur) &&
+                                  date.getTime() <= Math.max(prv, cur)
+                                    ? 'date-range-selected'
+                                    : '',
+                                ];
+                              },
+
+                              onSelect: function (dateText, inst) {
+                                // $('#etc_bst_autoSmsReport__update_date').focus();
+                                var d1, d2;
+                                $('#etc_bst_autoSmsReport__update_date').attr(
+                                  'status',
+                                  '1'
+                                );
+
+                                prv = cur;
+                                cur = new Date(
+                                  inst.selectedYear,
+                                  inst.selectedMonth,
+                                  inst.selectedDay
+                                ).getTime();
+                                if (prv == -1) {
+                                  prv = cur;
+                                  $('#etc_bst_autoSmsReport__update_date')
+                                    .val(dateText)
+                                    .removeClass('default');
+                                } else {
+                                  d1 = $.datepicker.formatDate(
+                                    'yy-mm-dd',
+                                    new Date(Math.min(prv, cur)),
+                                    {}
+                                  );
+                                  d2 = $.datepicker.formatDate(
+                                    'yy-mm-dd',
+                                    new Date(Math.max(prv, cur)),
+                                    {}
+                                  );
+                                  $('#etc_bst_autoSmsReport__update_date').val(
+                                    d1 + '~' + d2
+                                  );
+                                  $(
+                                    '#datepickerPeriod_box_etc_bst_autoSmsReport__update_date'
+                                  ).hide();
+                                  var callback = $(
+                                    '#etc_bst_autoSmsReport__update_date'
+                                  ).attr('callback');
+                                  // if (callback) eval (callback);
+                                  refresher.execute(
+                                    callback,
+                                    $('#etc_bst_autoSmsReport__update_date')
+                                  );
+                                }
+                              },
+
+                              onChangeMonthYear: function (year, month, inst) {
+                                //prv = cur = -1;
+                              },
+
+                              onAfterUpdate: function (inst) {
+                                $(
+                                  '<button type="button" class="ui-datepicker-close ui-state-default ui-priority-primary ui-corner-all" data-handler="hide" data-event="click">Done</button>'
+                                )
+                                  .appendTo(
+                                    $(
+                                      '#datepickerPeriod_box_etc_bst_autoSmsReport__update_date .ui-datepicker-buttonpane'
+                                    )
+                                  )
+                                  .on('click', function () {
+                                    $(
+                                      '#datepickerPeriod_box_etc_bst_autoSmsReport__update_date'
+                                    ).hide();
+                                    var callback = $(
+                                      '#etc_bst_autoSmsReport__update_date'
+                                    ).attr('callback');
+                                    if (callback) eval(callback);
+                                  });
+                                $(
+                                  '<button type="button" class="ui-datepicker-close ui-state-default ui-priority-primary ui-corner-all" data-handler="hide" data-event="click">Clear</button>'
+                                )
+                                  .appendTo(
+                                    $(
+                                      '#datepickerPeriod_box_etc_bst_autoSmsReport__update_date .ui-datepicker-buttonpane'
+                                    )
+                                  )
+                                  .on('click', function () {
+                                    $(
+                                      '#datepickerPeriod_box_etc_bst_autoSmsReport__update_date'
+                                    ).hide();
+                                    $(
+                                      '#etc_bst_autoSmsReport__update_date'
+                                    ).val('');
+                                    var callback = $(
+                                      '#etc_bst_autoSmsReport__update_date'
+                                    ).attr('callback');
+                                    // if (callback) eval (callback);
+                                    refresher.execute(
+                                      callback,
+                                      $('#etc_bst_autoSmsReport__update_date')
+                                    );
+                                  });
+                              },
+                            })
+                            .click(function () {
+                              $('#etc_bst_autoSmsReport__update_date').attr(
+                                'status',
+                                '1'
+                              );
+                            })
+
+                            .hide();
+                          $('body').mousemove(function (e) {
+                            $(this).attr('pageY', e.pageY);
+                          });
+                          $('#etc_bst_autoSmsReport__update_date')
+                            .on('focus', function (e) {
+                              $(this).attr('status', '');
+                              var v = this.value,
+                                d;
+
+                              try {
+                                if (v.indexOf(' - ') > -1) {
+                                  d = v.split(' - ');
+
+                                  prv = $.datepicker
+                                    .parseDate('yy-mm-dd', d[0])
+                                    .getTime();
+                                  cur = $.datepicker
+                                    .parseDate('yy-mm-dd', d[1])
+                                    .getTime();
+                                } else if (v.length > 0) {
+                                  prv = cur = $.datepicker
+                                    .parseDate('yy-mm-dd', v)
+                                    .getTime();
+                                }
+                              } catch (e) {
+                                cur = prv = -1;
+                              }
+
+                              if (cur > -1)
+                                $(
+                                  '#datepickerPeriod_box_etc_bst_autoSmsReport__update_date'
+                                ).datepicker('setDate', new Date(cur));
+
+                              var pos = $(
+                                '#etc_bst_autoSmsReport__update_date'
+                              ).offset();
+                              // console.log(pos);
+                              var e2 = window.event;
+                              $(
+                                '#datepickerPeriod_box_etc_bst_autoSmsReport__update_date'
+                              )
+                                .css('left', pos.left + 'px')
+                                .css(
+                                  'top',
+                                  pos.top +
+                                    $(
+                                      '#etc_bst_autoSmsReport__update_date'
+                                    ).height() *
+                                      1 +
+                                    'px'
+                                )
+                                .datepicker('refresh')
+                                .show();
+                            })
+                            .on('blur', function () {
+                              setTimeout(function () {
+                                if (
+                                  $('#etc_bst_autoSmsReport__update_date').attr(
+                                    'status'
+                                  ) != '1'
+                                )
+                                  $(
+                                    '#datepickerPeriod_box_etc_bst_autoSmsReport__update_date'
+                                  ).hide();
+                              }, 150);
+                            });
+                        });
+                      </script>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- <tr class="index"><td colspan="6"></td><td class="index_name">오늘</td><td colspan="1"></td></tr> -->
+                  <tr id="3596" class="">
+                    <td align="center" class="checkTd">
+                      <input type="checkbox" value="3596" tabindex="1000" />
+                    </td>
+                    <td class="countNo">3596</td>
+                    <td class="sDate type_text">2022-10-29</td>
+                    <td class="report type_textareaOnly">
+                      17건의 문자를 전송하였습니다.<br />
+                    </td>
+                    <td class="cont type_textareaOnly rollOverV">
+                      수술 예약 5일전 문자 발송
+                    </td>
+                    <td class="update_member_id type_memberId"></td>
+                    <td class="update_date type_update_date last-child">
+                      22-10-24 09:00:19
+                    </td>
+                  </tr>
+                  <tr id="3595" class="">
+                    <td align="center" class="checkTd">
+                      <input type="checkbox" value="3595" tabindex="1000" />
+                    </td>
+                    <td class="countNo">3595</td>
+                    <td class="sDate type_text">2022-10-25</td>
+                    <td class="report type_textareaOnly">
+                      50건의 문자를 전송하였습니다.<br />
+                    </td>
+                    <td class="cont type_textareaOnly rollOverV">
+                      전지점 1일전 문자 발송
+                    </td>
+                    <td class="update_member_id type_memberId"></td>
+                    <td class="update_date type_update_date last-child">
+                      22-10-24 09:00:15
+                    </td>
+                  </tr>
+                  <tr id="3594" class="rollOver">
+                    <td align="center" class="checkTd">
+                      <input type="checkbox" value="3594" tabindex="1000" />
+                    </td>
+                    <td class="countNo">3594</td>
+                    <td class="sDate type_text">2022-10-24</td>
+                    <td class="report type_textareaOnly">
+                      자동 문자 발송 시스템
+                    </td>
+                    <td class="cont type_textareaOnly rollOverV">
+                      자동 문자 발송 시스템
+                    </td>
+                    <td class="update_member_id type_memberId"></td>
+                    <td class="update_date type_update_date last-child">
+                      22-10-24 09:00:01
+                    </td>
+                  </tr>
+                  <!-- <tr class="index"><td colspan="6"></td><td class="index_name">어제</td><td colspan="1"></td></tr> -->
+                  <tr id="3593" class="">
+                    <td align="center" class="checkTd">
+                      <input type="checkbox" value="3593" tabindex="1000" />
+                    </td>
+                    <td class="countNo">3593</td>
+                    <td class="sDate type_text">2022-10-28</td>
+                    <td class="report type_textareaOnly">
+                      27건의 문자를 전송하였습니다.<br />
+                    </td>
+                    <td class="cont type_textareaOnly rollOverV">
+                      수술 예약 5일전 문자 발송
+                    </td>
+                    <td class="update_member_id type_memberId"></td>
+                    <td class="update_date type_update_date last-child">
+                      22-10-23 13:00:25
+                    </td>
+                  </tr>
+                  <tr id="3592" class="">
+                    <td align="center" class="checkTd">
+                      <input type="checkbox" value="3592" tabindex="1000" />
+                    </td>
+                    <td class="countNo">3592</td>
+                    <td class="sDate type_text">2022-10-24</td>
+                    <td class="report type_textareaOnly">
+                      90건의 문자를 전송하였습니다.<br />
+                    </td>
+                    <td class="cont type_textareaOnly rollOverV">
+                      전지점 1일전 문자 발송
+                    </td>
+                    <td class="update_member_id type_memberId"></td>
+                    <td class="update_date type_update_date last-child">
+                      22-10-23 13:00:20
+                    </td>
+                  </tr>
+                  <tr id="3591" class="">
+                    <td align="center" class="checkTd">
+                      <input type="checkbox" value="3591" tabindex="1000" />
+                    </td>
+                    <td class="countNo">3591</td>
+                    <td class="sDate type_text">2022-10-23</td>
+                    <td class="report type_textareaOnly">
+                      자동 문자 발송 시스템
+                    </td>
+                    <td class="cont type_textareaOnly rollOverV">
+                      자동 문자 발송 시스템
+                    </td>
+                    <td class="update_member_id type_memberId"></td>
+                    <td class="update_date type_update_date last-child">
+                      22-10-23 13:00:02
+                    </td>
+                  </tr>
+                  <!-- <tr class="index"><td colspan="6"></td><td class="index_name">토요일</td><td colspan="1"></td></tr> -->
+                  <tr id="3590" class="">
+                    <td align="center" class="checkTd">
+                      <input type="checkbox" value="3590" tabindex="1000" />
+                    </td>
+                    <td class="countNo">3590</td>
+                    <td class="sDate type_text">2022-10-27</td>
+                    <td class="report type_textareaOnly">
+                      13건의 문자를 전송하였습니다.<br />
+                    </td>
+                    <td class="cont type_textareaOnly rollOverV">
+                      수술 예약 5일전 문자 발송
+                    </td>
+                    <td class="update_member_id type_memberId"></td>
+                    <td class="update_date type_update_date last-child">
+                      22-10-22 09:00:08
+                    </td>
+                  </tr>
+                  <tr id="3589">
+                    <td align="center" class="checkTd">
+                      <input type="checkbox" value="3589" tabindex="1000" />
+                    </td>
+                    <td class="countNo">3589</td>
+                    <td class="sDate type_text">2022-10-23</td>
+                    <td class="report type_textareaOnly">
+                      1건의 문자를 전송하였습니다.<br />
+                    </td>
+                    <td class="cont type_textareaOnly rollOverV">
+                      전지점 1일전 문자 발송
+                    </td>
+                    <td class="update_member_id type_memberId"></td>
+                    <td class="update_date type_update_date last-child">
+                      22-10-22 09:00:02
+                    </td>
+                  </tr>
+                  <tr id="3588">
+                    <td align="center" class="checkTd">
+                      <input type="checkbox" value="3588" tabindex="1000" />
+                    </td>
+                    <td class="countNo">3588</td>
+                    <td class="sDate type_text">2022-10-22</td>
+                    <td class="report type_textareaOnly">
+                      자동 문자 발송 시스템
+                    </td>
+                    <td class="cont type_textareaOnly rollOverV">
+                      자동 문자 발송 시스템
+                    </td>
+                    <td class="update_member_id type_memberId"></td>
+                    <td class="update_date type_update_date last-child">
+                      22-10-22 09:00:01
+                    </td>
+                  </tr>
+                  <!-- <tr class="index"><td colspan="6"></td><td class="index_name">금요일</td><td colspan="1"></td></tr> -->
+                  <tr id="3587" class="">
+                    <td align="center" class="checkTd">
+                      <input type="checkbox" value="3587" tabindex="1000" />
+                    </td>
+                    <td class="countNo">3587</td>
+                    <td class="sDate type_text">2022-10-26</td>
+                    <td class="report type_textareaOnly">
+                      6건의 문자를 전송하였습니다.<br />
+                    </td>
+                    <td class="cont type_textareaOnly rollOverV">
+                      수술 예약 5일전 문자 발송
+                    </td>
+                    <td class="update_member_id type_memberId"></td>
+                    <td class="update_date type_update_date last-child">
+                      22-10-21 09:00:56
+                    </td>
+                  </tr>
+                  <tr id="3586">
+                    <td align="center" class="checkTd">
+                      <input type="checkbox" value="3586" tabindex="1000" />
+                    </td>
+                    <td class="countNo">3586</td>
+                    <td class="sDate type_text">2022-10-22</td>
+                    <td class="report type_textareaOnly">
+                      113건의 문자를 전송하였습니다.<br />
+                    </td>
+                    <td class="cont type_textareaOnly rollOverV">
+                      전지점 1일전 문자 발송
+                    </td>
+                    <td class="update_member_id type_memberId"></td>
+                    <td class="update_date type_update_date last-child">
+                      22-10-21 09:00:55
+                    </td>
+                  </tr>
+                  <tr id="3585">
+                    <td align="center" class="checkTd">
+                      <input type="checkbox" value="3585" tabindex="1000" />
+                    </td>
+                    <td class="countNo">3585</td>
+                    <td class="sDate type_text">2022-10-21</td>
+                    <td class="report type_textareaOnly">
+                      자동 문자 발송 시스템
+                    </td>
+                    <td class="cont type_textareaOnly rollOverV">
+                      자동 문자 발송 시스템
+                    </td>
+                    <td class="update_member_id type_memberId"></td>
+                    <td class="update_date type_update_date last-child">
+                      22-10-21 09:00:01
+                    </td>
+                  </tr>
+                  <!-- <tr class="index"><td colspan="6"></td><td class="index_name">목요일</td><td colspan="1"></td></tr> -->
+                  <tr id="3584">
+                    <td align="center" class="checkTd">
+                      <input type="checkbox" value="3584" tabindex="1000" />
+                    </td>
+                    <td class="countNo">3584</td>
+                    <td class="sDate type_text">2022-10-25</td>
+                    <td class="report type_textareaOnly">
+                      13건의 문자를 전송하였습니다.<br />
+                    </td>
+                    <td class="cont type_textareaOnly rollOverV">
+                      수술 예약 5일전 문자 발송
+                    </td>
+                    <td class="update_member_id type_memberId"></td>
+                    <td class="update_date type_update_date last-child">
+                      22-10-20 09:00:59
+                    </td>
+                  </tr>
+                  <tr id="3583">
+                    <td align="center" class="checkTd">
+                      <input type="checkbox" value="3583" tabindex="1000" />
+                    </td>
+                    <td class="countNo">3583</td>
+                    <td class="sDate type_text">2022-10-21</td>
+                    <td class="report type_textareaOnly">
+                      98건의 문자를 전송하였습니다.<br />
+                    </td>
+                    <td class="cont type_textareaOnly rollOverV">
+                      전지점 1일전 문자 발송
+                    </td>
+                    <td class="update_member_id type_memberId"></td>
+                    <td class="update_date type_update_date last-child">
+                      22-10-20 09:00:55
+                    </td>
+                  </tr>
+                  <tr id="3582">
+                    <td align="center" class="checkTd">
+                      <input type="checkbox" value="3582" tabindex="1000" />
+                    </td>
+                    <td class="countNo">3582</td>
+                    <td class="sDate type_text">2022-10-20</td>
+                    <td class="report type_textareaOnly">
+                      자동 문자 발송 시스템
+                    </td>
+                    <td class="cont type_textareaOnly rollOverV">
+                      자동 문자 발송 시스템
+                    </td>
+                    <td class="update_member_id type_memberId"></td>
+                    <td class="update_date type_update_date last-child">
+                      22-10-20 09:00:01
+                    </td>
+                  </tr>
+                  <!-- <tr class="index"><td colspan="6"></td><td class="index_name">수요일</td><td colspan="1"></td></tr> -->
+                  <tr id="3581">
+                    <td align="center" class="checkTd">
+                      <input type="checkbox" value="3581" tabindex="1000" />
+                    </td>
+                    <td class="countNo">3581</td>
+                    <td class="sDate type_text">2022-10-24</td>
+                    <td class="report type_textareaOnly">
+                      20건의 문자를 전송하였습니다.<br />
+                    </td>
+                    <td class="cont type_textareaOnly rollOverV">
+                      수술 예약 5일전 문자 발송
+                    </td>
+                    <td class="update_member_id type_memberId"></td>
+                    <td class="update_date type_update_date last-child">
+                      22-10-19 09:00:34
+                    </td>
+                  </tr>
+                  <tr id="3580">
+                    <td align="center" class="checkTd">
+                      <input type="checkbox" value="3580" tabindex="1000" />
+                    </td>
+                    <td class="countNo">3580</td>
+                    <td class="sDate type_text">2022-10-20</td>
+                    <td class="report type_textareaOnly">
+                      66건의 문자를 전송하였습니다.<br />
+                    </td>
+                    <td class="cont type_textareaOnly rollOverV">
+                      전지점 1일전 문자 발송
+                    </td>
+                    <td class="update_member_id type_memberId"></td>
+                    <td class="update_date type_update_date last-child">
+                      22-10-19 09:00:29
+                    </td>
+                  </tr>
+                  <tr id="3579">
+                    <td align="center" class="checkTd">
+                      <input type="checkbox" value="3579" tabindex="1000" />
+                    </td>
+                    <td class="countNo">3579</td>
+                    <td class="sDate type_text">2022-10-19</td>
+                    <td class="report type_textareaOnly">
+                      자동 문자 발송 시스템
+                    </td>
+                    <td class="cont type_textareaOnly rollOverV">
+                      자동 문자 발송 시스템
+                    </td>
+                    <td class="update_member_id type_memberId"></td>
+                    <td class="update_date type_update_date last-child">
+                      22-10-19 09:00:01
+                    </td>
+                  </tr>
+                  <!-- <tr class="index"><td colspan="6"></td><td class="index_name">화요일</td><td colspan="1"></td></tr> -->
+                  <tr id="3578">
+                    <td align="center" class="checkTd">
+                      <input type="checkbox" value="3578" tabindex="1000" />
+                    </td>
+                    <td class="countNo">3578</td>
+                    <td class="sDate type_text">2022-10-23</td>
+                    <td class="report type_textareaOnly">
+                      0건의 문자를 전송하였습니다.<br />
+                    </td>
+                    <td class="cont type_textareaOnly rollOverV">
+                      수술 예약 5일전 문자 발송
+                    </td>
+                    <td class="update_member_id type_memberId"></td>
+                    <td class="update_date type_update_date last-child">
+                      22-10-18 09:00:35
+                    </td>
+                  </tr>
+                  <tr id="3577">
+                    <td align="center" class="checkTd">
+                      <input type="checkbox" value="3577" tabindex="1000" />
+                    </td>
+                    <td class="countNo">3577</td>
+                    <td class="sDate type_text">2022-10-19</td>
+                    <td class="report type_textareaOnly">
+                      81건의 문자를 전송하였습니다.<br />
+                    </td>
+                    <td class="cont type_textareaOnly rollOverV">
+                      전지점 1일전 문자 발송
+                    </td>
+                    <td class="update_member_id type_memberId"></td>
+                    <td class="update_date type_update_date last-child">
+                      22-10-18 09:00:34
+                    </td>
+                  </tr>
+                  <tr class="last-child">
+                    <td colspan="8" class="last-child">
+                      <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                          <li class="page-item active">
+                            <a href="javascript:;" class="page-link">1</a>
+                          </li>
+                          <li class="page-item">
+                            <a
+                              href="#autoSmsReport/list/2?order=update_date&amp;sort=desc&amp;order2=&amp;sort2=asc&amp;order3=&amp;sort3=desc"
+                              class="page-link"
+                              >2</a
+                            >
+                          </li>
+                          <li class="page-item">
+                            <a
+                              href="#autoSmsReport/list/3?order=update_date&amp;sort=desc&amp;order2=&amp;sort2=asc&amp;order3=&amp;sort3=desc"
+                              class="page-link"
+                              >3</a
+                            >
+                          </li>
+                          <li class="page-item">
+                            <a
+                              href="#autoSmsReport/list/4?order=update_date&amp;sort=desc&amp;order2=&amp;sort2=asc&amp;order3=&amp;sort3=desc"
+                              class="page-link"
+                              >4</a
+                            >
+                          </li>
+                          <li class="page-item">
+                            <a
+                              href="#autoSmsReport/list/5?order=update_date&amp;sort=desc&amp;order2=&amp;sort2=asc&amp;order3=&amp;sort3=desc"
+                              class="page-link"
+                              >5</a
+                            >
+                          </li>
+                          <li class="page-item">
+                            <a
+                              href="#autoSmsReport/list/6?order=update_date&amp;sort=desc&amp;order2=&amp;sort2=asc&amp;order3=&amp;sort3=desc"
+                              class="page-link"
+                              >6</a
+                            >
+                          </li>
+                          <li class="page-item">
+                            <a
+                              href="#autoSmsReport/list/7?order=update_date&amp;sort=desc&amp;order2=&amp;sort2=asc&amp;order3=&amp;sort3=desc"
+                              class="page-link"
+                              >7</a
+                            >
+                          </li>
+                          <li class="page-item">
+                            <a
+                              href="#autoSmsReport/list/8?order=update_date&amp;sort=desc&amp;order2=&amp;sort2=asc&amp;order3=&amp;sort3=desc"
+                              class="page-link"
+                              >8</a
+                            >
+                          </li>
+                          <li class="page-item">
+                            <a
+                              href="#autoSmsReport/list/9?order=update_date&amp;sort=desc&amp;order2=&amp;sort2=asc&amp;order3=&amp;sort3=desc"
+                              class="page-link"
+                              >9</a
+                            >
+                          </li>
+                          <li class="page-item">
+                            <a
+                              href="#autoSmsReport/list/10?order=update_date&amp;sort=desc&amp;order2=&amp;sort2=asc&amp;order3=&amp;sort3=desc"
+                              class="page-link"
+                              >10</a
+                            >
+                          </li>
+                          <li class="page-item last-child">
+                            <a
+                              class="page-link"
+                              href="#autoSmsReport/list/11?order=update_date&amp;sort=desc&amp;order2=&amp;sort2=asc&amp;order3=&amp;sort3=desc"
+                              aria-label="Next"
+                              ><span aria-hidden="true">»</span
+                              ><span class="sr-only">Next</span></a
+                            >
+                          </li>
+                        </ul>
+                      </nav>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- ETC2S Default Skin Footer Start-->
+        </div>
+        <script type="text/javascript">
+          $.extend($.fn.dataTable.defaults, {
+            paging: false,
+            info: false,
+            order: [],
+            searching: false,
+            // dom: 'Bfrtip',
+            // buttons: [
+            // 	'excel'
+            // ],
+            language: {
+              processing: '로딩중',
+              search: '검색&nbsp;:',
+              emptyTable: '조회된 정보가 없습니다.',
+              info: '전체 _TOTAL_ 개 항목 중 _START_ - _END_',
+              infoEmpty: '전체 0개 항목',
+              infoFiltered: '(전체 _MAX_개 항목 중 필터링 됨)',
+              lengthMenu: '페이지 당 _MENU_ 개 항목 표시',
+              zeroRecords: '검색 결과가 없습니다.',
+              paginate: {
+                first: '처음',
+                previous: '이전',
+                next: '다음',
+                last: '끝',
+              },
+            },
+          });
+        </script>
+
+        <!-- ETC2S Default Skin Footer End-->
+      </div>
+    </div>
+    <div
+      id="datepickerPeriod_box_etc_bst_autoSmsReport__update_date"
+      class="datepickerPeriodBox hasDatepicker"
+      load="etc_bst_autoSmsReport__update_date"
+      style="display: none"
+    >
+      <div
+        class="ui-datepicker-inline ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"
+        style="display: block"
+      >
+        <div
+          class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"
+        >
+          <a
+            class="ui-datepicker-prev ui-corner-all"
+            data-handler="prev"
+            data-event="click"
+            title="이전달"
+            ><span class="ui-icon ui-icon-circle-triangle-w">이전달</span></a
+          ><a
+            class="ui-datepicker-next ui-corner-all"
+            data-handler="next"
+            data-event="click"
+            title="다음달"
+            ><span class="ui-icon ui-icon-circle-triangle-e">다음달</span></a
+          >
+          <div class="ui-datepicker-title">
+            <select
+              class="ui-datepicker-month"
+              data-handler="selectMonth"
+              data-event="change"
+            >
+              <option value="0">1월</option>
+              <option value="1">2월</option>
+              <option value="2">3월</option>
+              <option value="3">4월</option>
+              <option value="4">5월</option>
+              <option value="5">6월</option>
+              <option value="6">7월</option>
+              <option value="7">8월</option>
+              <option value="8">9월</option>
+              <option value="9" selected="selected">10월</option>
+              <option value="10">11월</option>
+              <option value="11">12월</option></select
+            ><select
+              class="ui-datepicker-year"
+              data-handler="selectYear"
+              data-event="change"
+            >
+              <option value="2000">2000</option>
+              <option value="2001">2001</option>
+              <option value="2002">2002</option>
+              <option value="2003">2003</option>
+              <option value="2004">2004</option>
+              <option value="2005">2005</option>
+              <option value="2006">2006</option>
+              <option value="2007">2007</option>
+              <option value="2008">2008</option>
+              <option value="2009">2009</option>
+              <option value="2010">2010</option>
+              <option value="2011">2011</option>
+              <option value="2012">2012</option>
+              <option value="2013">2013</option>
+              <option value="2014">2014</option>
+              <option value="2015">2015</option>
+              <option value="2016">2016</option>
+              <option value="2017">2017</option>
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+              <option value="2020">2020</option>
+              <option value="2021">2021</option>
+              <option value="2022" selected="selected">2022</option>
+              <option value="2023">2023</option>
+              <option value="2024">2024</option></select
+            >년
+          </div>
+        </div>
+        <table class="ui-datepicker-calendar">
+          <thead>
+            <tr class="last-child">
+              <th class="ui-datepicker-week-end">
+                <span title="일요일">일</span>
+              </th>
+              <th><span title="월요일">월</span></th>
+              <th><span title="화요일">화</span></th>
+              <th><span title="수요일">수</span></th>
+              <th><span title="목요일">목</span></th>
+              <th><span title="금요일">금</span></th>
+              <th class="ui-datepicker-week-end last-child">
+                <span title="토요일">토</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td
+                class="ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled"
+              >
+                &nbsp;
+              </td>
+              <td
+                class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled"
+              >
+                &nbsp;
+              </td>
+              <td
+                class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled"
+              >
+                &nbsp;
+              </td>
+              <td
+                class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled"
+              >
+                &nbsp;
+              </td>
+              <td
+                class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled"
+              >
+                &nbsp;
+              </td>
+              <td
+                class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled"
+              >
+                &nbsp;
+              </td>
+              <td
+                class="ui-datepicker-week-end last-child"
+                data-handler="selectDay"
+                data-event="click"
+                data-month="9"
+                data-year="2022"
+              >
+                <a class="ui-state-default" href="#autoSmsReport#">1</a>
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="ui-datepicker-week-end"
+                data-handler="selectDay"
+                data-event="click"
+                data-month="9"
+                data-year="2022"
+              >
+                <a class="ui-state-default" href="#autoSmsReport#">2</a>
+              </td>
+              <td
+                class=" "
+                data-handler="selectDay"
+                data-event="click"
+                data-month="9"
+                data-year="2022"
+              >
+                <a class="ui-state-default" href="#autoSmsReport#">3</a>
+              </td>
+              <td
+                class=" "
+                data-handler="selectDay"
+                data-event="click"
+                data-month="9"
+                data-year="2022"
+              >
+                <a class="ui-state-default" href="#autoSmsReport#">4</a>
+              </td>
+              <td
+                class=" "
+                data-handler="selectDay"
+                data-event="click"
+                data-month="9"
+                data-year="2022"
+              >
+                <a class="ui-state-default" href="#autoSmsReport#">5</a>
+              </td>
+              <td
+                class=" "
+                data-handler="selectDay"
+                data-event="click"
+                data-month="9"
+                data-year="2022"
+              >
+                <a class="ui-state-default" href="#autoSmsReport#">6</a>
+              </td>
+              <td
+                class=" "
+                data-handler="selectDay"
+                data-event="click"
+                data-month="9"
+                data-year="2022"
+              >
+                <a class="ui-state-default" href="#autoSmsReport#">7</a>
+              </td>
+              <td
+                class="ui-datepicker-week-end last-child"
+                data-handler="selectDay"
+                data-event="click"
+                data-month="9"
+                data-year="2022"
+              >
+                <a class="ui-state-default" href="#autoSmsReport#">8</a>
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="ui-datepicker-week-end"
+                data-handler="selectDay"
+                data-event="click"
+                data-month="9"
+                data-year="2022"
+              >
+                <a class="ui-state-default" href="#autoSmsReport#">9</a>
+              </td>
+              <td
+                class=" "
+                data-handler="selectDay"
+                data-event="click"
+                data-month="9"
+                data-year="2022"
+              >
+                <a class="ui-state-default" href="#autoSmsReport#">10</a>
+              </td>
+              <td
+                class=" "
+                data-handler="selectDay"
+                data-event="click"
+                data-month="9"
+                data-year="2022"
+              >
+                <a class="ui-state-default" href="#autoSmsReport#">11</a>
+              </td>
+              <td
+                class=" "
+                data-handler="selectDay"
+                data-event="click"
+                data-month="9"
+                data-year="2022"
+              >
+                <a class="ui-state-default" href="#autoSmsReport#">12</a>
+              </td>
+              <td
+                class=" "
+                data-handler="selectDay"
+                data-event="click"
+                data-month="9"
+                data-year="2022"
+              >
+                <a class="ui-state-default" href="#autoSmsReport#">13</a>
+              </td>
+              <td
+                class=" "
+                data-handler="selectDay"
+                data-event="click"
+                data-month="9"
+                data-year="2022"
+              >
+                <a class="ui-state-default" href="#autoSmsReport#">14</a>
+              </td>
+              <td
+                class="ui-datepicker-week-end last-child"
+                data-handler="selectDay"
+                data-event="click"
+                data-month="9"
+                data-year="2022"
+              >
+                <a class="ui-state-default" href="#autoSmsReport#">15</a>
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="ui-datepicker-week-end"
+                data-handler="selectDay"
+                data-event="click"
+                data-month="9"
+                data-year="2022"
+              >
+                <a class="ui-state-default" href="#autoSmsReport#">16</a>
+              </td>
+              <td
+                class=" "
+                data-handler="selectDay"
+                data-event="click"
+                data-month="9"
+                data-year="2022"
+              >
+                <a class="ui-state-default" href="#autoSmsReport#">17</a>
+              </td>
+              <td
+                class=" "
+                data-handler="selectDay"
+                data-event="click"
+                data-month="9"
+                data-year="2022"
+              >
+                <a class="ui-state-default" href="#autoSmsReport#">18</a>
+              </td>
+              <td
+                class=" "
+                data-handler="selectDay"
+                data-event="click"
+                data-month="9"
+                data-year="2022"
+              >
+                <a class="ui-state-default" href="#autoSmsReport#">19</a>
+              </td>
+              <td
+                class=" "
+                data-handler="selectDay"
+                data-event="click"
+                data-month="9"
+                data-year="2022"
+              >
+                <a class="ui-state-default" href="#autoSmsReport#">20</a>
+              </td>
+              <td
+                class=" "
+                data-handler="selectDay"
+                data-event="click"
+                data-month="9"
+                data-year="2022"
+              >
+                <a class="ui-state-default" href="#autoSmsReport#">21</a>
+              </td>
+              <td
+                class="ui-datepicker-week-end last-child"
+                data-handler="selectDay"
+                data-event="click"
+                data-month="9"
+                data-year="2022"
+              >
+                <a class="ui-state-default" href="#autoSmsReport#">22</a>
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="ui-datepicker-week-end"
+                data-handler="selectDay"
+                data-event="click"
+                data-month="9"
+                data-year="2022"
+              >
+                <a class="ui-state-default" href="#autoSmsReport#">23</a>
+              </td>
+              <td
+                class="ui-datepicker-days-cell-over ui-datepicker-current-day ui-datepicker-today"
+                data-handler="selectDay"
+                data-event="click"
+                data-month="9"
+                data-year="2022"
+              >
+                <a
+                  class="ui-state-default ui-state-highlight ui-state-active ui-state-hover"
+                  href="#autoSmsReport#"
+                  >24</a
+                >
+              </td>
+              <td
+                class=" "
+                data-handler="selectDay"
+                data-event="click"
+                data-month="9"
+                data-year="2022"
+              >
+                <a class="ui-state-default" href="#autoSmsReport#">25</a>
+              </td>
+              <td
+                class=" "
+                data-handler="selectDay"
+                data-event="click"
+                data-month="9"
+                data-year="2022"
+              >
+                <a class="ui-state-default" href="#autoSmsReport#">26</a>
+              </td>
+              <td
+                class=" "
+                data-handler="selectDay"
+                data-event="click"
+                data-month="9"
+                data-year="2022"
+              >
+                <a class="ui-state-default" href="#autoSmsReport#">27</a>
+              </td>
+              <td
+                class=" "
+                data-handler="selectDay"
+                data-event="click"
+                data-month="9"
+                data-year="2022"
+              >
+                <a class="ui-state-default" href="#autoSmsReport#">28</a>
+              </td>
+              <td
+                class="ui-datepicker-week-end last-child"
+                data-handler="selectDay"
+                data-event="click"
+                data-month="9"
+                data-year="2022"
+              >
+                <a class="ui-state-default" href="#autoSmsReport#">29</a>
+              </td>
+            </tr>
+            <tr class="last-child">
+              <td
+                class="ui-datepicker-week-end"
+                data-handler="selectDay"
+                data-event="click"
+                data-month="9"
+                data-year="2022"
+              >
+                <a class="ui-state-default" href="#autoSmsReport#">30</a>
+              </td>
+              <td
+                class=" "
+                data-handler="selectDay"
+                data-event="click"
+                data-month="9"
+                data-year="2022"
+              >
+                <a class="ui-state-default" href="#autoSmsReport#">31</a>
+              </td>
+              <td
+                class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled"
+              >
+                &nbsp;
+              </td>
+              <td
+                class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled"
+              >
+                &nbsp;
+              </td>
+              <td
+                class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled"
+              >
+                &nbsp;
+              </td>
+              <td
+                class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled"
+              >
+                &nbsp;
+              </td>
+              <td
+                class="ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled last-child"
+              >
+                &nbsp;
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="ui-datepicker-buttonpane ui-widget-content">
+          <button
+            type="button"
+            class="ui-datepicker-current ui-state-default ui-priority-secondary ui-corner-all"
+            data-handler="today"
+            data-event="click"
+          >
+            오늘</button
+          ><button
+            type="button"
+            class="ui-datepicker-close ui-state-default ui-priority-primary ui-corner-all"
+            data-handler="hide"
+            data-event="click"
+          >
+            Done</button
+          ><button
+            type="button"
+            class="ui-datepicker-close ui-state-default ui-priority-primary ui-corner-all"
+            data-handler="hide"
+            data-event="click"
+          >
+            Clear
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      id="ui-datepicker-div"
+      class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"
+    ></div>
+  </body>
+  <whale-quicksearch translate="no"></whale-quicksearch>
+</html>

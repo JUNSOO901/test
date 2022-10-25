@@ -1,0 +1,96 @@
+function __DENIM_REFERENCE (opt) {
+	var _this = this;
+	this.standby(opt,{
+		if_target:null,
+		if_ui:null,
+		v:[],
+		J:[],
+		if_text:null,
+		if_ul:null,
+		dom_li:"<li data-id='{id}'>{label}<input type='button' value='X'></li>",
+		dom_ui:"<div class='denim_reference'><input type='text' class='text' placeholder='전체보기 : 스페이스'><ul></ul></div>"
+	});
+	if (this.if_target().hasClass("referenceActivated")) return false;;
+	this.if_target().addClass("referenceActivated");
+	if (this.if_target().val()) this.v(this.if_target().val().split(","));
+	this.if_ui(this.dom_ui());
+	this.if_target().after(this.if_ui());
+	this.if_text(this.if_target().next().find("input"));
+	this.if_ul(this.if_target().next().find("ul"));
+
+	var id = this.if_target().attr("data-id");
+	var mode = this.if_target().attr("data-mode");
+	var minLength = this.if_target().attr("data-minLength");
+	var fId = this.if_target().attr("data-fId");
+	var bIdentity = this.if_target().attr("data-bIdentity");
+	if (this.if_target().val()) this.J(this.if_target().val().split(","));
+	$.getJSON("/referenceAJAX/"+mode+"/"+id,{type:'load',bIdentity:bIdentity,fId:fId,ids:this.if_target().val()},function (J) {
+		_this.J(J);
+		_this.fn_render();
+	});
+
+	// this.fn_render();
+
+	this.if_text().autocomplete({
+		source:function (req,res) {
+			var res = res;
+			var term = req.term;
+			$.getJSON("/referenceAJAX/"+mode+"/"+id,{type:'autocomplete',bIdentity:bIdentity,fId:fId,term:term},function (J) {
+				res(J);
+			});
+		},
+		minLength:this.if_text().attr("data-minLength"),
+		delay:100,
+		autoFocus:true,
+		select:function (e,u) {
+			setTimeout(function () {_this.if_text().val("");_this.if_text().focus()}, 100);
+			if (_this.v().indexOf(u.item.Id)!=-1) return false;
+			_this.J().push(u.item);
+			_this.v().push(u.item.Id);
+			_this.fn_render();
+		}
+	});
+};
+__DENIM_REFERENCE.prototype = new __TOMATOOBJECT();
+__DENIM_REFERENCE.prototype.fn_render = function () {
+	var _this = this;
+	this.if_target().val(this.v().join(','));
+	this.if_ul().html(this.J().reduce(function (ul,J) {
+		return ul+_this.dom_li().replace("{label}",J.label).replace("{id}",J.Id);
+	},""));
+	_this.v(
+		_this.v().filter(function (v) {
+			return v!="";
+		})
+	);
+	console.log(this.v());
+	this.if_ul().find("input").click(function () {
+		// console.log(this);
+		var Id = $(this).closest("li").attr("data-id");
+		// console.log("remove Id",Id);
+		_this.v(
+			_this.v().filter(function (v) {
+				// console.log(v,Id,v==Id);
+				return v!=Id && v!="";
+			})
+		);
+		_this.J(
+			_this.J().filter(function (j) {
+				return j.Id!=Id;
+			})
+		);
+		// $(this).parent().remove();
+		_this.fn_render();
+	});
+};
+refresher.set("onload",function () {
+	$("input[data-fieldType=reference]").not(".referenceActivated").each(function () {
+		var DR = new __DENIM_REFERENCE({if_target:$(this)});
+	});
+});
+refresher.set("onAjaxLoad",function () {
+	// TOMATOFIELD.setDatepicker();
+	$("input[data-fieldType=reference]").not(".referenceActivated").each(function () {
+		var DR = new __DENIM_REFERENCE({if_target:$(this)});
+	});
+});

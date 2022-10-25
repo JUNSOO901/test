@@ -1,0 +1,9 @@
+	<script>location.href='/LOGIN?rtn=/checkArsAlarm_css';</script>
+		<meta charset="UTF-8">
+	<script>
+		alert ("checkArsAlarm_css에 사용 권한이 없습니다.");
+			</script>
+	#ars_alarm {position:fixed;left:75px;bottom:50px;width:30px;height:30px;background: red;cursor:pointer;color:white;text-align: center;line-height: 30px;font-size: 20px;border-radius: 30px;}
+	.arsAlarm.modal > .modal-lg {max-width: 90%;}
+@media (min-width:1000px) {
+}

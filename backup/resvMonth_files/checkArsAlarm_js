@@ -1,0 +1,140 @@
+	<script>location.href='/LOGIN?rtn=/checkArsAlarm_js?1=3';</script>
+		<meta charset="UTF-8">
+	<script>
+		alert ("checkArsAlarm_js에 사용 권한이 없습니다.");
+			</script>
+	function __ARS_ALARM (opt) {
+	this.standby(opt,{
+		dom_count:'<span class="alarm-num bg-danger">{cc}</span>',
+		if_count:null,
+		if_alarmBtn:$('.alarm-btn'),
+		dom_modal:'<div class="modal modal-insert arsAlarm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">미확인 알림</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body"></div></div></div>',
+		if_interval:null,
+		if_modal:null,
+		if_body:$("body"),
+		if_window:$("window")
+	});
+	this.setOutlet();
+	this.fn_start();
+}
+
+__ARS_ALARM.prototype = new __TOMATOOBJECT();
+__ARS_ALARM.prototype.fn_start = function () {
+	console.log("fn_start");
+	var _this = this;
+	_this.fn_check();
+	if (this.if_interval()) clearInterval(this.if_interval());
+	this.if_interval(setInterval(function () {
+		_this.fn_check();
+	}, 30000));
+}
+__ARS_ALARM.prototype.fn_check = function () {
+	// if ($("body").find(".arsAlarm").length>0) return false;
+	// if ($("body").find("#ars_alarm").length>0) return false;
+	var _this = this;
+	$.get("/checkArsAlarm",function (c) {
+			_this.fn_count(c);
+		// if (c*1>0) {
+		// 	// _this.if_count($(_this.dom_count().replace("{cc}",c)));
+		// 	// _this.if_count().appendTo($("body"));
+		// } else {
+		// 	if (_this.if_count()) _this.if_count().remove();
+		// }
+	})
+}
+
+__ARS_ALARM.prototype.fn_count = function (c) {
+	console.log("fn_count");
+	if (this.if_count()) this.if_count().remove();
+
+	this.if_count($(this.dom_count().replace("{cc}",c)));
+	this.if_alarmBtn().find(".alarm-num").remove();
+	if (c>0) {
+		this.if_count().appendTo(this.if_alarmBtn());
+		this.if_alarmBtn().addClass("blinking");
+	} else {
+		this.if_alarmBtn().removeClass("blinking");
+	}
+	var _this = this;
+	this.if_alarmBtn().unbind("click").bind("click",function () {
+		_this.fn_alarm();
+	})
+}
+__ARS_ALARM.prototype.fn_alarm = function () {
+	console.log("fn_alarm");
+	this.if_modal($(this.dom_modal()));
+	$("body").prepend(this.if_modal());
+	// $(this.if_modal()).modal("show");
+	var _this = this;
+	this.if_modal().find(".modal-body").load("/modal_ars_alarm?etc_bst_ars_alarm__checked=no",function (html) {
+		_this.if_modal().modal("show");
+	});
+}
+__ARS_ALARM.prototype.fn_Page = function (pageNo,isRecall) {
+	// console.log("fn_alarm");
+	// this.if_modal($(this.dom_modal()));
+	// $("body").prepend(this.if_modal());
+	// $(this.if_modal()).modal("show");
+	var _this = this;
+	if (isRecall==2) $(".arsAlarm.show").find(".modal-body").load("/ars_recall?etc_bst_ars_recall__checked=no&page="+pageNo,function (html) {
+		_this.if_modal().modal("show");
+	});
+	else this.if_modal().find(".modal-body").load("/modal_ars_alarm?etc_bst_ars_alarm__checked=no&page="+pageNo,function (html) {
+		_this.if_modal().modal("show");
+	});
+}
+__ARS_ALARM.prototype.fn_openAll = function (t) {
+	var _this = this;
+	$.map(this.if_modal().find("table.table").find("tbody").find("tr"),function (tr) {
+		_this.fn_open($(tr).find("input.open"));
+	});
+}
+__ARS_ALARM.prototype.fn_open = function (t) {
+	this.fn_checked(t);
+	// console.log(t);
+	// window.open("/customers/mod/"+$(t).attr("data-customersId")+"#tab-"+$(t).attr("data-type"));
+	window.open("/customers/mod/"+$(t).attr("data-customersId")+"#"+$(t).attr("data-type"));
+}
+__ARS_ALARM.prototype.fn_checkedAll = function (t) {
+	var _this = this;
+	$.get("/ars_checkAll",function () {
+		alert("전체 확인 되었습니다.");
+		_this.fn_Page(1);
+	});
+	// $.map(this.if_modal().find("table.table").find("tbody").find("tr"),function (tr) {
+	// 	_this.fn_checked($(tr).find("input.checked"));
+	// });
+}
+__ARS_ALARM.prototype.fn_checked = function (t) {
+	var _t = t;
+	var id = $(t).closest("tr").attr("id");
+	// console.log(id);
+	var T = new __tomato("modal_ars_alarm");
+	T._noMessage=false;
+	T.modAc(id,{checked:"yes",_mode:"mod"},function () {
+		$(_t).closest("tr").find("input.checked").remove();
+	})
+}
+__ARS_ALARM.prototype.fn_new = function (t) {
+	var _t = t;
+	this.fn_checked(t);
+	window.open("/customers/insert?phoneNumber="+$(t).attr("data-phone"));
+	// var id = $(t).closest("tr").attr("id");
+	// var T = new __tomato("customers");
+	// T._noMessage = false;
+	// T.insertAc({
+	// 	phone:$(t).attr("data-phone"),
+	// 	noQuery:1
+	// },function (J) {
+	// 	var J = $.parseJSON(J);
+	// 	window.open("/customers/mod/"+J.id);
+	// 	$(_t).closest("tr").find("input.new").remove();
+	// });
+
+	// window.open("/customers/insert?alarmId="+id);
+}
+var ARA;
+refresher.set("onload",function () {
+	ARA = new __ARS_ALARM();
+});
+// var ARA = new __ARS_ALARM();

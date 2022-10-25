@@ -1,0 +1,46 @@
+
+@import "default.css";
+@import "udemzitos_main.css";
+@import "udemzitos_layout.css";
+@import "component.css";
+@import "board.css?1=10";
+@import "subBoard.css";
+@import "chat.css?1=2";
+@import "aldoc.css?1=2";
+@import "fakeLoader.css?1=3";
+/*@font-face {
+ font-family: 'NanumBarunGothic';
+ font-style: normal;
+ src: url('./font/NanumBarunGothic.woff');
+ src: url('./font/NanumBarunGothic.woff') format('woff');
+}
+@font-face {
+ font-family: 'NanumBarunGothicBold';
+ font-style: normal;
+ src: url('./font/NanumBarunGothicBold.woff');
+ src: url('./font/NanumBarunGothicBold.woff') format('woff');
+}
+@font-face {
+ font-family: 'NanumGothic';
+ font-style: normal;
+ src: url('./font/NanumGothic.woff');
+ src: url('./font/NanumGothic.woff') format('woff');
+}
+@font-face {
+ font-family: 'NanumGothicBold';
+ font-style: normal;
+ src: url('./font/NanumGothicBold.woff');
+ src: url('./font/NanumGothicBold.woff') format('woff');
+}
+@font-face {
+ font-family: 'NanumGothicExtraBold';
+ font-style: normal;
+ src: url('./font/NanumGothicExtraBold.woff');
+ src: url('./font/NanumGothicExtraBold.woff') format('woff');
+}
+@font-face {
+ font-family: 'NanumGothicLight';
+ font-style: normal;
+ src: url('./font/NanumGothicLight.woff');
+ src: url('./font/NanumGothicLight.woff') format('woff');
+}*/
