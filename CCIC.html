@@ -1924,7 +1924,7 @@
           min-width: 800px;
         }
       </style>
-      <ul class="nav nav-tabs nav-fill" role="tablist">
+      <!-- <ul class="nav nav-tabs nav-fill" role="tablist">
         <li class="nav-item">
           <a
             class="nav-link active"
@@ -2069,7 +2069,7 @@
             >지점11</a
           >
         </li>
-      </ul>
+      </ul> -->
       <script>
         function changeBranch(branch) {
           var yy = $('#mYear').val();
@@ -2085,47 +2085,73 @@
         <div class="col-12">
           <div class="card main-data">
             <div class="card-body">
-              <div
-                class="form-inline justify-content-start"
-                style="margin-top: -10px; margin-bottom: 0.5rem"
-              >
-                <select
-                  id="mYear"
-                  class="custom-select my-1 mr-sm-2 form-control"
-                  style="min-width: 6rem"
+              <div class="row no-gutters">
+                <div
+                  class="col form-inline justify-content-start"
+                  style="margin-top: -10px; margin-bottom: 0.5rem"
                 >
-                  <option value="2023">2023년</option>
-                  <option value="2022" selected="">2022년</option>
-                  <option value="2021">2021년</option>
-                  <option value="2020">2020년</option>
-                </select>
-                <select
-                  id="mMonth"
-                  class="custom-select my-1 mr-sm-2 form-control"
-                  style="min-width: 4rem"
-                >
-                  <option value="1">1월</option>
-                  <option value="2">2월</option>
-                  <option value="3">3월</option>
-                  <option value="4">4월</option>
-                  <option value="5">5월</option>
-                  <option value="6">6월</option>
-                  <option value="7">7월</option>
-                  <option value="8">8월</option>
-                  <option value="9">9월</option>
-                  <option value="10" selected="">10월</option>
-                  <option value="11">11월</option>
-                  <option value="12">12월</option>
-                </select>
-                <div class="">
-                  <button
-                    type="button"
-                    class="btn btn-sm btn-primary"
-                    name="button"
-                    onclick="changeBranch(0);"
+                  <select
+                    id="mYear"
+                    class="custom-select my-1 mr-sm-2 form-control"
+                    style="min-width: 6rem"
                   >
-                    검색
-                  </button>
+                    <option value="2023">2023년</option>
+                    <option value="2022" selected="">2022년</option>
+                    <option value="2021">2021년</option>
+                    <option value="2020">2020년</option>
+                  </select>
+                  <select
+                    id="mMonth"
+                    class="custom-select my-1 mr-sm-2 form-control"
+                    style="min-width: 4rem"
+                  >
+                    <option value="1">1월</option>
+                    <option value="2">2월</option>
+                    <option value="3">3월</option>
+                    <option value="4">4월</option>
+                    <option value="5">5월</option>
+                    <option value="6">6월</option>
+                    <option value="7">7월</option>
+                    <option value="8">8월</option>
+                    <option value="9">9월</option>
+                    <option value="10" selected="">10월</option>
+                    <option value="11">11월</option>
+                    <option value="12">12월</option>
+                  </select>
+                  <div class="">
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-primary"
+                      name="button"
+                      onclick="changeBranch(0);"
+                    >
+                      검색
+                    </button>
+                  </div>
+                </div>
+
+                <div
+                  class="form-inline justify-content-end"
+                  style="margin-top: -10px; margin-bottom: 0.5rem"
+                >
+                  <form class="ml-3" action="#" method="post">
+                    <input
+                      type="text"
+                      name="customers"
+                      class="form-control form-control-dark mx-lg-2 d-lg-inline-block text"
+                      placeholder="지점 검색"
+                      aria-label="Search"
+                      value=""
+                    />
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-primary"
+                      name="button"
+                      onclick="changeBranch(0);"
+                    >
+                      검색
+                    </button>
+                  </form>
                 </div>
               </div>
 
@@ -2280,54 +2306,23 @@
                         labels: thisMonth,
                         datasets: [
                           {
-                            label: '확정 총매출',
+                            label: '이번달 매출',
                             data: [
-                              6480,
-                              6480,
-                              22802,
-                              40770,
-                              47296,
-                              53944,
-                              67019,
-                              83732,
-                              92721,
-                              ,
-                              ,
-                              ,
-                              ,
-                              ,
-                              ,
-                              ,
-                              ,
-                              ,
-                              ,
+                              15116268, 12186268, 15996268, 13126268, 18336268,
+                              11316268, 11205900, 11305900, 11005900, 31905900,
+                              23305900, 17372536, 18035900, 11505900, 31305900,
+                              21705900, 21705900, 21705900, 21705900,
                             ],
                             fill: 'origin',
                             borderColor: 'rgb(75, 192, 192)',
-                            lineTension: 0.1,
                           },
                           {
-                            label: '총매출 목표',
+                            label: '지난달 매출',
                             data: [
-                              14378,
-                              28756,
-                              43134,
-                              57512,
-                              71890,
-                              86268,
-                              100646,
-                              115024,
-                              129402,
-                              143780,
-                              158158,
-                              172536,
-                              186914,
-                              201292,
-                              215670,
-                              230048,
-                              ,
-                              ,
-                              ,
+                              12116268, 15186268, 12996268, 9126268, 12336268,
+                              17316268, 15205900, 13305900, 8005900, 23905900,
+                              16305900, 15372536, 12035900, 15505900, 27305900,
+                              12705900, 19705900, 22705900, 33705900,
                             ],
                           },
                         ],
