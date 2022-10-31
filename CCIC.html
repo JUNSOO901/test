@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>CCIC 인증 전체 의료기관 통계</title>
-
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <meta http-equiv="Content-Script-Type" content="text/javascript" />
     <meta http-equiv="Content-Style-Type" content="text/css" />
     <meta http-equiv="Descript-xion" content="올마이티 닥터" />
@@ -2169,7 +2169,7 @@
                           >
                         </h5>
                         <div
-                          class="h2 font-weight-bold text-right text-md-center text-info"
+                          class="h2 font-weight-bold text-right text-md-center text-primary"
                         >
                           17,059,000,000<small class="h5"> 원</small>
                         </div>
@@ -2315,7 +2315,7 @@
                               621705900, 321705900, 521705900,
                             ],
                             fill: 'origin',
-                            borderColor: 'rgb(75, 192, 192)',
+                            borderColor: '#007bff',
                           },
                           {
                             label: '지난달 매출',
@@ -2424,7 +2424,7 @@
                               </div>
                               <div class="">
                                 <div
-                                  class="h2 font-weight-bold text-right text-info"
+                                  class="h2 font-weight-bold text-right text-primary"
                                 >
                                   600<small class="h5"> 기관</small>
                                 </div>
@@ -2535,13 +2535,91 @@
                             </div>
                           </div>
                           <!-- <h5>상담 신청 고객의 관심항목</h5> -->
-                          <canvas
-                            id="myBarChart"
-                            width="455"
-                            height="293"
-                            style="display: block; width: 455px; height: 293px"
-                            class="chartjs-render-monitor"
-                          ></canvas>
+                          <div id="chart24" width="455" height="273"></div>
+                          <script>
+                            var options = {
+                              series: [
+                                {
+                                  name: '예시1',
+                                  data: [44, 55, 41],
+                                },
+                                {
+                                  name: '예시2',
+                                  data: [53, 32, 33],
+                                },
+                                {
+                                  name: '예시3',
+                                  data: [12, 17, 11],
+                                },
+                              ],
+                              chart: {
+                                toolbar: {
+                                  show: false,
+                                },
+                                type: 'bar',
+                                height: 350,
+                                stacked: true,
+                                offsetY: -30,
+                              },
+                              plotOptions: {
+                                bar: {
+                                  horizontal: true,
+                                  dataLabels: {
+                                    total: {
+                                      enabled: true,
+                                      offsetX: 0,
+                                      style: {
+                                        fontSize: '14px',
+                                        fontWeight: 900,
+                                      },
+                                    },
+                                  },
+                                },
+                              },
+                              stroke: {
+                                width: 2,
+                                colors: ['#fff'],
+                              },
+                              title: {
+                                text: '',
+                              },
+                              xaxis: {
+                                categories: ['A예시', 'B예시', 'C예시'],
+                                labels: {
+                                  formatter: function (val) {
+                                    return val + 'K';
+                                  },
+                                },
+                              },
+                              yaxis: {
+                                title: {
+                                  text: undefined,
+                                },
+                              },
+                              tooltip: {
+                                y: {
+                                  formatter: function (val) {
+                                    return val + 'K';
+                                  },
+                                },
+                              },
+                              fill: {
+                                opacity: 1,
+                              },
+                              legend: {
+                                position: 'top',
+                                horizontalAlign: 'center',
+                                offsetX: 0,
+                              },
+                            };
+
+                            var chart = new ApexCharts(
+                              document.querySelector('#chart24'),
+                              options
+                            );
+                            chart.render();
+                          </script>
+
                           <script>
                             var myBarChart = new Chart(
                               document.getElementById('myBarChart'),
@@ -2577,7 +2655,7 @@
                                   legend: {
                                     display: true,
                                     labels: {
-                                      boxWidth: 15,
+                                      boxWidth: 12,
                                     },
                                   },
                                   maintainAspectRatio: false,
@@ -2688,7 +2766,7 @@
                               </div>
                               <div class="">
                                 <div
-                                  class="h2 font-weight-bold text-right text-info"
+                                  class="h2 font-weight-bold text-right text-primary"
                                 >
                                   20<small class="h5"> 건</small>
                                 </div>
@@ -2770,13 +2848,53 @@
                               ></div>
                             </div>
                           </div>
-                          <canvas
-                            id="myPieChart2"
-                            width="455"
-                            height="293"
-                            style="display: block; width: 455px; height: 293px"
-                            class="chartjs-render-monitor"
-                          ></canvas>
+                          <div
+                            class="d-flex justify-content-center"
+                            id="radialBarBottom"
+                          ></div>
+                          <script>
+                            var optionsCircle4 = {
+                              chart: {
+                                type: 'radialBar',
+                                height: 330,
+                                width: 330,
+                              },
+                              plotOptions: {
+                                radialBar: {
+                                  size: undefined,
+                                  inverseOrder: true,
+                                  hollow: {
+                                    margin: 5,
+                                    size: '36%',
+                                    background: 'transparent',
+                                  },
+                                  track: {
+                                    show: false,
+                                  },
+                                  startAngle: -180,
+                                  endAngle: 180,
+                                },
+                              },
+                              stroke: {
+                                lineCap: 'round',
+                              },
+                              series: [71, 66, 54],
+                              labels: ['예시1', '예시2', '예시3'],
+                              legend: {
+                                show: true,
+                                floating: true,
+                                position: 'left',
+                                offsetX: 160,
+                                offsetY: 192,
+                              },
+                            };
+
+                            var chartCircle4 = new ApexCharts(
+                              document.querySelector('#radialBarBottom'),
+                              optionsCircle4
+                            );
+                            chartCircle4.render();
+                          </script>
                           <script>
                             var myPieChart2 = new Chart(
                               document.getElementById('myPieChart2'),
