@@ -2169,7 +2169,7 @@
                           >
                         </h5>
                         <div
-                          class="h2 font-weight-bold text-right text-md-center text-primary"
+                          class="h2 font-weight-bold text-right text-md-center text-info"
                         >
                           17,059,000,000<small class="h5"> 원</small>
                         </div>
@@ -2287,12 +2287,12 @@
                     var thisMonth = [];
                     var d = new Date();
                     var n = 10;
-                    for (var i = 0; i < 30; i = i + 2) {
+                    for (var i = 0; i < 30; i = i + 1) {
                       j = i + 1;
-                      thisMonth.push(n + '월 ' + j + '일');
+                      thisMonth.push(n + '/' + j + '');
                     }
                     if (lastDay > 30) {
-                      thisMonth.push(n + '월 ' + lastDay + '일');
+                      thisMonth.push(n + '/' + lastDay);
                     }
                     // console.log(moment().format("ll"));
                     var tChar = new Chart(document.getElementById('myChart'), {
@@ -2312,10 +2312,16 @@
                               618336268, 911316268, 511205900, 611305900,
                               711005900, 831905900, 623305900, 817372536,
                               718035900, 811505900, 831305900, 1021705900,
-                              621705900, 321705900, 521705900,
+                              621705900, 621705900, 521705900, 915116268,
+                              712186268, 715996268, 813126268, 618336268,
+                              911316268, 511205900, 611305900, 711005900,
+                              831905900, 623305900, 817372536, 718035900,
+                              811505900, 831305900, 1021705900, 621705900,
+                              321705900, 521705900,
                             ],
                             fill: 'origin',
                             borderColor: '#007bff',
+                            lineTension: 0,
                           },
                           {
                             label: '지난달 매출',
@@ -2324,8 +2330,14 @@
                               518336268, 711316268, 451205900, 571305900,
                               611005900, 631905900, 823305900, 917372536,
                               918035900, 611505900, 731305900, 421705900,
-                              421705900, 521705900, 521705900,
+                              421705900, 521705900, 521705900, 815116268,
+                              712186268, 615996268, 513126268, 518336268,
+                              711316268, 451205900, 571305900, 611005900,
+                              631905900, 823305900, 917372536, 918035900,
+                              611505900, 731305900, 421705900, 421705900,
+                              521705900, 821705900,
                             ],
+                            lineTension: 0,
                           },
                         ],
                       },
@@ -2337,6 +2349,9 @@
                         scales: {
                           yAxes: [
                             {
+                              gridLines: {
+                                drawOnChartArea: false,
+                              },
                               ticks: {
                                 callback: function (value) {
                                   return value.toLocaleString() + '';
@@ -2424,7 +2439,7 @@
                               </div>
                               <div class="">
                                 <div
-                                  class="h2 font-weight-bold text-right text-primary"
+                                  class="h2 font-weight-bold text-right text-info"
                                 >
                                   600<small class="h5"> 기관</small>
                                 </div>
